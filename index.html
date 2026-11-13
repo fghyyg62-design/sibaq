@@ -12,73 +12,81 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;overscroll-behavior:none}
 body{background:#DCEAF5;color:#1F2A37;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;user-select:none;-webkit-user-select:none}
-button{font:inherit;cursor:pointer;border:none}
+button{font:inherit;cursor:pointer;border:none;color:inherit}
+input{font:inherit}
 .screen{display:none;min-height:100dvh;padding:14px 14px 24px;max-width:520px;margin:0 auto}
 .screen.show{display:block}
 .top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
-.coins{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:5px 12px 5px 8px;font-weight:600;color:#633806;border:2px solid #FAC775}
+.coins{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:5px 12px 5px 8px;font-weight:700;color:#633806;border:2px solid #FAC775}
 .coin{width:20px;height:20px;flex:none}
-.ibtn{width:44px;height:44px;border-radius:14px;background:#fff;border-bottom:4px solid #B5C6D6;display:flex;align-items:center;justify-content:center;font-size:20px;color:#2E5E8C}
-.ibtn:active,.gbtn:active,.card:active{transform:translateY(2px)}
-.gbtn{display:block;width:100%;border-radius:18px;padding:14px;font-size:20px;font-weight:700;color:#fff;background:#3B8AD8;border-bottom:6px solid #1F5F9E;margin:8px 0}
+.ibtn{width:44px;height:44px;border-radius:14px;background:#fff;border-bottom:4px solid #B5C6D6;display:flex;align-items:center;justify-content:center;font-size:20px;color:#2E5E8C;flex:none}
+.ibtn:active,.gbtn:active,.card:active,.bigbtn:active{transform:translateY(2px)}
+.gbtn{display:block;width:100%;border-radius:18px;padding:14px;font-size:20px;font-weight:800;color:#fff;background:#3B8AD8;border-bottom:6px solid #1F5F9E;margin:8px 0}
 .gbtn.green{background:#3FAE6A;border-bottom-color:#25784A}
 .gbtn.orange{background:#F29A2E;border-bottom-color:#B86A12}
 .gbtn.gray{background:#8A96A3;border-bottom-color:#5F6B78}
-.gbtn.small{font-size:16px;padding:10px;border-radius:14px;border-bottom-width:4px}
-.title{font-size:34px;font-weight:800;text-align:center;color:#1F4F7A;margin:6px 0 0;letter-spacing:0}
+.gbtn.small{font-size:15px;padding:9px;border-radius:14px;border-bottom-width:4px}
+.title{font-size:32px;font-weight:900;text-align:center;color:#1F4F7A;margin:4px 0 0}
 .sub{text-align:center;color:#5A6B7C;font-size:14px;margin:2px 0 8px}
-.h2{font-size:22px;font-weight:800;color:#1F4F7A;margin:0}
+.h2{font-size:22px;font-weight:900;color:#1F4F7A;margin:0}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.card{background:#fff;border-radius:18px;padding:12px;border-bottom:5px solid #B5C6D6;text-align:center;position:relative}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.card{background:#fff;border-radius:18px;padding:12px;border-bottom:5px solid #B5C6D6;text-align:center;position:relative;display:block;width:100%}
 .card.sel{outline:3px solid #3B8AD8}
-.card .nm{font-weight:700;font-size:15px}
+.card .nm{font-weight:800;font-size:14px}
 .card .ds{font-size:12px;color:#5A6B7C;margin-top:2px;line-height:1.5}
-.badge{position:absolute;top:-6px;left:-6px;background:#E24B4A;color:#fff;border-radius:999px;min-width:22px;height:22px;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px}
-.pill{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:700}
+.bigbtn{display:flex;gap:12px;align-items:center;text-align:right;background:#fff;border-radius:20px;padding:14px;border-bottom:5px solid #B5C6D6;width:100%;margin-bottom:10px;position:relative}
+.bigbtn .ic{font-size:36px;flex:none}
+.bigbtn .nm{font-size:19px;font-weight:900;color:#1F4F7A}
+.bigbtn .ds{font-size:13px;color:#5A6B7C;line-height:1.5}
+.soon{position:absolute;top:10px;left:10px;background:#FFF4D6;color:#633806;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:800}
+.badge{position:absolute;top:-6px;left:-6px;background:#E24B4A;color:#fff;border-radius:999px;min-width:22px;height:22px;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 6px}
+.pill{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:800}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:8px 0}
-.tab{background:#fff;border-radius:12px;padding:7px 12px;font-size:14px;font-weight:600;color:#2E5E8C;border-bottom:3px solid #B5C6D6}
+.tab{background:#fff;border-radius:12px;padding:7px 12px;font-size:14px;font-weight:700;color:#2E5E8C;border-bottom:3px solid #B5C6D6}
 .tab.on{background:#3B8AD8;color:#fff;border-bottom-color:#1F5F9E}
 .tab.lk{opacity:.45}
 .lvgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
-.lv{background:#fff;border-radius:14px;padding:8px 0;border-bottom:4px solid #B5C6D6;font-weight:800;font-size:18px;color:#1F4F7A}
-.lv small{display:block;font-size:11px;color:#BA7517;font-weight:700;min-height:14px}
-.lv.lk{opacity:.45}
-.lv.cur{background:#FFF4D6;border-bottom-color:#F2C46B}
+.lv{background:#fff;border-radius:14px;padding:10px 0;border-bottom:4px solid #B5C6D6;font-weight:900;font-size:20px;color:#1F4F7A}
+.lv small{display:block;font-size:11px;color:#BA7517;font-weight:800;min-height:14px}
+.lv.lk{opacity:.45}.lv.cur{background:#FFF4D6;border-bottom-color:#F2C46B}
 .row{display:flex;gap:8px;align-items:center}
-.lbl{font-size:13px;color:#5A6B7C;font-weight:600;margin:12px 0 4px}
+.lbl{font-size:13px;color:#5A6B7C;font-weight:700;margin:14px 0 6px}
 .opt{display:flex;gap:6px;flex-wrap:wrap}
-.opt button{background:#fff;border-radius:12px;padding:8px 12px;font-weight:700;color:#2E5E8C;border-bottom:3px solid #B5C6D6}
+.opt button{flex:1;background:#fff;border-radius:12px;padding:10px 8px;font-weight:800;color:#2E5E8C;border-bottom:3px solid #B5C6D6}
 .opt button.on{background:#3B8AD8;color:#fff;border-bottom-color:#1F5F9E}
+.opt button small{display:block;font-size:11px;font-weight:600;opacity:.8}
 .mis{background:#fff;border-radius:16px;padding:12px;border-bottom:4px solid #B5C6D6;margin:8px 0}
 .bar{height:10px;background:#E5ECF2;border-radius:999px;overflow:hidden;margin:8px 0}
 .bar i{display:block;height:100%;background:#3FAE6A;border-radius:999px}
-.toggle{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:16px;padding:14px;margin:8px 0;border-bottom:4px solid #B5C6D6;font-weight:700}
-.sw{width:54px;height:30px;border-radius:999px;background:#B5C6D6;position:relative;transition:.2s}
+.toggle{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:14px;margin:8px 0;border-bottom:4px solid #B5C6D6;font-weight:800}
+.sw{width:54px;height:30px;border-radius:999px;background:#B5C6D6;position:relative;transition:.2s;flex:none}
 .sw::after{content:"";position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
 .sw.on{background:#3FAE6A}.sw.on::after{right:27px}
-/* game */
+.inp{border:2px solid #B5C6D6;border-radius:12px;padding:8px 10px;width:150px;background:#F5F8FB;color:#1F2A37}
 #scGame{padding:0;max-width:none;height:100dvh;min-height:0;flex-direction:column;background:#DCEAF5}
 #scGame.show{display:flex}
-.hud{display:flex;align-items:center;gap:6px;padding:8px 10px;max-width:560px;width:100%;margin:0 auto}
-.pc{flex:1;min-width:0;display:flex;align-items:center;gap:6px;background:#fff;border-radius:14px;padding:4px 8px;border:3px solid transparent;border-bottom:4px solid #B5C6D6}
+.area{max-width:560px;width:100%;margin:0 auto;padding:6px 8px}
+.hud{display:flex;align-items:center;gap:6px}
+.pc{flex:1;min-width:0;display:flex;align-items:center;gap:6px;background:#fff;border-radius:14px;padding:3px 8px;border:3px solid transparent;border-bottom:4px solid #B5C6D6}
 .pc.act{border-color:#F2C46B}
-.pc .n{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc .n{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pc .s{font-size:12px;color:#5A6B7C;white-space:nowrap}
-.board{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 6px;position:relative}
-.board svg{width:100%;height:100%;max-width:560px;touch-action:manipulation}
-.bub{position:absolute;top:2px;left:50%;transform:translateX(-50%);background:#fff;border-radius:14px;padding:4px 12px;font-size:13px;font-weight:600;color:#3D4B59;display:flex;align-items:center;gap:6px;white-space:nowrap;border-bottom:3px solid #B5C6D6;z-index:2;max-width:92%}
-.ctrl{display:flex;gap:6px;padding:4px 10px 10px;max-width:560px;width:100%;margin:0 auto}
-.ctrl button{flex:1;background:#fff;border-radius:14px;padding:10px 4px;font-weight:800;font-size:14px;color:#2E5E8C;border-bottom:4px solid #B5C6D6}
+.board{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 2px;position:relative}
+.board svg{width:100%;height:100%;max-width:600px;touch-action:manipulation}
+.bub{position:absolute;top:0;left:50%;transform:translateX(-50%);background:#fff;border-radius:14px;padding:3px 12px;font-size:13px;font-weight:700;color:#3D4B59;display:flex;align-items:center;gap:6px;white-space:nowrap;border-bottom:3px solid #B5C6D6;z-index:2;max-width:92%}
+.ctrl{display:flex;gap:6px;margin-top:6px}
+.ctrl button{flex:1;background:#fff;border-radius:14px;padding:10px 2px;font-weight:900;font-size:14px;color:#2E5E8C;border-bottom:4px solid #B5C6D6}
 .ctrl button.on{background:#3B8AD8;color:#fff;border-bottom-color:#1F5F9E}
 .ctrl button.go{background:#3FAE6A;color:#fff;border-bottom-color:#25784A}
-.ctrl button:disabled{opacity:.4}
-.stt{text-align:center;font-weight:800;font-size:15px;color:#1F4F7A;min-height:20px}
+.ctrl button:disabled{opacity:.35}
+.flip{transform:rotate(180deg)}
+.stt{text-align:center;font-weight:900;font-size:15px;color:#1F4F7A;min-height:20px}
 .ov{position:fixed;inset:0;background:rgba(20,35,50,.55);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}
 .ov.show{display:flex}
-.box{background:#F5F8FB;border-radius:24px;padding:18px;max-width:380px;width:100%;text-align:center;border-bottom:6px solid #B5C6D6}
+.box{background:#F5F8FB;border-radius:24px;padding:18px;max-width:380px;width:100%;text-align:center;border-bottom:6px solid #B5C6D6;max-height:92dvh;overflow:auto}
 .stars{font-size:44px;letter-spacing:6px;line-height:1}
-.toast{position:fixed;top:12px;left:50%;transform:translateX(-50%) translateY(-120px);background:#3FAE6A;color:#fff;font-weight:700;border-radius:14px;padding:10px 16px;z-index:30;transition:transform .3s;max-width:90%;text-align:center}
+.toast{position:fixed;top:12px;left:50%;transform:translateX(-50%) translateY(-140px);background:#3FAE6A;color:#fff;font-weight:800;border-radius:14px;padding:10px 16px;z-index:30;transition:transform .3s;max-width:90%;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .bob{animation:bob .9s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
@@ -91,136 +99,156 @@ button{font:inherit;cursor:pointer;border:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hop{animation:hop 1.4s ease-in-out infinite}
 @keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.new{display:inline-block;background:#FFF4D6;color:#633806;border-radius:10px;padding:3px 10px;font-size:13px;font-weight:700;margin-top:6px}
+.tw{animation:tw 2s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:1}}
+.new{display:inline-block;background:#FFF4D6;color:#633806;border-radius:10px;padding:3px 10px;font-size:13px;font-weight:800;margin-top:6px}
+.tier{background:#fff;border-radius:16px;padding:12px;border-bottom:4px solid #B5C6D6;display:flex;justify-content:space-between;align-items:center;margin:8px 0;font-weight:800;opacity:.7}
 </style>
 </head>
 <body>
 <div id="toast" class="toast"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<pattern id="pWood" width="10" height="6" patternUnits="userSpaceOnUse"><rect width="10" height="6" fill="#A0673A"/><path d="M0 2 Q5 1 10 2 M0 4.5 Q5 5.5 10 4.5" stroke="#7A4A23" stroke-width=".8" fill="none"/></pattern>
+<pattern id="pBrick" width="12" height="8" patternUnits="userSpaceOnUse"><rect width="12" height="8" fill="#B4472F"/><path d="M0 4 H12 M0 0 H12 M6 0 V4 M0 4 V8 M12 4 V8" stroke="#E8C9B8" stroke-width="1"/></pattern>
+<pattern id="pCandy" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#FFFFFF"/><rect width="4" height="8" fill="#E24B6A"/></pattern>
+<linearGradient id="gRain" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E24B4A"/><stop offset=".25" stop-color="#EF9F27"/><stop offset=".5" stop-color="#3FAE6A"/><stop offset=".75" stop-color="#378ADD"/><stop offset="1" stop-color="#7F77DD"/></linearGradient>
+<linearGradient id="gGold" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#FCE29A"/><stop offset=".5" stop-color="#E8A320"/><stop offset="1" stop-color="#B86A12"/></linearGradient>
+</defs></svg>
 
-<!-- الواجهة الرئيسية -->
 <section id="scHome" class="screen">
 <div class="top"><span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg><span class="cv">0</span></span><button class="ibtn" data-go="scSettings" aria-label="الإعدادات">⚙</button></div>
 <div class="title">سباق الجدران</div>
 <div class="sub">سكّر الطريق، ووصّل قبلهم</div>
-<svg id="hero" viewBox="-80 -40 160 80" width="100%" style="max-height:200px;display:block;margin:6px auto 4px"></svg>
-<button class="gbtn green" id="btnStart" style="font-size:26px;padding:18px">ابدأ</button>
-<div class="grid3" style="margin-top:8px">
-<button class="card" data-go="scMissions"><span class="badge" id="misBadge" style="display:none">!</span><div style="font-size:26px">🎯</div><div class="nm">المهام</div></button>
-<button class="card" data-go="scShop"><div style="font-size:26px">🛒</div><div class="nm">المتجر</div></button>
-<button class="card" id="btnGift"><span class="badge" id="giftBadge" style="display:none">!</span><div style="font-size:26px">🎁</div><div class="nm">هدية اليوم</div></button>
+<div style="background:#fff;border-radius:24px;border-bottom:5px solid #B5C6D6;padding:8px 10px 12px;text-align:center;margin:8px 0">
+<svg id="hero" viewBox="-30 -36 60 58" width="160" height="150" style="display:block;margin:0 auto"></svg>
+<div class="h2" id="heroName" style="font-size:18px"></div>
+<div class="sub" id="heroSub" style="margin:0 0 6px"></div>
+<button class="gbtn small" data-go="scShop" style="width:auto;display:inline-block;padding:8px 20px;margin:0">👕 غيّر الشكل</button>
 </div>
-<div class="sub" style="margin-top:14px" id="homeStats"></div>
+<button class="gbtn green" id="btnStart" style="font-size:26px;padding:16px">ابدأ</button>
+<div class="grid4" style="margin-top:6px">
+<button class="card" data-go="scShop" style="padding:10px 4px"><div style="font-size:24px">🛒</div><div class="nm">المتجر</div></button>
+<button class="card" data-go="scMissions" style="padding:10px 4px"><span class="badge" id="misBadge" style="display:none">!</span><div style="font-size:24px">🎯</div><div class="nm">المهام</div></button>
+<button class="card" id="btnGift" style="padding:10px 4px"><span class="badge" id="giftBadge" style="display:none">!</span><div style="font-size:24px">🎁</div><div class="nm">الهدية</div></button>
+<button class="card" id="btnRank" style="padding:10px 4px"><div style="font-size:24px">🏆</div><div class="nm">الترتيب</div></button>
+</div>
 </section>
 
-<!-- اختيار الطور -->
 <section id="scMode" class="screen">
-<div class="top"><button class="ibtn" data-go="scHome" aria-label="رجوع">→</button><span class="h2">شنو تبي تلعب؟</span><span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg><span class="cv">0</span></span></div>
-<div class="lbl">شخصيتك</div>
-<div class="grid3" id="modeChars" style="grid-template-columns:repeat(4,minmax(0,1fr))"></div>
-<div class="lbl">الطور</div>
-<button class="card" style="width:100%;text-align:right;display:flex;gap:12px;align-items:center;margin-bottom:10px" id="mLevels"><div style="font-size:34px">🗺️</div><div><div class="nm" style="font-size:18px">المراحل</div><div class="ds" id="mLevelsDs">100 مرحلة بعشر عوالم</div></div></button>
-<button class="card" style="width:100%;text-align:right;display:flex;gap:12px;align-items:center;margin-bottom:10px" data-go="scFree"><div style="font-size:34px">👥</div><div><div class="nm" style="font-size:18px">لعب حر</div><div class="ds">ضد البوتات أو مع أصحابك على نفس الجوال، لحد 4 لاعبين</div></div></button>
-<button class="card" style="width:100%;text-align:right;display:flex;gap:12px;align-items:center" id="mQuick"><div style="font-size:34px">⚡</div><div><div class="nm" style="font-size:18px">تحدي سريع</div><div class="ds">مرحلة عشوائية من اللي فتحتها، وجائزتها عملات أكثر</div></div></button>
+<div class="top"><button class="ibtn" data-go="scHome" aria-label="رجوع">→</button><span class="h2">اختار الطور</span><span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg><span class="cv">0</span></span></div>
+<button class="bigbtn" id="mRobot"><div class="ic">🤖</div><div><div class="nm">ضد الروبوت</div><div class="ds" id="mRobotDs">مراحل تصعب شوي شوي، وكل فوز يعطيك عملات</div></div></button>
+<button class="bigbtn" data-go="scLocal"><div class="ic">🧑‍🤝‍🧑</div><div><div class="nm">مع صاحبك على نفس الجوال</div><div class="ds">لعب كلاسيكي، بدون عملات وبدون رهان</div></div></button>
+<button class="bigbtn" data-go="scOnline"><span class="soon">قريباً</span><div class="ic">🌍</div><div><div class="nm">أونلاين بالرهان</div><div class="ds">تراهن بعملاتك ضد لاعب حقيقي، واللي يفوز ياخذ الكل</div></div></button>
 </section>
 
-<!-- المراحل -->
 <section id="scLevels" class="screen">
-<div class="top"><button class="ibtn" data-go="scMode" aria-label="رجوع">→</button><span class="h2">المراحل</span><span class="pill" style="background:#FFF4D6;color:#633806">★ <span id="tst">0</span>/300</span></div>
+<div class="top"><button class="ibtn" data-go="scMode" aria-label="رجوع">→</button><span class="h2">المراحل</span><span class="pill" style="background:#FFF4D6;color:#633806">★ <span id="tst">0</span>/75</span></div>
 <div class="tabs" id="wts"></div>
-<div class="card" style="text-align:right;margin-top:6px"><div class="nm" id="wName"></div><div class="ds" id="wDesc"></div></div>
+<div class="card" style="text-align:right;margin-top:6px"><div class="nm" id="wName" style="font-size:16px"></div><div class="ds" id="wDesc"></div></div>
 <div class="lvgrid" id="lvls"></div>
+<div class="sub" style="margin-top:14px">25 مرحلة الحين، ومراحل جديدة جاية بالتحديثات</div>
 </section>
 
-<!-- لعب حر -->
-<section id="scFree" class="screen">
-<div class="top"><button class="ibtn" data-go="scMode" aria-label="رجوع">→</button><span class="h2">لعب حر</span><span></span></div>
-<div class="lbl">عدد اللاعبين</div><div class="opt" id="np"><button data-v="2">لاعبين</button><button data-v="4">4 لاعبين</button></div>
-<div class="lbl">حجم اللوحة</div><div class="opt" id="bs"><button data-v="7">7×7</button><button data-v="9">9×9</button><button data-v="11">11×11</button><button data-v="13">13×13</button></div>
-<div class="lbl">مين يلعب الباقين؟ اضغط عشان تبدل بين بوت وصاحبك</div><div class="grid3" id="seats"></div>
-<div class="lbl">ذكاء البوتات</div><div class="opt" id="gl"><button data-v="e">هادي</button><button data-v="m">شاطر</button><button data-v="h">قوي</button></div>
-<button class="gbtn green" id="btnFree" style="margin-top:18px">ابدأ اللعب</button>
+<section id="scLocal" class="screen">
+<div class="top"><button class="ibtn" data-go="scMode" aria-label="رجوع">→</button><span class="h2">مع صاحبك</span><span></span></div>
+<div class="lbl">عدد اللاعبين</div><div class="opt" id="np"><button data-v="2">اثنين وجهاً لوجه</button><button data-v="4">أربعة</button></div>
+<div class="lbl">حجم اللوحة</div><div class="opt" id="bsz"></div>
+<div class="lbl" id="seatLbl"></div><div class="grid4" id="seats"></div>
+<div id="botLvlWrap"><div class="lbl">ذكاء البوتات</div><div class="opt" id="gl"><button data-v="e">هادي</button><button data-v="m">شاطر</button><button data-v="h">قوي</button></div></div>
+<button class="gbtn green" id="btnLocal" style="margin-top:18px">ابدأ اللعب</button>
+<div class="sub" id="localHint"></div>
 </section>
 
-<!-- المتجر -->
+<section id="scOnline" class="screen">
+<div class="top"><button class="ibtn" data-go="scMode" aria-label="رجوع">→</button><span class="h2">أونلاين بالرهان</span><span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg><span class="cv">0</span></span></div>
+<div class="card" style="text-align:right"><div class="nm" style="font-size:16px">كيف راح يشتغل</div><div class="ds" style="font-size:14px;line-height:1.8">تختار طاولة حسب الرهان، واللعبة تدورلك لاعب اختار نفس الطاولة، وتلعبون على طول. كل واحد يحط نفس المبلغ، واللي يفوز ياخذ المبلغين.</div></div>
+<div id="tiers"></div>
+<div class="sub" style="margin-top:10px">هالطور يحتاج خادم على الإنترنت يوصل اللاعبين ببعض، وراح ينضاف بتحديث جاي. اجمع عملاتك من الحين!</div>
+</section>
+
 <section id="scShop" class="screen">
 <div class="top"><button class="ibtn" data-go="scHome" aria-label="رجوع">→</button><span class="h2">المتجر</span><span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg><span class="cv">0</span></span></div>
-<div class="tabs" id="shopTabs"><button class="tab on" data-t="chars">الشخصيات</button><button class="tab" data-t="walls">الجدران</button><button class="tab" data-t="boards">اللوحات</button></div>
+<div class="tabs" id="shopTabs"><button class="tab on" data-t="chars">الشخصيات</button><button class="tab" data-t="accs">الإكسسوارات</button><button class="tab" data-t="walls">الجدران</button><button class="tab" data-t="grounds">الأرضيات</button></div>
 <div class="grid2" id="shopGrid"></div>
-<div class="sub" style="margin-top:12px">تجمع العملات من الفوز بالمراحل والمهام وهدية اليوم</div>
+<div class="sub" style="margin-top:12px">تجمع العملات من مراحل الروبوت والمهام اليومية وهدية اليوم</div>
 </section>
 
-<!-- المهام -->
 <section id="scMissions" class="screen">
 <div class="top"><button class="ibtn" data-go="scHome" aria-label="رجوع">→</button><span class="h2">مهام اليوم</span><span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg><span class="cv">0</span></span></div>
 <div class="sub">كل يوم تطلع لك ثلاث مهام جديدة</div>
 <div id="misList"></div>
 </section>
 
-<!-- الإعدادات -->
 <section id="scSettings" class="screen">
 <div class="top"><button class="ibtn" data-go="scHome" aria-label="رجوع">→</button><span class="h2">الإعدادات</span><span></span></div>
+<div class="toggle">اسمك<input class="inp" id="inName" maxlength="14"></div>
 <div class="toggle">الأصوات<div class="sw" id="swSound"></div></div>
 <div class="toggle">الاهتزاز<div class="sw" id="swVib"></div></div>
-<div class="toggle">سرعة البوت<div class="opt" id="spd"><button data-v="slow">بطيء</button><button data-v="norm">عادي</button><button data-v="fast">سريع</button></div></div>
+<div class="lbl">سرعة البوت</div><div class="opt" id="spd"><button data-v="slow">بطيء</button><button data-v="norm">عادي</button><button data-v="fast">سريع</button></div>
+<div class="lbl">إحصائياتك</div><div class="card" style="text-align:right" id="statBox"></div>
 <button class="gbtn gray small" id="btnReset" style="margin-top:20px">مسح كل التقدم</button>
-<div class="sub" style="margin-top:16px">سباق الجدران · نسخة ١</div>
+<div class="sub" style="margin-top:16px">سباق الجدران · نسخة ٢</div>
 </section>
 
-<!-- شاشة اللعب -->
 <section id="scGame" class="screen">
-<div class="hud"><button class="ibtn" id="btnPause" aria-label="إيقاف مؤقت" style="flex:none">❚❚</button><div id="oppCards" style="display:flex;gap:6px;flex:1;min-width:0"></div></div>
+<div class="area" id="topArea"></div>
 <div class="stt" id="st"></div>
 <div class="board"><div class="bub" id="bubWrap"><svg width="22" height="26" viewBox="-17 -26 34 44" id="icBub"></svg><span id="bub"></span></div>
 <svg id="sv" viewBox="-12 -12 384 384" role="img" aria-label="لوحة اللعب">
 <defs><clipPath id="cp"><rect x="0" y="0" width="360" height="360" rx="12"/></clipPath></defs>
 <rect id="frame" x="-10" y="-10" width="380" height="380" rx="22" fill="#DCE1EA"/>
-<rect id="bgr" x="0" y="0" width="360" height="360" rx="12" fill="#FFFFFF"/>
+<g clip-path="url(#cp)"><rect id="bgr" x="0" y="0" width="360" height="360" fill="#FFFFFF"/><g id="bgx"></g></g>
 <g id="bd" clip-path="url(#cp)"></g><g id="tr"></g><g id="pth"></g><g id="hl"></g><g id="wl"></g><g id="pw"></g><g id="gh"></g><g id="cfg" clip-path="url(#cp)"></g>
 </svg></div>
-<div class="hud" style="padding-bottom:4px"><div id="myCard" style="display:flex;gap:6px;flex:1;min-width:0"></div><button class="ibtn" id="sp" aria-label="ورني طريقي" style="flex:none;font-size:13px;font-weight:800;width:auto;padding:0 10px">طريقي</button></div>
-<div class="ctrl"><button data-v="move" class="on">امشِ</button><button data-v="h">جدار ━ <span class="wn"></span></button><button data-v="v">جدار ┃ <span class="wn"></span></button><button id="ok" class="go" style="display:none">✓ ثبّت</button></div>
+<div class="area" id="botArea"></div>
 </section>
 
-<div class="ov" id="ovIntro"><div class="box"><div class="h2" id="inName"></div><div id="inNew"></div><svg id="inPic" viewBox="-60 -30 120 60" width="200" style="display:block;margin:8px auto"></svg><div class="ds" id="inDesc" style="color:#3D4B59;line-height:1.7;font-size:15px"></div><div class="ds" id="inStars" style="color:#5A6B7C;font-size:12px;margin-top:8px;line-height:1.6"></div><button class="gbtn green" id="inGo">يلا نبدأ</button></div></div>
+<div class="ov" id="ovIntro"><div class="box"><div class="h2" id="inTitle"></div><div id="inNew"></div><svg id="inPic" viewBox="-60 -32 120 62" width="210" style="display:block;margin:8px auto"></svg><div id="inDesc" style="color:#3D4B59;line-height:1.7;font-size:15px"></div><div id="inStars" style="color:#5A6B7C;font-size:12px;margin-top:8px;line-height:1.6"></div><button class="gbtn green" id="inGo">يلا نبدأ</button></div></div>
 <div class="ov" id="ovPause"><div class="box"><div class="h2" style="margin-bottom:10px">إيقاف مؤقت</div><button class="gbtn green" id="pResume">كمّل</button><button class="gbtn" id="pRestart">أعد من البداية</button><button class="gbtn gray" id="pHome">الواجهة الرئيسية</button></div></div>
-<div class="ov" id="ovRes"><div class="box"><div class="stars" id="rStars"></div><div class="h2" id="rTitle" style="margin-top:6px"></div><div class="ds" id="rSub" style="margin:6px 0;color:#5A6B7C"></div><div id="rCoins" style="margin:8px 0"></div><button class="gbtn green" id="rNext">المرحلة الجاية</button><button class="gbtn" id="rAgain">العب مرة ثانية</button><button class="gbtn gray" id="rHome">الواجهة الرئيسية</button></div></div>
-<div class="ov" id="ovConfirm"><div class="box"><div class="h2" id="cfText" style="font-size:18px;line-height:1.6"></div><div class="row" style="margin-top:10px"><button class="gbtn gray small" id="cfNo">لا</button><button class="gbtn orange small" id="cfYes">أيوه</button></div></div></div>
+<div class="ov" id="ovRes"><div class="box"><div class="stars" id="rStars"></div><div class="h2" id="rTitle" style="margin-top:6px"></div><div id="rSub" style="margin:6px 0;color:#5A6B7C;font-size:13px"></div><div id="rCoins" style="margin:8px 0"></div><button class="gbtn green" id="rNext">المرحلة الجاية</button><button class="gbtn" id="rAgain">العب مرة ثانية</button><button class="gbtn gray" id="rHome">الواجهة الرئيسية</button></div></div>
+<div class="ov" id="ovMsg"><div class="box"><div id="msgText" style="font-size:16px;font-weight:700;line-height:1.7;color:#1F4F7A"></div><div class="row" style="margin-top:10px" id="msgBtns"></div></div></div>
 
 <script>
 const $=id=>document.getElementById(id),sv=$('sv');
-const CH={blob:{b:'#378ADD',d:'#0C447C',l:'#B5D4F4',n:'زرقون',price:0},cat:{b:'#7F77DD',d:'#3C3489',l:'#CECBF6',n:'بسبوس',price:150},bunny:{b:'#D4537E',d:'#72243E',l:'#F4C0D1',n:'أرنوب',price:250},robot:{b:'#D85A30',d:'#712B13',l:'#FAECE7',n:'روبو',price:400}};
-const WSK={char:{n:'لون شخصيتك',c:null,price:0},gold:{n:'ذهبي',c:'#E8A320',price:120},mint:{n:'نعناعي',c:'#1D9E75',price:120},night:{n:'ليلي',c:'#2C2C2A',price:150},candy:{n:'حلاوة',c:'#ED93B1',price:150}};
-const BSK={classic:{n:'كلاسيكي',bg:'#FFFFFF',ln:'#D9DDE4',price:0},grass:{n:'عشب',bg:'#EEF6E4',ln:'#C9E2A8',price:150},sand:{n:'رمل',bg:'#FBF1DD',ln:'#EBD3A6',price:150},sky:{n:'سماء',bg:'#EAF4FD',ln:'#BBD7F0',price:200},night:{n:'ليل',bg:'#2F3440',ln:'#454C5C',price:250}};
+const CH={
+blob:{shape:'blob',b:'#378ADD',d:'#0C447C',l:'#B5D4F4',n:'زرقون',price:0},
+cat:{shape:'cat',b:'#7F77DD',d:'#3C3489',l:'#CECBF6',n:'بسبوس',price:150},
+bunny:{shape:'bunny',b:'#D4537E',d:'#72243E',l:'#F4C0D1',n:'أرنوب',price:250},
+robot:{shape:'robot',b:'#D85A30',d:'#712B13',l:'#FAECE7',n:'روبو',price:400},
+bunnySnow:{shape:'bunny',b:'#F4F1EA',d:'#8A847A',l:'#FBE3EC',n:'أرنوب الثلجي',price:600},
+catNight:{shape:'cat',b:'#3D3A4A',d:'#16141E',l:'#8C88A0',n:'بسبوس الليلي',price:750},
+robotMint:{shape:'robot',b:'#1D9E75',d:'#0A4A36',l:'#E1F5EE',n:'روبو النعناعي',price:900},
+blobGold:{shape:'blob',b:'#E8A320',d:'#7A4A05',l:'#FAE3A0',n:'زرقون الذهبي',price:1200}};
+const ACC={none:{n:'بدون',price:0},glasses:{n:'نظارة شمسية',price:100},bow:{n:'فيونكة',price:150},cap:{n:'كاب',price:250},phones:{n:'سماعات',price:400},crown:{n:'تاج',price:700},halo:{n:'هالة ذهبية',price:1000}};
+const WSK={char:{n:'لون شخصيتك',price:0},stone:{n:'حجر',f:'#8A8F98',s:'#5F646C',price:80},wood:{n:'خشب',f:'url(#pWood)',s:'#5E3A1A',price:150},brick:{n:'طابوق',f:'url(#pBrick)',s:'#7A2A18',price:250},ice:{n:'ثلج',f:'#BFE3F5',s:'#6FA9CF',price:350},candy:{n:'حلاوة',f:'url(#pCandy)',s:'#A3264A',price:500},gold:{n:'ذهب',f:'url(#gGold)',s:'#8A5A08',price:800},rainbow:{n:'قوس قزح',f:'url(#gRain)',s:'#3C3489',price:1200}};
+const GSK={classic:{n:'كلاسيكي',bg:'#FFFFFF',ln:'#D9DDE4',price:0},grass:{n:'عشب',bg:'#EEF6E4',ln:'#C9E2A8',price:100},sand:{n:'رمل',bg:'#FBF1DD',ln:'#EBD3A6',price:150},sky:{n:'سماء',bg:'#EAF4FD',ln:'#BBD7F0',price:200},wood:{n:'خشب',bg:'#E9C99B',ln:'#C99E66',x:'wood',price:300},candy:{n:'حلاوة',bg:'#FDE7EF',ln:'#F2BED0',x:'dots',price:400},night:{n:'ليل',bg:'#2F3440',ln:'#454C5C',price:500},space:{n:'فضاء',bg:'#1B1F33',ln:'#2D3352',x:'stars',price:800}};
 const A=(n,x)=>Array(n).fill(x);
 const WORLDS=[
-{n:'الحديقة',fr:'#CDEBD9',N:5,m:['rows','center','rows','corners','center','multi','rows','center','corners','rows'],w:A(10,3),l:'eeeeeeeeee',F:[0,0,1,1,1,1,2,2,2,2],d:'لوحة صغيرة وبوتات هادية، عشان تتعلم اللعبة.'},
-{n:'البوابات',fr:'#CFEDE6',N:7,m:['rows+portals','center','rows+portals','center+portals','corners','multi+portals','rows','center+portals','corners+portals','rows+portals'],w:A(10,4),l:'eeeeemmmmm',F:[1,1,2,2,2,2,3,3,3,3],d:'بوابات دوارة تنقلك من مكان لمكان.'},
-{n:'المفاتيح',fr:'#FAEEDA',N:7,m:['rows+keys','center+keys','rows+keys','corners+keys','rows+keys+portals','multi+keys','center+keys','rows+keys','corners+keys+portals','center+keys+portals'],w:A(10,4),l:'mmmmmmmmmm',F:[2,2,2,3,3,3,3,4,4,4],d:'لازم تاخذ مفتاحك قبل ما توصل.'},
-{n:'الحصون',fr:'#F5E3C4',N:9,m:['fort','fort+keys','fort','fort+portals','fort+keys','fort','fort+keys+portals','fort','fort+portals','fort+keys'],w:[6,6,6,5,5,5,5,5,4,4],l:'mmmmmmmhhh',F:[0,1,1,1,2,2,2,3,3,3],d:'الكنز داخل حصن له بابين بس.'},
-{n:'الكنز الهارب',fr:'#FBEBC9',N:9,m:['treasure','treasure','multi','treasure+portals','corners','treasure+keys','multi+portals','treasure','treasure+portals','multi+keys'],w:A(10,5),l:'mmmmmhhhhh',F:[3,3,4,4,4,5,5,5,6,6],d:'الكنز يهرب لمكان جديد كل ثلاث جولات.'},
-{n:'الثلاثي',fr:'#E2E0FA',N:9,m:['rows+trio','center+trio','rows+trio','center+trio+portals','rows+trio+keys','center+trio','rows+trio+portals','treasure+trio','rows+trio','center+trio+keys'],w:A(10,5),l:'mmmmmmmmhh',F:[2,2,3,3,3,4,4,4,5,5],d:'ضدك بوتين مو واحد.'},
-{n:'المتاهة الكبيرة',fr:'#DCE1EA',N:11,m:['rows','corners','multi','rows+keys','center','rows+portals','corners+keys','multi+portals','rows','center+keys'],w:A(10,6),l:'mmmmmhhhhh',F:[8,8,9,9,10,10,11,12,13,14],d:'لوحة كبيرة مليانة جدران ثابتة.'},
-{n:'الصحراء',fr:'#F5DCC8',N:11,m:['treasure','rows+keys+portals','treasure+keys','corners+portals','fort','treasure+portals','multi+keys','fort+keys','treasure','rows+portals'],w:[6,6,6,6,5,5,5,5,5,5],l:'hhhhhhhhhh',F:[6,6,7,7,8,8,9,9,10,10],d:'خلطة من كل شي، والبوت قوي.'},
-{n:'القلعة',fr:'#D9D7D0',N:11,m:['fort+trio','rows+trio+keys','center+trio+portals','fort','treasure+trio','rows+trio','fort+keys+portals','center+trio+keys','treasure+trio+portals','fort+trio+keys'],w:A(10,5),l:'hhhhhhhhhh',F:[5,5,6,6,7,7,8,8,9,9],d:'حصون وثلاث لاعبين.'},
-{n:'التحدي الأخير',fr:'#F7D6D6',N:11,m:['rows+keys+portals','fort+keys','treasure+keys+portals','multi+keys+portals','center+trio+keys+portals','corners+keys+portals','fort+trio','treasure+trio+keys','rows+trio+keys+portals','fort+keys+portals'],w:[5,5,4,4,4,4,3,3,3,3],l:'hhhhhhhhhh',F:[6,7,8,8,9,9,10,10,11,12],d:'آخر عالم، وجدرانك قليلة.'}];
-const NL=100,WALLS={2:{7:6,9:10,11:12,13:15},4:{7:4,9:5,11:7,13:8}};
-const MECH={corners:'الزوايا',multi:'الكنوز المتعددة',fort:'الحصن',treasure:'الكنز الهارب',portals:'البوابات',keys:'المفاتيح',trio:'ثلاث لاعبين'};
-const FIRST={};for(let i=0;i<NL;i++){WORLDS[Math.floor(i/10)].m[i%10].split('+').forEach(x=>{if(MECH[x]&&FIRST[x]===undefined)FIRST[x]=i})}
-const MPOOL=[{id:'win2',t:'فز بمرحلتين',n:2,r:40},{id:'win3',t:'فز بثلاث مراحل',n:3,r:60},{id:'walls6',t:'حط 6 جدران',n:6,r:30},{id:'walls12',t:'حط 12 جدار',n:12,r:50},{id:'nowall',t:'فز بمرحلة بدون ما تحط ولا جدار',n:1,r:50},{id:'star3',t:'خذ 3 نجوم بمرحلة',n:1,r:50},{id:'free',t:'العب مباراة لعب حر',n:1,r:30},{id:'key',t:'خذ مفتاح بمرحلة',n:1,r:30},{id:'portal',t:'ادخل بوابة',n:2,r:30},{id:'quick',t:'فز بتحدي سريع',n:1,r:50}];
-// حفظ
-let P0={coins:0,owned:{chars:['blob'],walls:['char'],boards:['classic']},sel:'blob',wsk:'char',bsk:'classic',stars:A(NL,0),unlocked:1,S:{w:0,l:0},mis:null,gift:'',set:{sound:true,vib:true,spd:'norm'}};
+{n:'الحديقة',fr:'#CDEBD9',N:5,m:['rows','center','rows','corners','center'],w:A(5,3),l:'eeeee',F:[0,0,1,1,2],d:'لوحة صغيرة وروبو هادي، عشان تتعلم اللعبة.'},
+{n:'البوابات',fr:'#CFEDE6',N:7,m:['rows+portals','center','center+portals','multi','corners+portals'],w:A(5,4),l:'eemmm',F:[1,2,2,3,3],d:'بوابات دوارة تنقلك من مكان لمكان.'},
+{n:'المفاتيح',fr:'#FAEEDA',N:7,m:['rows+keys','center+keys','corners+keys+portals','multi+keys','treasure'],w:A(5,4),l:'mmmmm',F:[2,3,3,4,4],d:'لازم تاخذ مفتاحك قبل ما توصل، والكنز يهرب!'},
+{n:'الحصون',fr:'#F5E3C4',N:9,m:['fort','fort+keys','treasure+portals','rows+trio','fort+portals'],w:[6,5,5,5,5],l:'mmmhh',F:[1,2,4,3,3],d:'حصون لها بابين، وأول مرة تلعب ضد اثنين.'},
+{n:'التحدي',fr:'#F7D6D6',N:9,m:['center+trio+keys','treasure+keys','multi+keys+portals','fort+trio','rows+keys+portals'],w:[5,4,4,4,4],l:'hhhhh',F:[4,5,5,4,6],d:'كل شي مع بعض، والروبو قوي.'}];
+const NL=25,PER=5;
+const SIZES={s:{n:'صغيرة',2:5,4:7},m:{n:'وسط',2:7,4:9},l:{n:'كبيرة',2:9,4:11}};
+const WALLS={2:{5:3,7:6,9:10,11:12},4:{7:4,9:5,11:7}};
+const MECH={corners:'الزوايا',multi:'الكنوز المتعددة',fort:'الحصن',treasure:'الكنز الهارب',portals:'البوابات',keys:'المفاتيح',trio:'ضد اثنين'};
+const FIRST={};for(let i=0;i<NL;i++){WORLDS[Math.floor(i/PER)].m[i%PER].split('+').forEach(x=>{if(MECH[x]&&FIRST[x]===undefined)FIRST[x]=i})}
+const MPOOL=[{id:'win2',t:'فز بمرحلتين ضد الروبوت',n:2,r:40},{id:'win3',t:'فز بثلاث مراحل ضد الروبوت',n:3,r:60},{id:'walls6',t:'حط 6 جدران',n:6,r:30},{id:'walls12',t:'حط 12 جدار',n:12,r:50},{id:'nowall',t:'فز بمرحلة بدون ما تحط ولا جدار',n:1,r:50},{id:'star3',t:'خذ 3 نجوم بمرحلة',n:1,r:50},{id:'local',t:'العب مباراة مع صاحبك',n:1,r:30},{id:'key',t:'خذ مفتاح بمرحلة',n:1,r:30},{id:'portal',t:'ادخل بوابة',n:2,r:30},{id:'buy',t:'اشتر أي شي من المتجر',n:1,r:40}];
+const P0={name:'لاعب',coins:0,owned:{chars:['blob'],accs:['none'],walls:['char'],grounds:['classic']},sel:'blob',acc:'none',wsk:'char',gsk:'classic',stars:A(NL,0),unlocked:1,S:{w:0,l:0,earned:0,local:0},mis:null,gift:'',set:{sound:true,vib:true,spd:'norm'}};
 let D=JSON.parse(JSON.stringify(P0));
-try{const s=JSON.parse(localStorage.getItem('sibaq-game-v3')||'null');if(s)D=Object.assign(D,s)}catch(e){}
-function save(){try{localStorage.setItem('sibaq-game-v3',JSON.stringify(D))}catch(e){}}
+try{const s=JSON.parse(localStorage.getItem('sibaq-game-v4')||'null');if(s)D=Object.assign(D,s);else{const o=JSON.parse(localStorage.getItem('sibaq-game-v3')||'null');if(o){D.coins=o.coins||0;if(o.owned&&o.owned.chars)D.owned.chars=[...new Set(['blob',...o.owned.chars.filter(c=>CH[c])])];if(CH[o.sel])D.sel=o.sel;if(o.set)D.set=o.set;if(o.gift)D.gift=o.gift}}}catch(e){}
+['chars','accs','walls','grounds'].forEach(k=>{if(!D.owned[k])D.owned[k]=P0.owned[k].slice()});if(!D.S.earned)D.S.earned=0;if(!D.S.local)D.S.local=0;
+function save(){try{localStorage.setItem('sibaq-game-v4',JSON.stringify(D))}catch(e){}}
 const today=()=>{const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()};
-function ensureMis(){if(D.mis&&D.mis.date===today())return;let h=0;for(const ch of today())h=(h*31+ch.charCodeAt(0))|0;const pool=MPOOL.slice(),pick3=[];while(pick3.length<3){h=(h*1103515245+12345)|0;const k=Math.abs(h)%pool.length;pick3.push(pool.splice(k,1)[0].id)}D.mis={date:today(),list:pick3.map(id=>({id,p:0,c:false}))};save()}
+function ensureMis(){if(D.mis&&D.mis.date===today())return;let h=0;for(const ch of today())h=(h*31+ch.charCodeAt(0))|0;const pool=MPOOL.slice(),p3=[];while(p3.length<3){h=(h*1103515245+12345)|0;p3.push(pool.splice(Math.abs(h)%pool.length,1)[0].id)}D.mis={date:today(),list:p3.map(id=>({id,p:0,c:false}))};save()}
 function misEvent(id,n=1){ensureMis();let done=[];D.mis.list.forEach(m=>{if(m.id===id&&!m.c){const M=MPOOL.find(x=>x.id===id);const was=m.p>=M.n;m.p=Math.min(M.n,m.p+n);if(!was&&m.p>=M.n)done.push(M.t)}});save();if(done.length)toast('خلصت مهمة: '+done[0]+' 🎯')}
-function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('show'),2200)}
-// أصوات
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('show'),2300)}
+function msg(t,btns){$('msgText').innerHTML=t;$('msgBtns').innerHTML='';(btns||[{t:'تمام',c:'green'}]).forEach(b=>{const e=document.createElement('button');e.className='gbtn small '+(b.c||'');e.textContent=b.t;e.onclick=()=>{$('ovMsg').classList.remove('show');b.f&&b.f()};$('msgBtns').appendChild(e)});$('ovMsg').classList.add('show')}
 let actx=null;function snd(k){if(!D.set.sound)return;try{actx=actx||new(window.AudioContext||window.webkitAudioContext)();const t=actx.currentTime,o=actx.createOscillator(),g=actx.createGain();const f={move:[520,660],wall:[220,160],win:[523,1046],lose:[330,180],tap:[700,700],coin:[880,1320]}[k]||[500,500];o.type=k==='wall'?'square':'triangle';o.frequency.setValueAtTime(f[0],t);o.frequency.exponentialRampToValueAtTime(f[1],t+(k==='win'?.45:.12));g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+(k==='win'?.5:.16));o.connect(g).connect(actx.destination);o.start(t);o.stop(t+.55)}catch(e){}}
 function vib(ms){if(D.set.vib&&navigator.vibrate)try{navigator.vibrate(ms)}catch(e){}}
-// منطق اللعبة
-let N=9,PX=40,H,V,G=[],order=[],ti=0,over,mode='move',ghost=null,cfg,showPath=false,lastWall=null,pm,ply=0,game='lv',cur=0,wtab=0,lvl='m',nP=4,BS=9,seatT=['you','bot','bot','bot'],quick=false,wallsUsedRound=0,paused=false,botTimer=null;
+// ===== منطق اللعبة =====
+let N=9,PX=40,H,V,G=[],order=[],ti=0,over=true,mode='move',ghost=null,cfg,showPath=false,lastWall=null,pm,ply=0,game='lv',cur=0,wtab=0,lvl='m',nP=2,BSZ='m',seatT=['you','human','bot','bot'],p2ch='robot',wallsUsedRound=0,paused=false,botTimer=null;
 const h=(r,c)=>r>=0&&r<N-1&&c>=0&&c<N-1&&H[r][c],v=(r,c)=>r>=0&&r<N-1&&c>=0&&c<N-1&&V[r][c];
 function blocked(r,c,dr,dc){if(dr===1)return h(r,c)||h(r,c-1);if(dr===-1)return h(r-1,c)||h(r-1,c-1);if(dc===1)return v(r,c)||v(r-1,c);return v(r,c-1)||v(r-1,c-1)}
 const Dd=[[1,0],[-1,0],[0,1],[0,-1]],inb=(r,c)=>r>=0&&r<N&&c>=0&&c<N;
@@ -237,7 +265,7 @@ function overlap(t,r,c){return t==='h'?(H[r][c]||h(r,c-1)||h(r,c+1)||V[r][c]):(V
 function valid(t,r,c){if(overlap(t,r,c))return false;const Ar=t==='h'?H:V;Ar[r][c]=99;const ok=G.every(x=>tdP(x,x.pos,x.hasKey)<Infinity);Ar[r][c]=0;return ok}
 function setW(t,r,c,w){(t==='h'?H:V)[r][c]=w}
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-function genLevel(i){const W=WORLDS[Math.floor(i/10)],k=i%10,R=rng(i*7919+131),ri=n=>Math.floor(R()*n),parts=W.m[k].split('+'),base=parts[0],fl=x=>parts.includes(x);
+function genLevel(i){const W=WORLDS[Math.floor(i/PER)],k=i%PER,R=rng(i*7919+131),ri=n=>Math.floor(R()*n),parts=W.m[k].split('+'),base=parts[0],fl=x=>parts.includes(x);
 const n=W.N,m=(n-1)/2,mirC=([r,c])=>[n-1-r,n-1-c],row=r=>Array.from({length:n},(_,c)=>[r,c]),col=c=>Array.from({length:n},(_,r)=>[r,c]);
 const sc=ri(n);const L={N:n,base,keys:fl('keys'),portals:fl('portals'),trio:fl('trio'),moving:base==='treasure',w:W.w[k],l:W.l[k],F:W.F[k],R,me:[n-1,sc],bt:[0,n-1-sc]};
 if(base==='rows'){L.mg=row(0);L.bg=row(n-1)}
@@ -253,89 +281,99 @@ if(L.portals){L.pp=[];let g=0;while(g++<200){const a=[n-2-ri(Math.max(1,m-1)),ri
 if(n>=7){const a=[m,1],b=[m,n-2];if(free(a)&&free(b)){L.pp.push([a,b]);add(a);add(b)}}}
 L.name=`${W.n} ${k+1}`;
 const DS={rows:'وصّل للضلع اللي قدامك قبل الباقين.',center:'فيه كنز واحد بالنص، اللي يوصله أول يفوز.',corners:L.mg.length>1?'وصّل لأي زاوية من الزاويتين فوق قبل ما يوصل خصمك لزاوية تحت.':'هدفك زاوية فوق، وهدف خصمك الزاوية المقابلة تحت.',multi:'فيه أكثر من كنز أخضر لك، وصّل لأي واحد منهم قبل ما يوصل خصمك لكنوزه الحمراء.',fort:'الكنز داخل حصن له بابين بس. سكّر الباب القريب من خصمك وخله يلف.',treasure:'الكنز يهرب! كل ثلاث جولات ينتقل لمكان جديد قريب من النص، فلازم تغير خطتك.'};
-let d=DS[base];if(L.keys)d+=' لازم تاخذ مفتاحك اللي بلونك أول، وبعدين يحسب وصولك.';if(L.portals)d+=' فيه بوابات: تدخل بوابة وتطلع من البوابة اللي بنفس لونها.';if(L.trio)d+=' هالمرة ضدك بوتين مو واحد.';if(L.F)d+=' فيه جدران رمادية ثابتة.';
-L.d=d+` البوتات ${L.l==='e'?'هادية':L.l==='m'?'شاطرة':'قوية'}.`;
-L.isNew=Object.keys(MECH).filter(x=>FIRST[x]===i).map(x=>MECH[x]);return L}
-// رسم الشخصيات
+let d=DS[base];if(L.keys)d+=' لازم تاخذ مفتاحك اللي بلونك أول، وبعدين يحسب وصولك.';if(L.portals)d+=' فيه بوابات: تدخل بوابة وتطلع من البوابة اللي بنفس لونها.';if(L.trio)d+=' هالمرة ضدك اثنين مو واحد.';if(L.F)d+=' فيه جدران رمادية ثابتة.';
+L.d=d+` الروبو ${L.l==='e'?'هادي':L.l==='m'?'شاطر':'قوي'}.`;L.isNew=Object.keys(MECH).filter(x=>FIRST[x]===i).map(x=>MECH[x]);return L}
+// ===== رسم الشخصيات =====
 function eyes(mood,px,py,ey){if(mood==='w')return`<path d="M-8 ${ey+1} Q-5 ${ey-3} -2 ${ey+1} M2 ${ey+1} Q5 ${ey-3} 8 ${ey+1}" stroke="#2C2C2A" stroke-width="1.6" fill="none" stroke-linecap="round"/>`;
 let s=`<ellipse cx="-5" cy="${ey}" rx="3.8" ry="4.4" fill="#fff"/><ellipse cx="5" cy="${ey}" rx="3.8" ry="4.4" fill="#fff"/><circle cx="${-5+px}" cy="${ey+py}" r="2" fill="#2C2C2A"/><circle cx="${5+px}" cy="${ey+py}" r="2" fill="#2C2C2A"/><circle cx="${-4.2+px}" cy="${ey+py-.8}" r=".7" fill="#fff"/><circle cx="${5.8+px}" cy="${ey+py-.8}" r=".7" fill="#fff"/>`;
 if(mood==='s')s+=`<path d="M-8 ${ey-7} Q-5 ${ey-5} -2 ${ey-6} M8 ${ey-7} Q5 ${ey-5} 2 ${ey-6}" stroke="#2C2C2A" stroke-width="1.2" fill="none" stroke-linecap="round"/>`;return s}
 const mouth=(mood,y)=>mood==='s'?`<path d="M-3 ${y+2.5} Q0 ${y} 3 ${y+2.5}" stroke="#2C2C2A" stroke-width="1.4" fill="none" stroke-linecap="round"/>`:mood==='w'?`<path d="M-4 ${y-.5} Q0 ${y+5} 4 ${y-.5} Z" fill="#4B1528"/>`:`<path d="M-3 ${y} Q0 ${y+3} 3 ${y}" stroke="#2C2C2A" stroke-width="1.4" fill="none" stroke-linecap="round"/>`;
 const cheeks=`<circle cx="-9.5" cy="3.5" r="2.2" fill="#ED93B1" opacity=".7"/><circle cx="9.5" cy="3.5" r="2.2" fill="#ED93B1" opacity=".7"/>`,shadow=`<ellipse cx="0" cy="16.5" rx="11" ry="2.6" fill="#2C2C2A" opacity=".12"/>`;
 const egg=(b,d)=>`<path d="M0 -15 C10 -15 14 -6 14 3 C14 11 8 14.5 0 14.5 C-8 14.5 -14 11 -14 3 C-14 -6 -10 -15 0 -15Z" fill="${b}" stroke="${d}" stroke-width="1.2"/>`,feet=d=>`<ellipse cx="-6" cy="14" rx="4.5" ry="2.6" fill="${d}"/><ellipse cx="6" cy="14" rx="4.5" ry="2.6" fill="${d}"/>`;
-function charSVG(type,mood,look){const C=CH[type],px=look[0]*1.6,py=look[1]*1.4;let s=shadow;
-if(type==='blob'){s+=`<path d="M-3 -14 Q-6 -21 -1 -20 Q0 -24 3 -20 Q7 -21 4 -14" fill="${C.b}" stroke="${C.d}" stroke-width="1.2"/>`+feet(C.d)+egg(C.b,C.d)+`<ellipse cx="0" cy="7" rx="7" ry="5" fill="${C.l}" opacity=".75"/>`+eyes(mood,px,py,-3)+cheeks+mouth(mood,5)}
-else if(type==='cat'){s+=`<path d="M12 10 Q22 8 19 -2 Q18 -6 16 -4" fill="none" stroke="${C.d}" stroke-width="3" stroke-linecap="round"/><path d="M-12 -6 L-11 -19 L-3 -12 Z M12 -6 L11 -19 L3 -12 Z" fill="${C.b}" stroke="${C.d}" stroke-width="1.2" stroke-linejoin="round"/><path d="M-10 -9 L-9.5 -15 L-6 -12 Z M10 -9 L9.5 -15 L6 -12 Z" fill="#F4C0D1"/>`+feet(C.d)+`<ellipse cx="0" cy="1" rx="14" ry="13.5" fill="${C.b}" stroke="${C.d}" stroke-width="1.2"/><ellipse cx="0" cy="8" rx="7" ry="4.5" fill="${C.l}" opacity=".75"/>`+eyes(mood,px,py,-2)+`<path d="M-1.5 3 L1.5 3 L0 4.6 Z" fill="#72243E"/><path d="M-6 4 L-15 2 M-6 6 L-15 7 M6 4 L15 2 M6 6 L15 7" stroke="${C.d}" stroke-width=".8" stroke-linecap="round"/>`+mouth(mood,6)}
-else if(type==='bunny'){s+=`<ellipse cx="-5" cy="-19" rx="3.6" ry="9" fill="${C.b}" stroke="${C.d}" stroke-width="1.2" transform="rotate(-10 -5 -19)"/><ellipse cx="5" cy="-19" rx="3.6" ry="9" fill="${C.b}" stroke="${C.d}" stroke-width="1.2" transform="rotate(10 5 -19)"/><ellipse cx="-5" cy="-19" rx="1.6" ry="6" fill="${C.l}" transform="rotate(-10 -5 -19)"/><ellipse cx="5" cy="-19" rx="1.6" ry="6" fill="${C.l}" transform="rotate(10 5 -19)"/><circle cx="-13" cy="9" r="3.5" fill="#fff" stroke="${C.d}" stroke-width="1"/>`+feet(C.d)+egg(C.b,C.d)+`<ellipse cx="0" cy="7" rx="7" ry="5" fill="${C.l}" opacity=".75"/>`+eyes(mood,px,py,-3)+cheeks+`<rect x="-2" y="6.5" width="4" height="3" rx=".8" fill="#fff" stroke="${C.d}" stroke-width=".6"/>`+mouth(mood,4.5)}
+const TOPY={blob:-15,cat:-12.5,bunny:-14.5,robot:-13},EYEY={blob:-3,cat:-2,bunny:-3,robot:-4};
+function accSVG(a,shape){if(!a||a==='none')return'';const t=TOPY[shape],e=EYEY[shape];
+if(a==='glasses')return`<rect x="-10" y="${e-3}" width="8.5" height="5.8" rx="2.2" fill="#1F1F1F"/><rect x="1.5" y="${e-3}" width="8.5" height="5.8" rx="2.2" fill="#1F1F1F"/><path d="M-1.5 ${e-1} H1.5" stroke="#1F1F1F" stroke-width="1.4"/><rect x="-8.6" y="${e-2.2}" width="3" height="1.2" rx=".6" fill="#fff" opacity=".55"/><rect x="2.9" y="${e-2.2}" width="3" height="1.2" rx=".6" fill="#fff" opacity=".55"/>`;
+if(a==='bow')return`<g transform="translate(8,${t+3}) rotate(15)"><path d="M0 0 L-6 -4 L-6 4 Z M0 0 L6 -4 L6 4 Z" fill="#ED6A9A" stroke="#93244E" stroke-width=".8" stroke-linejoin="round"/><circle r="1.8" fill="#93244E"/></g>`;
+if(a==='cap')return`<path d="M-10.5 ${t+4} Q-10 ${t-7} 0 ${t-7} Q10 ${t-7} 10.5 ${t+4} Z" fill="#E24B4A" stroke="#791F1F" stroke-width="1"/><path d="M9 ${t+3} Q16 ${t+2} 17 ${t+5} L9 ${t+5} Z" fill="#B53333" stroke="#791F1F" stroke-width=".8"/><circle cx="0" cy="${t-6.5}" r="1.3" fill="#791F1F"/><path d="M-4 ${t-1} H4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>`;
+if(a==='phones')return`<path d="M-13.5 1 Q-14.5 ${t-7} 0 ${t-7} Q14.5 ${t-7} 13.5 1" fill="none" stroke="#2C2C2A" stroke-width="2.4"/><rect x="-18" y="-4" width="5.5" height="10" rx="2.4" fill="#378ADD" stroke="#2C2C2A" stroke-width="1"/><rect x="12.5" y="-4" width="5.5" height="10" rx="2.4" fill="#378ADD" stroke="#2C2C2A" stroke-width="1"/>`;
+if(a==='crown')return`<path d="M-8.5 ${t+2} L-8.5 ${t-6} L-4 ${t-1.5} L0 ${t-8} L4 ${t-1.5} L8.5 ${t-6} L8.5 ${t+2} Z" fill="#F2C46B" stroke="#B86A12" stroke-width="1" stroke-linejoin="round"/><circle cx="0" cy="${t-1.5}" r="1.5" fill="#E24B4A"/><circle cx="-5" cy="${t}" r="1" fill="#378ADD"/><circle cx="5" cy="${t}" r="1" fill="#3FAE6A"/>`;
+if(a==='halo')return`<ellipse cx="0" cy="${t-9}" rx="9" ry="2.6" fill="none" stroke="#F2C46B" stroke-width="2.4"/><ellipse cx="0" cy="${t-9}" rx="9" ry="2.6" fill="none" stroke="#FFF4D6" stroke-width=".8"/><path class="tw" d="M13 ${t-12} l1 2.5 2.5 1 -2.5 1 -1 2.5 -1 -2.5 -2.5 -1 2.5 -1z" fill="#F2C46B"/>`;return''}
+function charSVG(type,mood,look,acc){const C=CH[type],sh=C.shape,px=look[0]*1.6,py=look[1]*1.4;let s=shadow;
+if(sh==='blob'){s+=`<path d="M-3 -14 Q-6 -21 -1 -20 Q0 -24 3 -20 Q7 -21 4 -14" fill="${C.b}" stroke="${C.d}" stroke-width="1.2"/>`+feet(C.d)+egg(C.b,C.d)+`<ellipse cx="0" cy="7" rx="7" ry="5" fill="${C.l}" opacity=".75"/>`+eyes(mood,px,py,-3)+cheeks+mouth(mood,5)}
+else if(sh==='cat'){s+=`<path d="M12 10 Q22 8 19 -2 Q18 -6 16 -4" fill="none" stroke="${C.d}" stroke-width="3" stroke-linecap="round"/><path d="M-12 -6 L-11 -19 L-3 -12 Z M12 -6 L11 -19 L3 -12 Z" fill="${C.b}" stroke="${C.d}" stroke-width="1.2" stroke-linejoin="round"/><path d="M-10 -9 L-9.5 -15 L-6 -12 Z M10 -9 L9.5 -15 L6 -12 Z" fill="#F4C0D1"/>`+feet(C.d)+`<ellipse cx="0" cy="1" rx="14" ry="13.5" fill="${C.b}" stroke="${C.d}" stroke-width="1.2"/><ellipse cx="0" cy="8" rx="7" ry="4.5" fill="${C.l}" opacity=".75"/>`+eyes(mood,px,py,-2)+`<path d="M-1.5 3 L1.5 3 L0 4.6 Z" fill="#72243E"/><path d="M-6 4 L-15 2 M-6 6 L-15 7 M6 4 L15 2 M6 6 L15 7" stroke="${C.d}" stroke-width=".8" stroke-linecap="round"/>`+mouth(mood,6)}
+else if(sh==='bunny'){s+=`<ellipse cx="-5" cy="-19" rx="3.6" ry="9" fill="${C.b}" stroke="${C.d}" stroke-width="1.2" transform="rotate(-10 -5 -19)"/><ellipse cx="5" cy="-19" rx="3.6" ry="9" fill="${C.b}" stroke="${C.d}" stroke-width="1.2" transform="rotate(10 5 -19)"/><ellipse cx="-5" cy="-19" rx="1.6" ry="6" fill="${C.l}" transform="rotate(-10 -5 -19)"/><ellipse cx="5" cy="-19" rx="1.6" ry="6" fill="${C.l}" transform="rotate(10 5 -19)"/><circle cx="-13" cy="9" r="3.5" fill="#fff" stroke="${C.d}" stroke-width="1"/>`+feet(C.d)+egg(C.b,C.d)+`<ellipse cx="0" cy="7" rx="7" ry="5" fill="${C.l}" opacity=".75"/>`+eyes(mood,px,py,-3)+cheeks+`<rect x="-2" y="6.5" width="4" height="3" rx=".8" fill="#fff" stroke="${C.d}" stroke-width=".6"/>`+mouth(mood,4.5)}
 else{s+=`<line x1="0" y1="-13" x2="0" y2="-20" stroke="${C.d}" stroke-width="1.6"/><circle cx="0" cy="-21.5" r="2.8" fill="#EF9F27" stroke="#854F0B" stroke-width=".8"/><circle cx="-7" cy="14" r="3.5" fill="#444441"/><circle cx="7" cy="14" r="3.5" fill="#444441"/><circle cx="-7" cy="14" r="1.2" fill="#B4B2A9"/><circle cx="7" cy="14" r="1.2" fill="#B4B2A9"/><rect x="-15" y="-3" width="3" height="7" rx="1.5" fill="${C.d}"/><rect x="12" y="-3" width="3" height="7" rx="1.5" fill="${C.d}"/><rect x="-13" y="-13" width="26" height="25" rx="7" fill="${C.b}" stroke="${C.d}" stroke-width="1.2"/><rect x="-9.5" y="-9.5" width="19" height="13" rx="4" fill="#2C2C2A"/>`;
 const ex=look[0]*1.2,ey=look[1];
 if(mood==='w')s+=`<path d="M-7 -2 L-5 -5 L-3 -2 M3 -2 L5 -5 L7 -2" stroke="#5DCAA5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
 else if(mood==='s')s+=`<path d="M-7 -3 L-3 -3 M3 -3 L7 -3" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round"/>`;
 else s+=`<rect x="${-6.5+ex}" y="${-6.5+ey}" width="3" height="5" rx="1.5" fill="#5DCAA5"/><rect x="${3.5+ex}" y="${-6.5+ey}" width="3" height="5" rx="1.5" fill="#5DCAA5"/>`;
 s+=`<path d="${mood==='s'?'M-3 1.8 Q0 0 3 1.8':'M-3 0.5 Q0 2.5 3 0.5'}" stroke="#5DCAA5" stroke-width="1.2" fill="none" stroke-linecap="round"/><circle cx="-9.5" cy="6" r="1.8" fill="#F0997B"/><circle cx="9.5" cy="6" r="1.8" fill="#F0997B"/><rect x="-5" y="6" width="10" height="3.5" rx="1.5" fill="${C.l}"/>`}
-return s}
-const mini=(t,m='n')=>`<svg width="30" height="36" viewBox="-17 -26 34 44">${charSVG(t,m,[0,0])}</svg>`;
+return s+accSVG(acc,sh)}
+const mini=(t,m='n',a)=>`<svg width="30" height="36" viewBox="-17 -26 34 44">${charSVG(t,m,[0,0],a)}</svg>`;
 function lookDir(i){const p=G[i],T=p.key>=0&&!p.hasKey?p.keyS:p.goals;let r=0,c=0,n=0;T.forEach(k=>{r+=Math.floor(k/N);c+=k%N;n++});const dr=r/n-p.pos[0],dc=c/n-p.pos[1],m=Math.hypot(dr,dc)||1;return[dc/m,dr/m]}
-function say(i,t){$('bub').textContent=t;$('icBub').innerHTML=charSVG(G[i].ch,'n',[0,0]);$('bubWrap').style.visibility='visible'}
+function say(i,t){$('bub').textContent=t;$('icBub').innerHTML=charSVG(G[i].ch,'n',[0,0],G[i].acc);$('bubWrap').style.visibility='visible'}
 const pick=a=>a[Math.floor(Math.random()*a.length)];
-const cx=c=>PX*c+PX/2,curP=()=>order[ti],SC=()=>Math.min(PX/40,1.45);
-function wc(w){if(w===99)return'#888780';const p=G[w-1];if(w===1&&WSK[D.wsk].c)return WSK[D.wsk].c;return CH[p.ch].b}
+const cx=c=>PX*c+PX/2,curP=()=>order[ti],SC=()=>Math.min(PX/40,1.6);
+function wallStyle(w){if(w===99)return{f:'#888780',s:'#5F5E5A'};const p=G[w-1];const sk=WSK[p.wsk||'char'];if(!sk.f)return{f:CH[p.ch].b,s:CH[p.ch].d};return{f:sk.f,s:sk.s}}
 const keyIcon=(r,c,col,dk)=>`<g transform="translate(${cx(c)},${cx(r)}) scale(${SC()})"><circle cx="-6" cy="0" r="5" fill="none" stroke="${dk}" stroke-width="4"/><circle cx="-6" cy="0" r="5" fill="none" stroke="${col}" stroke-width="2.4"/><rect x="-1.5" y="-1.8" width="12" height="3.6" rx="1.2" fill="${col}" stroke="${dk}" stroke-width=".8"/><rect x="6" y="1.4" width="2.4" height="4" fill="${col}" stroke="${dk}" stroke-width=".6"/><rect x="2.5" y="1.4" width="2.4" height="3" fill="${col}" stroke="${dk}" stroke-width=".6"/></g>`;
 const PCOL=[['#1D9E75','#E1F5EE'],['#BA7517','#FAEEDA']];
-function drawBoard(){const B=BSK[D.bsk];$('bgr').setAttribute('fill',B.bg);let s='';
+function groundExtra(g){const x=GSK[g].x;if(x==='wood'){let s='';for(let y=24;y<360;y+=24)s+=`<path d="M0 ${y} H360" stroke="#C49460" stroke-width="1.2"/>`;return s}if(x==='dots'){let s='';for(let y=12;y<360;y+=30)for(let xx=(y/30%2?27:12);xx<360;xx+=30)s+=`<circle cx="${xx}" cy="${y}" r="2.2" fill="#F6C6D8"/>`;return s}if(x==='stars'){const R=rng(77);let s='';for(let i=0;i<60;i++)s+=`<circle ${i%5===0?'class="tw" style="animation-delay:'+(R()*2).toFixed(1)+'s"':''} cx="${(R()*360).toFixed(1)}" cy="${(R()*360).toFixed(1)}" r="${(R()*1.3+.4).toFixed(2)}" fill="#fff" opacity="${(R()*.6+.3).toFixed(2)}"/>`;return s}return''}
+function drawBoard(){const B=GSK[D.gsk];$('bgr').setAttribute('fill',B.bg);$('bgx').innerHTML=groundExtra(D.gsk);let s='';
 if(game==='lv'){const tint=['#CDEFE2','#FADADA',null];const single=G.every(p=>p.goals.size===1);for(let r=0;r<N;r++)for(let c=0;c<N;c++){const k=r*N+c,who=G.map((p,j)=>p.goals.has(k)?j:-1).filter(j=>j>=0);if(!who.length)continue;
-if(who.length>1){s+=`<rect x="${PX*c}" y="${PX*r}" width="${PX}" height="${PX}" fill="#FCE6BE"/>`;if(single)s+=`<polygon class="hop" points="${cx(c)},${PX*r+PX*.22} ${PX*c+PX*.78},${cx(r)} ${cx(c)},${PX*r+PX*.78} ${PX*c+PX*.22},${cx(r)}" fill="#EF9F27" stroke="#BA7517" stroke-width="1.2"/>`}
-else{const j=who[0];s+=`<rect x="${PX*c}" y="${PX*r}" width="${PX}" height="${PX}" fill="${tint[j]||CH[G[j].ch].l}" ${j===2?'opacity=".6"':''}/>`;if(G[j].goals.size<N)s+=`<polygon points="${cx(c)},${PX*r+PX*.32} ${PX*c+PX*.68},${cx(r)} ${cx(c)},${PX*r+PX*.68} ${PX*c+PX*.32},${cx(r)}" fill="${j===0?'#5DCAA5':j===1?'#F09595':CH[G[j].ch].b}"/>`}}}
-else G.forEach(p=>{const C=CH[p.ch],sd=p.side;s+=sd==='t'?`<rect x="0" y="0" width="360" height="${PX}" fill="${C.l}" opacity=".5"/><rect x="0" y="0" width="360" height="5" fill="${C.b}"/>`:sd==='b'?`<rect x="0" y="${360-PX}" width="360" height="${PX}" fill="${C.l}" opacity=".5"/><rect x="0" y="355" width="360" height="5" fill="${C.b}"/>`:sd==='l'?`<rect x="0" y="0" width="${PX}" height="360" fill="${C.l}" opacity=".5"/><rect x="0" y="0" width="5" height="360" fill="${C.b}"/>`:`<rect x="${360-PX}" y="0" width="${PX}" height="360" fill="${C.l}" opacity=".5"/><rect x="355" y="0" width="5" height="360" fill="${C.b}"/>`});
+if(who.length>1){s+=`<rect x="${PX*c}" y="${PX*r}" width="${PX}" height="${PX}" fill="#FCE6BE" opacity=".9"/>`;if(single)s+=`<polygon class="hop" points="${cx(c)},${PX*r+PX*.22} ${PX*c+PX*.78},${cx(r)} ${cx(c)},${PX*r+PX*.78} ${PX*c+PX*.22},${cx(r)}" fill="#EF9F27" stroke="#BA7517" stroke-width="1.2"/>`}
+else{const j=who[0];s+=`<rect x="${PX*c}" y="${PX*r}" width="${PX}" height="${PX}" fill="${tint[j]||CH[G[j].ch].l}" opacity="${j===2?.6:.9}"/>`;if(G[j].goals.size<N)s+=`<polygon points="${cx(c)},${PX*r+PX*.32} ${PX*c+PX*.68},${cx(r)} ${cx(c)},${PX*r+PX*.68} ${PX*c+PX*.32},${cx(r)}" fill="${j===0?'#5DCAA5':j===1?'#F09595':CH[G[j].ch].b}"/>`}}}
+else G.forEach(p=>{const C=CH[p.ch],sd=p.side;s+=sd==='t'?`<rect x="0" y="0" width="360" height="${PX}" fill="${C.l}" opacity=".55"/><rect x="0" y="0" width="360" height="5" fill="${C.b}"/>`:sd==='b'?`<rect x="0" y="${360-PX}" width="360" height="${PX}" fill="${C.l}" opacity=".55"/><rect x="0" y="355" width="360" height="5" fill="${C.b}"/>`:sd==='l'?`<rect x="0" y="0" width="${PX}" height="360" fill="${C.l}" opacity=".55"/><rect x="0" y="0" width="5" height="360" fill="${C.b}"/>`:`<rect x="${360-PX}" y="0" width="${PX}" height="360" fill="${C.l}" opacity=".55"/><rect x="355" y="0" width="5" height="360" fill="${C.b}"/>`});
 for(let k=1;k<N;k++)s+=`<line x1="${PX*k}" y1="0" x2="${PX*k}" y2="360" stroke="${B.ln}" stroke-width="1"/><line x1="0" y1="${PX*k}" x2="360" y2="${PX*k}" stroke="${B.ln}" stroke-width="1"/>`;
 let pi=0;const seen=new Set();for(let k=0;k<N*N;k++)if(pm[k]>=0&&!seen.has(k)){seen.add(k);seen.add(pm[k]);const[c1,c2]=PCOL[pi++%2];for(const q of[k,pm[k]]){const[r,c]=rc(q);s+=`<circle cx="${cx(c)}" cy="${cx(r)}" r="${PX*.36}" fill="${c2}" stroke="${c1}" stroke-width="2.5"/><circle class="spin" cx="${cx(c)}" cy="${cx(r)}" r="${PX*.22}" fill="none" stroke="${c1}" stroke-width="2" stroke-dasharray="${PX*.18} ${PX*.1}"/>`}}
 G.forEach(p=>{if(p.key>=0&&!p.hasKey){const[r,c]=rc(p.key);s+=keyIcon(r,c,CH[p.ch].b,CH[p.ch].d)}});
-$('bd').innerHTML=s;$('frame').setAttribute('fill',game==='lv'?WORLDS[Math.floor(cur/10)].fr:'#C9D6E2')}
-const wall=(t,r,c,col,op,cls)=>{const w=Math.max(5,PX*.16),pad=PX*.1;return t==='h'?`<rect${cls?` class="${cls}"`:''} x="${PX*c+pad}" y="${PX*(r+1)-w/2}" width="${2*PX-2*pad}" height="${w}" rx="${w/2}" fill="${col}" opacity="${op}"/>`:`<rect${cls?` class="${cls}"`:''} x="${PX*(c+1)-w/2}" y="${PX*r+pad}" width="${w}" height="${2*PX-2*pad}" rx="${w/2}" fill="${col}" opacity="${op}"/>`};
+$('bd').innerHTML=s;$('frame').setAttribute('fill',game==='lv'?WORLDS[Math.floor(cur/PER)].fr:'#C9D6E2')}
+function wall(t,r,c,st,op,cls){const w=Math.max(6,PX*.17),pad=PX*.08;const a=`${cls?` class="${cls}"`:''} rx="${w/2}" fill="${st.f}" stroke="${st.s}" stroke-width="1" opacity="${op}"`;return t==='h'?`<rect${a} x="${PX*c+pad}" y="${PX*(r+1)-w/2}" width="${2*PX-2*pad}" height="${w}"/>`:`<rect${a} x="${PX*(c+1)-w/2}" y="${PX*r+pad}" width="${w}" height="${2*PX-2*pad}"/>`}
 function pathOf(i){const p=G[i];if(p.key>=0&&!p.hasKey){const a=bfs(p.pos,p.keyS,true);if(!a.length)return a;return a.concat(bfs(rc(p.key),p.goals,true).slice(1))}return bfs(p.pos,p.goals,true)}
-function card(p,j,act){return`<div class="pc ${act?'act':''}">${mini(p.ch,p.mood)}<div style="min-width:0"><div class="n" style="color:${CH[p.ch].d}">${p.name}</div><div class="s">🧱${p.walls} · 👣${pd(j)}${p.key>=0?(p.hasKey?' · 🔑':' · 🔒'):''}</div></div></div>`}
+function card(j,act){const p=G[j];return`<div class="pc ${act?'act':''}">${mini(p.ch,p.mood,p.acc)}<div style="min-width:0"><div class="n" style="color:${CH[p.ch].d}">${p.name}</div><div class="s">🧱${p.walls} · 👣${pd(j)}${p.key>=0?(p.hasKey?' · 🔑':' · 🔒'):''}</div></div></div>`}
+function ctrlBar(j){const p=G[j],act=!over&&curP()===j&&p.human;const b=(v,t)=>`<button data-seat="${j}" data-act="${v}" class="${act&&mode===v?'on':''}" ${!act||(v!=='move'&&!p.walls)?'disabled':''}>${t}</button>`;
+return`<div class="ctrl">${b('move','امشِ')}${b('h','━ '+p.walls)}${b('v','┃ '+p.walls)}${act&&ghost&&ghost.ok?`<button class="go" data-seat="${j}" data-act="ok">✓ ثبّت</button>`:`<button data-seat="${j}" data-act="path" ${act?'':'disabled'} style="${showPath&&act?'background:#FFF4D6':''}">طريقي</button>`}</div>`}
+const face=()=>game==='local'&&nP===2;
+function renderAreas(){const i=curP();
+if(face()){$('topArea').innerHTML=`<div class="flip"><div class="hud">${card(1,!over&&i===1)}</div>${ctrlBar(1)}</div>`;$('botArea').innerHTML=`<div class="hud">${card(0,!over&&i===0)}<button class="ibtn" data-act="pause" aria-label="إيقاف مؤقت">❚❚</button></div>${ctrlBar(0)}`;return}
+const humans=G.map((p,j)=>j).filter(j=>G[j].human);const me=G[i].human?i:0;
+$('topArea').innerHTML=`<div class="hud"><button class="ibtn" data-act="pause" aria-label="إيقاف مؤقت">❚❚</button>${G.map((p,j)=>j).filter(j=>j!==me).map(j=>card(j,!over&&j===i)).join('')}</div>`;
+$('botArea').innerHTML=`<div class="hud">${card(me,!over&&me===i)}</div>${ctrlBar(me)}`}
 function draw(){drawBoard();const i=curP(),hum=!over&&G[i].human,lm=hum&&mode==='move'?moves(i):[];const C=CH[G[i].ch];
 $('tr').innerHTML=G.map(p=>p.trail.map((q,j)=>`<circle cx="${cx(q[1])}" cy="${cx(q[0])}" r="${(2+j*.6)*SC()}" fill="${CH[p.ch].b}" opacity="${.12+j*.06}"/>`).join('')).join('');
 $('pth').innerHTML=showPath&&hum?pathOf(i).slice(1).map(k=>`<circle cx="${cx(k%N)}" cy="${cx(Math.floor(k/N))}" r="${Math.max(2.5,PX*.07)}" fill="${C.b}" opacity=".6"/>`).join(''):'';
-$('hl').innerHTML=lm.map(([r,c])=>`<circle cx="${cx(c)}" cy="${cx(r)}" r="${PX*.18}" fill="${C.l}" stroke="${C.b}" stroke-width="1.2"/>`).join('');
-let w='';for(let r=0;r<N-1;r++)for(let c=0;c<N-1;c++)for(const t of['h','v']){const Ar=t==='h'?H:V;if(Ar[r][c])w+=wall(t,r,c,wc(Ar[r][c]),1,lastWall&&lastWall[0]===t&&lastWall[1]===r&&lastWall[2]===c?'pop':'')}
-$('wl').innerHTML=w;lastWall=null;$('gh').innerHTML=ghost?wall(ghost.t,ghost.r,ghost.c,ghost.ok?'#EF9F27':'#B4B2A9',.8):'';
-G.forEach((p,j)=>{$('pw'+j).style.transform=`translate(${cx(p.pos[1])}px,${cx(p.pos[0])}px)`;$('pi'+j).innerHTML=charSVG(p.ch,p.mood,lookDir(j));$('pb'+j).setAttribute('class',!over&&j===i?'bob':'')});
-const humans=G.map((p,j)=>j).filter(j=>G[j].human),others=G.map((p,j)=>j).filter(j=>!humans.includes(j));
-const mine=humans.length>1?[i].filter(j=>G[j].human).concat(humans.filter(j=>j!==i)).slice(0,1):[0];
-$('myCard').innerHTML=mine.map(j=>card(G[j],j,!over&&j===i)).join('');
-$('oppCards').innerHTML=G.map((p,j)=>j).filter(j=>!mine.includes(j)).map(j=>card(G[j],j,!over&&j===i)).join('');
-const me=G[hum?i:0];document.querySelectorAll('.wn').forEach(e=>e.textContent='('+me.walls+')');
-document.querySelectorAll('.ctrl button[data-v]').forEach(b=>{b.classList.toggle('on',b.dataset.v===mode);b.disabled=!hum||(b.dataset.v!=='move'&&!me.walls)});
-$('ok').style.display=ghost&&ghost.ok&&hum?'':'none';$('sp').style.background=showPath?'#FFF4D6':'';
-$('st').textContent=over?'':hum?(humans.length>1?'دور '+G[i].name:mode==='move'?'دورك · اختار وين تمشي':'دورك · اضغط بين المربعات وين تبي الجدار'):G[i].name+' يفكر...';
+$('hl').innerHTML=lm.map(([r,c])=>`<circle cx="${cx(c)}" cy="${cx(r)}" r="${PX*.18}" fill="${C.l}" stroke="${C.b}" stroke-width="1.5"/>`).join('');
+let w='';for(let r=0;r<N-1;r++)for(let c=0;c<N-1;c++)for(const t of['h','v']){const Ar=t==='h'?H:V;if(Ar[r][c])w+=wall(t,r,c,wallStyle(Ar[r][c]),1,lastWall&&lastWall[0]===t&&lastWall[1]===r&&lastWall[2]===c?'pop':'')}
+$('wl').innerHTML=w;lastWall=null;$('gh').innerHTML=ghost?wall(ghost.t,ghost.r,ghost.c,ghost.ok?{f:'#EF9F27',s:'#B86A12'}:{f:'#B4B2A9',s:'#888780'},.8):'';
+G.forEach((p,j)=>{$('pw'+j).style.transform=`translate(${cx(p.pos[1])}px,${cx(p.pos[0])}px)`;$('pi'+j).innerHTML=charSVG(p.ch,p.mood,lookDir(j),p.acc);$('pb'+j).setAttribute('class',!over&&j===i?'bob':'')});
+renderAreas();
+$('st').textContent=over||face()?'':hum?(mode==='move'?'دورك · اختار وين تمشي':'دورك · اضغط بين المربعات وين تبي الجدار'):G[i].name+' يفكر...';
 if(game==='lv'&&cfg.moving&&!over){const per=G.length*3,rem=per-(ply%per);$('st').textContent+=` · الكنز يهرب بعد ${Math.ceil(rem/G.length)}`}}
 function confetti(){const cols=['#378ADD','#7F77DD','#D4537E','#EF9F27','#1D9E75','#D85A30'];let s='';for(let i=0;i<50;i++){const x=Math.random()*360,d=Math.random()*.7,w=4+Math.random()*4;s+=`<rect class="cf" x="${x}" y="-10" width="${w}" height="${w*1.6}" rx="1" fill="${pick(cols)}" style="animation-delay:${d}s"/>`}$('cfg').innerHTML=s;setTimeout(()=>$('cfg').innerHTML='',2800)}
-const stars=n=>[0,1,2].map(i=>`<span style="color:${i<n?'#F2B231':'#C9D3DC'}">★</span>`).join('');
-function finish(wi){over=true;ghost=null;clearTimeout(botTimer);G.forEach((p,j)=>p.mood=j===wi?'w':'s');const you=wi===0,humanWin=G[wi].human;let st=0,earn=0;
-if(you){D.S.w++;if(game==='lv'){const used=cfg.w-G[0].walls,minB=Math.min(...G.slice(1).map((_,j)=>pd(j+1)));st=1+(used<=Math.ceil(cfg.w/2)?1:0)+(minB>=3?1:0);const first=!D.stars[cur];earn=10+st*5+(first?10:0);if(quick)earn+=20;if(st>D.stars[cur])D.stars[cur]=st;if(!quick)D.unlocked=Math.max(D.unlocked,Math.min(NL,cur+2));misEvent('win2');misEvent('win3');if(st===3)misEvent('star3');if(!wallsUsedRound)misEvent('nowall');if(quick)misEvent('quick')}else{earn=nP===4?25:15}}
-else{if(!humanWin||game==='lv')D.S.l++;earn=G[0].human?2:0}
-if(game==='free')misEvent('free');
-D.coins+=earn;save();updCoins();
+const starsH=n=>[0,1,2].map(i=>`<span style="color:${i<n?'#F2B231':'#C9D3DC'}">★</span>`).join('');
+const coinTag=n=>`<span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg>+${n}</span>`;
+function finish(wi){over=true;ghost=null;clearTimeout(botTimer);G.forEach((p,j)=>p.mood=j===wi?'w':'s');const humanWin=G[wi].human;let st=0,earn=0;
+if(game==='lv'){if(wi===0){D.S.w++;const used=cfg.w-G[0].walls,minB=Math.min(...G.slice(1).map((_,j)=>pd(j+1)));st=1+(used<=Math.ceil(cfg.w/2)?1:0)+(minB>=3?1:0);const first=!D.stars[cur];earn=10+st*5+(first?10:0);if(st>D.stars[cur])D.stars[cur]=st;D.unlocked=Math.max(D.unlocked,Math.min(NL,cur+2));misEvent('win2');misEvent('win3');if(st===3)misEvent('star3');if(!wallsUsedRound)misEvent('nowall')}else D.S.l++}
+else{D.S.local++;misEvent('local')}
+D.coins+=earn;D.S.earned+=earn;save();updCoins();
 if(humanWin){confetti();snd('win');vib([60,40,60])}else{snd('lose');vib(200)}
-const bot=G.findIndex((p,j)=>!p.human&&j!==wi);if(!G[wi].human)say(wi,pick(['وصلت أول! نعيدها؟','سبقتكم هالمرة','لا تزعل، جرب مرة ثانية']));else if(bot>=0)say(bot,pick(['كفو، غلبتنا!','واو، ما توقعتها','المرة الجاية لنا']));
+const bot=G.findIndex((p,j)=>!p.human&&j!==wi);if(!G[wi].human)say(wi,pick(['وصلت أول! نعيدها؟','سبقتك هالمرة','لا تزعل، جرب مرة ثانية']));else if(bot>=0)say(bot,pick(['كفو، غلبتني!','واو، ما توقعتها','المرة الجاية لي']));
 draw();
-setTimeout(()=>{$('rStars').innerHTML=you&&game==='lv'?stars(st):humanWin?'🏆':'😵';
-$('rTitle').textContent=you?(game==='lv'?(cur===NL-1&&!quick?'خلصت كل المراحل!':'فزت!'):'فزت!'):humanWin?'فاز '+G[wi].name+'!':'فاز '+G[wi].name;
-$('rSub').textContent=game==='lv'?(quick?'تحدي سريع · ':'')+cfg.name+' · جدران استخدمتها: '+(G[0].max-G[0].walls)+' من '+G[0].max:'لعب حر';
-$('rCoins').innerHTML=earn?`<span class="coins"><svg class="coin" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#F2C46B" stroke="#B86A12" stroke-width="1.5"/><circle cx="10" cy="10" r="5.5" fill="none" stroke="#B86A12" stroke-width="1.2"/></svg>+${earn}</span>`:'';
-$('rNext').style.display=you&&game==='lv'&&!quick&&cur<NL-1?'':'none';$('rNext').textContent=quick?'':'المرحلة الجاية';
+setTimeout(()=>{if(game==='lv'){$('rStars').innerHTML=wi===0?starsH(st):'😵';$('rTitle').textContent=wi===0?(cur===NL-1?'خلصت كل المراحل!':'فزت!'):'فاز '+G[wi].name;$('rSub').textContent=cfg.name+' · جدران استخدمتها: '+(G[0].max-G[0].walls)+' من '+G[0].max}
+else{$('rStars').innerHTML=`<svg width="90" height="100" viewBox="-17 -30 34 48">${charSVG(G[wi].ch,'w',[0,0],G[wi].acc)}</svg>`;$('rTitle').textContent='فاز '+G[wi].name+'!';$('rSub').textContent='لعب مع صاحبك · بدون عملات'}
+$('rCoins').innerHTML=earn?coinTag(earn):'';$('rNext').style.display=game==='lv'&&wi===0&&cur<NL-1?'':'none';
 $('ovRes').classList.add('show');if(earn)snd('coin')},1100)}
 function relocate(){const m=(N-1)/2,cand=[];for(let r=Math.max(0,m-1);r<=Math.min(N-1,m+1);r++)for(let c=0;c<N;c++){const k=r*N+c;if(occ(r,c)||pm[k]>=0||G.some(p=>p.key===k||p.goals.has(k)))continue;const S2=new Set([k]),ds=G.map(p=>{const g0=p.goals;p.goals=S2;const d=tdP(p,p.pos,p.hasKey);p.goals=g0;return d});if(ds.some(d=>d===Infinity||d<2))continue;cand.push([k,Math.max(...ds)-Math.min(...ds)])}
 if(!cand.length)return;const best=Math.min(...cand.map(x=>x[1])),pool=cand.filter(x=>x[1]<=best+1),k=pick(pool)[0];G.forEach(p=>p.goals=new Set([k]));
 const b=G.findIndex(p=>!p.human);if(b>=0)say(b,'الكنز هرب لمكان جديد!')}
 const delay=()=>({slow:1000,norm:650,fast:300})[D.set.spd]||650;
 function advance(){const i=curP(),p=G[i],k=p.pos[0]*N+p.pos[1];
-if(p.key===k&&!p.hasKey){p.hasKey=true;if(!p.human)say(i,'أخذت مفتاحي!');else{snd('coin');if(i===0)misEvent('key');const b=G.findIndex(x=>!x.human);if(b>=0)say(b,'أوه، أخذت مفتاحك!')}}
+if(p.key===k&&!p.hasKey){p.hasKey=true;if(!p.human)say(i,'أخذت مفتاحي!');else{snd('coin');if(i===0&&game==='lv')misEvent('key');const b=G.findIndex(x=>!x.human);if(b>=0)say(b,'أوه، أخذت مفتاحك!')}}
 if((p.key<0||p.hasKey)&&p.goals.has(k))return finish(i);
 if(game==='lv'&&cfg.moving){ply++;if(ply%(G.length*3)===0)relocate()}
-ti=(ti+1)%order.length;ghost=null;draw();const j=curP();if(G[j].human&&!moves(j).length&&!G[j].walls){toast('ما عندك حركة، دورك انعدّى');botTimer=setTimeout(advance,900);return}if(!G[j].human)botTimer=setTimeout(()=>{if(!paused)botTurn(j)},delay())}
-function moveTo(i,to){if(!to)return;G[i].trail.push([...G[i].pos]);if(G[i].trail.length>4)G[i].trail.shift();const dst=land(to);if((dst[0]!==to[0]||dst[1]!==to[1])&&i===0&&G[0].human)misEvent('portal');G[i].pos=dst}
+ti=(ti+1)%order.length;ghost=null;mode='move';draw();const j=curP();
+if(G[j].human&&!moves(j).length&&!G[j].walls){toast('ما عندك حركة، الدور انعدّى');botTimer=setTimeout(advance,900);return}
+if(!G[j].human)botTimer=setTimeout(()=>{if(!paused)botTurn(j)},delay())}
+function moveTo(i,to){if(!to)return;G[i].trail.push([...G[i].pos]);if(G[i].trail.length>4)G[i].trail.shift();const dst=land(to);if((dst[0]!==to[0]||dst[1]!==to[1])&&G[i].human)misEvent('portal');G[i].pos=dst}
 function bestStep(i){const p=G[i],ms=moves(i);let b=ms[0],bd=1e9;for(const m of ms){const dst=land(m),hk=p.hasKey||dst[0]*N+dst[1]===p.key,d=tdP(p,dst,hk)+Math.random()*.1;if(d<bd){bd=d;b=m}}return b}
 function botTurn(i){if(over||paused)return;const L=game==='lv'?cfg.l:lvl,me=G[i],myD=pd(i),opps=G.map((_,j)=>j).filter(j=>j!==i),ds={};opps.forEach(j=>ds[j]=pd(j));
 let lead=opps[0];opps.forEach(j=>{if(ds[j]<ds[lead])lead=j});let act=null;const oD=ds[lead];
@@ -354,84 +392,95 @@ if(mode==='move'){const c=Math.floor(x/PX),r=Math.floor(y/PX);if(moves(i).some(m
 if(!G[i].walls)return;const cl=k=>Math.max(0,Math.min(N-2,k)),r=cl(Math.round(y/PX)-1),c=cl(Math.round(x/PX)-1);
 if(ghost&&ghost.r===r&&ghost.c===c&&ghost.t===mode&&ghost.ok)return place();ghost={t:mode,r,c,ok:valid(mode,r,c)};snd('tap');draw()});
 function place(){const i=curP();if(!ghost||!ghost.ok)return;setW(ghost.t,ghost.r,ghost.c,i+1);lastWall=[ghost.t,ghost.r,ghost.c];G[i].walls--;snd('wall');vib(30);if(i===0){wallsUsedRound++;misEvent('walls6');misEvent('walls12')}
-const bot=G.findIndex(p=>!p.human);if(bot>=0&&Math.random()<.6)say(bot,pick(['أوه! جدار ذكي','طيب، بلف من هنا','ما توقعتها','حلوة هذي']));mode='move';advance()}
-const mk=(ch,pos,goals,walls,human,name,side,key)=>({ch,pos:[...pos],goals:new Set(goals),walls,max:walls,human,name,side,trail:[],mood:'n',key:key===undefined?-1:key,keyS:new Set(key===undefined?[]:[key]),hasKey:false});
-const oppChars=()=>['robot','blob','cat','bunny'].filter(x=>x!==D.sel);
+const bot=G.findIndex(p=>!p.human);if(bot>=0&&Math.random()<.6)say(bot,pick(['أوه! جدار ذكي','طيب، بلف من هنا','ما توقعتها','حلوة هذي']));advance()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b||b.disabled)return;const a=b.dataset.act;
+if(a==='pause'){paused=true;clearTimeout(botTimer);$('ovPause').classList.add('show');return}
+const j=+b.dataset.seat;if(over||paused||curP()!==j||!G[j].human)return;
+if(a==='ok')return place();if(a==='path'){showPath=!showPath;snd('tap');return draw()}mode=a;ghost=null;snd('tap');draw()});
+const mk=(ch,pos,goals,walls,human,name,side,key,acc,wsk)=>({ch,pos:[...pos],goals:new Set(goals),walls,max:walls,human,name,side,trail:[],mood:'n',key:key===undefined?-1:key,keyS:new Set(key===undefined?[]:[key]),hasKey:false,acc:acc||'none',wsk:wsk||'char'});
+const oppChars=()=>['robot','blob','cat','bunny'].filter(x=>CH[x].shape!==CH[D.sel].shape);
 function setup(){clearTimeout(botTimer);
-if(game==='lv'){cfg=genLevel(cur);N=cfg.N}else N=BS;
+if(game==='lv'){cfg=genLevel(cur);N=cfg.N}else N=SIZES[BSZ][nP];
 PX=360/N;H=Array.from({length:N-1},()=>Array(N-1).fill(0));V=Array.from({length:N-1},()=>Array(N-1).fill(0));pm=new Int16Array(N*N).fill(-1);ply=0;wallsUsedRound=0;
 const K=a=>a[0]*N+a[1],oc=oppChars();
-if(game==='lv'){G=[mk(D.sel,cfg.me,cfg.mg.map(K),cfg.w,true,'أنت','',cfg.keys?K(cfg.mk):undefined),mk(oc[0],cfg.bt,cfg.bg.map(K),cfg.w,false,CH[oc[0]].n,'',cfg.keys?K(cfg.bk):undefined)];
+if(game==='lv'){G=[mk(D.sel,cfg.me,cfg.mg.map(K),cfg.w,true,D.name,'',cfg.keys?K(cfg.mk):undefined,D.acc,D.wsk),mk(oc[0],cfg.bt,cfg.bg.map(K),cfg.w,false,CH[oc[0]].n,'',cfg.keys?K(cfg.bk):undefined)];
 if(cfg.trio)G.push(mk(oc[1],cfg.t3,cfg.tg.map(K),cfg.w,false,CH[oc[1]].n,'',cfg.keys&&cfg.tk?K(cfg.tk):undefined));
 order=cfg.trio?[0,2,1]:[0,1];
 if(cfg.portals)cfg.pp.forEach(([a,b])=>{pm[K(a)]=K(b);pm[K(b)]=K(a)});
 const fix=(t,r,c)=>{const r2=N-2-r,c2=N-2-c;if(r<0||c<0||r>N-2||c>N-2)return false;if(r===r2&&c===c2){if(valid(t,r,c)){setW(t,r,c,99);return true}return false}if(!valid(t,r,c))return false;setW(t,r,c,99);if(!valid(t,r2,c2)){setW(t,r,c,0);return false}setW(t,r2,c2,99);return true};
 const m=(N-1)/2;if(cfg.base==='fort')(cfg.fv?[['h',m-2,m],['v',m-1,m+1]]:[['h',m-2,m-1],['v',m-1,m-2]]).forEach(([t,r,c])=>fix(t,r,c));
 if(cfg.F){let n=0,tr=0;while(n<cfg.F&&tr<400){tr++;const t=cfg.R()<.5?'h':'v',r=Math.floor(cfg.R()*(N-1)),c=Math.floor(cfg.R()*(N-1));if(fix(t,r,c))n++}}}
-else{const m=Math.floor(N/2),chs=[D.sel,...oc],W=WALLS[nP][N],all=k=>Array.from({length:N},(_,j)=>k(j));
+else{const m=Math.floor(N/2),W=WALLS[nP][N],all=k=>Array.from({length:N},(_,j)=>k(j));
+const chs=nP===2?[D.sel,p2ch]:[D.sel,...oc.slice(0,3)];
 const seats=[[[N-1,m],all(c=>c),'t'],[[0,m],all(c=>(N-1)*N+c),'b'],[[m,0],all(r=>r*N+N-1),'r'],[[m,N-1],all(r=>r*N),'l']];
-let hn=1;G=[];for(let j=0;j<nP;j++){const hum=j===0||seatT[j]==='human',nm=j===0?'أنت':hum?'لاعب '+(++hn):CH[chs[j]].n;G.push(mk(chs[j],seats[j][0],seats[j][1],W,hum,nm,seats[j][2]))}
+let hn=1;G=[];for(let j=0;j<nP;j++){const hum=j===0||(nP===2?true:seatT[j]==='human'),nm=j===0?D.name:hum?'لاعب '+(++hn):CH[chs[j]].n;G.push(mk(chs[j],seats[j][0],seats[j][1],W,hum,nm,seats[j][2],undefined,j===0?D.acc:'none',j===0?D.wsk:'char'))}
 order=nP===4?[0,2,1,3]:[0,1]}
 $('pw').innerHTML=G.map((p,j)=>`<g id="pw${j}" class="mv" style="transform:translate(${cx(p.pos[1])}px,${cx(p.pos[0])}px)"><g id="pb${j}"><g id="pi${j}" transform="scale(${SC().toFixed(3)})"></g></g></g>`).join('');
-ti=0;over=false;paused=false;ghost=null;mode='move';$('cfg').innerHTML='';$('bubWrap').style.visibility='hidden';
+ti=0;over=false;paused=false;ghost=null;mode='move';showPath=false;$('cfg').innerHTML='';$('bubWrap').style.visibility='hidden';
 const bot=G.findIndex(p=>!p.human);if(bot>=0)say(bot,pick(['هلا! جاهز؟','يلا نشوف مين يوصل أول','أنا جاهز']));
 draw()}
-// الشاشات
+// ===== الشاشات =====
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('show',s.id===id));window.scrollTo(0,0);
-if(id==='scHome')renderHome();if(id==='scMode')renderMode();if(id==='scLevels')renderLevels();if(id==='scFree')renderFree();if(id==='scShop')renderShop();if(id==='scMissions')renderMis();if(id==='scSettings')renderSet()}
+({scHome:renderHome,scMode:renderMode,scLevels:renderLevels,scLocal:renderLocal,scOnline:renderOnline,scShop:renderShop,scMissions:renderMis,scSettings:renderSet})[id]?.()}
 document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{snd('tap');show(b.dataset.go)});
 function updCoins(){document.querySelectorAll('.cv').forEach(e=>e.textContent=D.coins)}
 function renderHome(){updCoins();ensureMis();const ready=D.mis.list.some(m=>!m.c&&m.p>=MPOOL.find(x=>x.id===m.id).n);$('misBadge').style.display=ready?'':'none';$('giftBadge').style.display=D.gift!==today()?'':'none';
-const cs=['robot','cat','blob','bunny'];$('hero').innerHTML=`<rect x="-80" y="22" width="160" height="6" rx="3" fill="#B5C6D6"/><rect x="-46" y="-6" width="4" height="30" rx="2" fill="#D85A30"/><rect x="18" y="-2" width="30" height="4" rx="2" fill="#378ADD"/>`+cs.map((c,i)=>`<g transform="translate(${-54+i*36},${4+(i%2)*2}) scale(1.05)"><g class="hop" style="animation-delay:${i*.2}s">${charSVG(c,'n',[i<2?1:-1,0])}</g></g>`).join('');
-$('homeStats').textContent=`★ ${D.stars.reduce((a,b)=>a+b,0)} نجمة · فزت ${D.S.w} مرة`}
-function renderMode(){updCoins();$('modeChars').innerHTML=Object.keys(CH).map(k=>{const own=D.owned.chars.includes(k);return`<button class="card ${D.sel===k?'sel':''}" data-k="${k}" style="padding:8px 4px;${own?'':'opacity:.55'}">${mini(k)}<div class="nm" style="font-size:12px">${CH[k].n}</div><div class="ds">${own?(D.sel===k?'مختار':'&nbsp;'):'🔒 '+CH[k].price}</div></button>`}).join('');
-document.querySelectorAll('#modeChars button').forEach(b=>b.onclick=()=>{const k=b.dataset.k;if(!D.owned.chars.includes(k)){toast('افتحها من المتجر');show('scShop');return}D.sel=k;save();snd('tap');renderMode()});
-$('mLevelsDs').textContent=`فتحت ${D.unlocked} من 100 · ★ ${D.stars.reduce((a,b)=>a+b,0)}`}
+$('hero').innerHTML=`<ellipse cx="0" cy="18" rx="16" ry="3" fill="#2C2C2A" opacity=".08"/><g class="hop">${charSVG(D.sel,'n',[0,.3],D.acc)}</g>`;
+$('heroName').textContent=D.name;$('heroSub').textContent=CH[D.sel].n+(D.acc!=='none'?' · '+ACC[D.acc].n:'')+` · ★ ${D.stars.reduce((a,b)=>a+b,0)}`}
 $('btnStart').onclick=()=>{snd('tap');show('scMode')};
-$('mLevels').onclick=()=>{snd('tap');wtab=Math.floor(Math.min(D.unlocked-1,NL-1)/10);show('scLevels')};
-$('mQuick').onclick=()=>{snd('tap');game='lv';quick=true;cur=Math.floor(Math.random()*D.unlocked);startGame()};
+function renderMode(){updCoins();$('mRobotDs').textContent=`فتحت ${D.unlocked} من ${NL} مرحلة · ★ ${D.stars.reduce((a,b)=>a+b,0)} · كل فوز يعطيك عملات`}
+$('mRobot').onclick=()=>{snd('tap');wtab=Math.floor(Math.min(D.unlocked-1,NL-1)/PER);show('scLevels')};
 function renderLevels(){$('tst').textContent=D.stars.reduce((a,b)=>a+b,0);
-$('wts').innerHTML=WORLDS.map((W,i)=>`<button class="tab ${i===wtab?'on':''} ${i*10>=D.unlocked?'lk':''}" data-w="${i}">${i*10>=D.unlocked?'🔒 ':''}${W.n}</button>`).join('');
-document.querySelectorAll('#wts button').forEach(b=>b.onclick=()=>{const w=+b.dataset.w;if(w*10>=D.unlocked){toast('خلّص عالم '+WORLDS[w-1].n+' أول');return}wtab=w;snd('tap');renderLevels()});
+$('wts').innerHTML=WORLDS.map((W,i)=>`<button class="tab ${i===wtab?'on':''} ${i*PER>=D.unlocked?'lk':''}" data-w="${i}">${i*PER>=D.unlocked?'🔒 ':''}${W.n}</button>`).join('');
+document.querySelectorAll('#wts button').forEach(b=>b.onclick=()=>{const w=+b.dataset.w;if(w*PER>=D.unlocked){toast('خلّص عالم '+WORLDS[w-1].n+' أول');return}wtab=w;snd('tap');renderLevels()});
 const W=WORLDS[wtab];$('wName').textContent=`${W.n} · لوحة ${W.N}×${W.N}`;$('wDesc').textContent=W.d;
-let s='';for(let k=0;k<10;k++){const i=wtab*10+k,lk=i>=D.unlocked;s+=`<button class="lv ${lk?'lk':''} ${i===D.unlocked-1&&!D.stars[i]?'cur':''}" data-i="${i}">${lk?'🔒':i+1}<small>${lk?'':D.stars[i]?'★'.repeat(D.stars[i]):''}</small></button>`}
-$('lvls').innerHTML=s;document.querySelectorAll('#lvls button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i>=D.unlocked){toast('خلّص المرحلة '+i+' أول');return}snd('tap');game='lv';quick=false;cur=i;startGame()})}
+let s='';for(let k=0;k<PER;k++){const i=wtab*PER+k,lk=i>=D.unlocked;s+=`<button class="lv ${lk?'lk':''} ${i===D.unlocked-1&&!D.stars[i]?'cur':''}" data-i="${i}">${lk?'🔒':i+1}<small>${lk?'':D.stars[i]?'★'.repeat(D.stars[i]):''}</small></button>`}
+$('lvls').innerHTML=s;document.querySelectorAll('#lvls button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i>=D.unlocked){toast('خلّص المرحلة '+i+' أول');return}snd('tap');game='lv';cur=i;startGame()})}
 function opt(id,get,set){document.querySelectorAll('#'+id+' button').forEach(b=>{b.classList.toggle('on',b.dataset.v===get());b.onclick=()=>{set(b.dataset.v);snd('tap');document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.toggle('on',x===b))}})}
-function renderFree(){opt('np',()=>String(nP),v=>{nP=+v;renderFree()});opt('bs',()=>String(BS),v=>BS=+v);opt('gl',()=>lvl,v=>lvl=v);
-const chs=[D.sel,...oppChars()];let s='';for(let j=1;j<nP;j++)s+=`<button class="card" data-j="${j}" style="padding:8px">${mini(chs[j])}<div class="nm" style="font-size:13px">${CH[chs[j]].n}</div><div class="ds">${seatT[j]==='bot'?'🤖 بوت':'🧑 صاحبك'}</div></button>`;
-$('seats').innerHTML=s;document.querySelectorAll('#seats button').forEach(b=>b.onclick=()=>{const j=+b.dataset.j;seatT[j]=seatT[j]==='bot'?'human':'bot';snd('tap');renderFree()})}
-$('btnFree').onclick=()=>{snd('tap');game='free';quick=false;startGame()};
+function renderLocal(){opt('np',()=>String(nP),v=>{nP=+v;renderLocal()});
+$('bsz').innerHTML=Object.keys(SIZES).map(k=>`<button data-v="${k}">${SIZES[k].n}<small>${SIZES[k][nP]}×${SIZES[k][nP]}</small></button>`).join('');opt('bsz',()=>BSZ,v=>BSZ=v);
+opt('gl',()=>lvl,v=>lvl=v);
+if(nP===2){$('seatLbl').textContent='شخصية صاحبك';$('botLvlWrap').style.display='none';if(CH[p2ch].shape===CH[D.sel].shape&&p2ch===D.sel)p2ch='robot';
+$('seats').innerHTML=Object.keys(CH).filter(k=>k!==D.sel).map(k=>`<button class="card ${p2ch===k?'sel':''}" data-k="${k}" style="padding:6px 2px">${mini(k)}<div class="nm" style="font-size:11px">${CH[k].n}</div></button>`).join('');
+document.querySelectorAll('#seats button').forEach(b=>b.onclick=()=>{p2ch=b.dataset.k;snd('tap');renderLocal()});
+$('localHint').textContent='صاحبك يقعد قبالك، وأزراره تطلع مقلوبة من فوق عشان تكون صوبه.'}
+else{$('seatLbl').textContent='الباقين: اضغط عشان تبدل بين بوت وصاحبك';$('botLvlWrap').style.display='';const oc=oppChars();
+$('seats').innerHTML=[1,2,3].map(j=>`<button class="card" data-j="${j}" style="padding:6px 2px">${mini(oc[j-1])}<div class="nm" style="font-size:11px">${CH[oc[j-1]].n}</div><div class="ds">${seatT[j]==='bot'?'🤖 بوت':'🧑 صاحبك'}</div></button>`).join('');
+document.querySelectorAll('#seats button').forEach(b=>b.onclick=()=>{const j=+b.dataset.j;seatT[j]=seatT[j]==='bot'?'human':'bot';snd('tap');renderLocal()});
+$('localHint').textContent='كل لاعب يبدأ من ضلع، وهدفه الضلع المقابل.'}}
+$('btnLocal').onclick=()=>{snd('tap');game='local';startGame()};
+function renderOnline(){updCoins();$('tiers').innerHTML=[5,50,100,500,1000].map(t=>`<div class="tier"><span>طاولة ${t}</span><span class="pill" style="background:#FFF4D6;color:#633806">🪙 ${t} ضد ${t} · الفايز ياخذ ${t*2}</span></div>`).join('')}
+$('btnRank').onclick=()=>{snd('tap');msg(`🏆 الترتيب<br><span style="font-weight:600;font-size:14px;color:#5A6B7C">قائمة أعلى اللاعبين بالعملات راح تنضاف مع طور الأونلاين.<br>عملاتك الحين: ${D.coins} · جمعت بالمجموع: ${D.S.earned}</span>`)};
 let shopTab='chars';
 document.querySelectorAll('#shopTabs button').forEach(b=>b.onclick=()=>{shopTab=b.dataset.t;document.querySelectorAll('#shopTabs button').forEach(x=>x.classList.toggle('on',x===b));snd('tap');renderShop()});
-function renderShop(){updCoins();const L=shopTab==='chars'?CH:shopTab==='walls'?WSK:BSK,own=D.owned[shopTab],cur=shopTab==='chars'?D.sel:shopTab==='walls'?D.wsk:D.bsk;
-$('shopGrid').innerHTML=Object.keys(L).map(k=>{const it=L[k],o=own.includes(k);let pic='';
-if(shopTab==='chars')pic=`<svg width="64" height="72" viewBox="-17 -26 34 44">${charSVG(k,'n',[0,0])}</svg>`;
-else if(shopTab==='walls')pic=`<svg width="90" height="60" viewBox="0 0 90 60"><rect x="0" y="0" width="90" height="60" rx="10" fill="#F1F4F7"/><rect x="10" y="26" width="70" height="9" rx="4.5" fill="${it.c||CH[D.sel].b}"/><rect x="40" y="6" width="9" height="20" rx="4.5" fill="${it.c||CH[D.sel].b}"/></svg>`;
-else pic=`<svg width="90" height="60" viewBox="0 0 90 60"><rect x="0" y="0" width="90" height="60" rx="10" fill="${it.bg}" stroke="#C9D3DC"/>${[1,2,3].map(i=>`<line x1="${i*22.5}" y1="0" x2="${i*22.5}" y2="60" stroke="${it.ln}"/>`).join('')}${[1,2].map(i=>`<line x1="0" y1="${i*20}" x2="90" y2="${i*20}" stroke="${it.ln}"/>`).join('')}</svg>`;
-return`<div class="card ${cur===k?'sel':''}">${pic}<div class="nm">${it.n}</div><button class="gbtn small ${o?(cur===k?'gray':''):'orange'}" data-k="${k}" style="margin-top:6px">${o?(cur===k?'مختار':'اختار'):'🪙 '+it.price}</button></div>`}).join('');
-document.querySelectorAll('#shopGrid button').forEach(b=>b.onclick=()=>{const k=b.dataset.k,it=L[k];if(!own.includes(k)){if(D.coins<it.price){toast('عملاتك ما تكفي، تحتاج '+(it.price-D.coins)+' زيادة');return}D.coins-=it.price;own.push(k);snd('coin');toast('اشتريت '+it.n+'!')}
-if(shopTab==='chars')D.sel=k;else if(shopTab==='walls')D.wsk=k;else D.bsk=k;save();renderShop()})}
-function renderMis(){updCoins();ensureMis();$('misList').innerHTML=D.mis.list.map((m,i)=>{const M=MPOOL.find(x=>x.id===m.id),done=m.p>=M.n;return`<div class="mis"><div class="row" style="justify-content:space-between"><b>${M.t}</b><span class="pill" style="background:#FFF4D6;color:#633806">🪙 ${M.r}</span></div><div class="bar"><i style="width:${Math.round(m.p/M.n*100)}%"></i></div><div class="row" style="justify-content:space-between"><span style="font-size:13px;color:#5A6B7C">${m.p} / ${M.n}</span>${m.c?'<span style="color:#3FAE6A;font-weight:700">✓ أخذتها</span>':`<button class="gbtn small ${done?'green':'gray'}" data-i="${i}" style="width:auto;margin:0;padding:6px 14px">${done?'خذ الجائزة':'لسه'}</button>`}</div></div>`}).join('');
-document.querySelectorAll('#misList button').forEach(b=>b.onclick=()=>{const m=D.mis.list[+b.dataset.i],M=MPOOL.find(x=>x.id===m.id);if(m.p<M.n){toast('كمّل المهمة أول');return}m.c=true;D.coins+=M.r;save();snd('coin');toast('+'+M.r+' عملة!');renderMis()})}
-$('btnGift').onclick=()=>{if(D.gift===today()){toast('أخذت هدية اليوم، تعال بكرة 🎁');return}D.gift=today();D.coins+=30;save();snd('coin');vib(40);toast('هدية اليوم: +30 عملة 🎁');renderHome()};
-function renderSet(){$('swSound').classList.toggle('on',D.set.sound);$('swVib').classList.toggle('on',D.set.vib);opt('spd',()=>D.set.spd,v=>{D.set.spd=v;save()})}
+const LIST={chars:CH,accs:ACC,walls:WSK,grounds:GSK},SELK={chars:'sel',accs:'acc',walls:'wsk',grounds:'gsk'};
+function shopPic(k){if(shopTab==='chars')return`<svg width="70" height="80" viewBox="-17 -27 34 45">${charSVG(k,'n',[0,0])}</svg>`;
+if(shopTab==='accs')return`<svg width="70" height="80" viewBox="-19 -30 38 48">${charSVG(D.sel,'n',[0,0],k)}</svg>`;
+if(shopTab==='walls'){const st=WSK[k].f?WSK[k]:{f:CH[D.sel].b,s:CH[D.sel].d};return`<svg width="100" height="70" viewBox="0 0 100 70"><rect width="100" height="70" rx="12" fill="#F1F4F7"/><rect x="10" y="30" width="80" height="11" rx="5.5" fill="${st.f}" stroke="${st.s}"/><rect x="44" y="6" width="11" height="24" rx="5.5" fill="${st.f}" stroke="${st.s}"/></svg>`}
+const g=GSK[k],old=D.gsk;D.gsk=k;const ex=groundExtra(k);D.gsk=old;return`<svg width="100" height="70" viewBox="0 0 360 252"><defs><clipPath id="c${k}"><rect width="360" height="252" rx="36"/></clipPath></defs><g clip-path="url(#c${k})"><rect width="360" height="252" fill="${g.bg}"/>${ex}${[1,2,3,4].map(i=>`<line x1="${i*72}" y1="0" x2="${i*72}" y2="252" stroke="${g.ln}" stroke-width="3"/>`).join('')}${[1,2].map(i=>`<line x1="0" y1="${i*84}" x2="360" y2="${i*84}" stroke="${g.ln}" stroke-width="3"/>`).join('')}</g><rect width="360" height="252" rx="36" fill="none" stroke="#C9D3DC" stroke-width="4"/></svg>`}
+function renderShop(){updCoins();const L=LIST[shopTab],own=D.owned[shopTab],cur=D[SELK[shopTab]];
+const keys=Object.keys(L).sort((a,b)=>L[a].price-L[b].price);
+$('shopGrid').innerHTML=keys.map(k=>{const it=L[k],o=own.includes(k);return`<div class="card ${cur===k?'sel':''}">${shopPic(k)}<div class="nm">${it.n}</div><button class="gbtn small ${o?(cur===k?'gray':''):'orange'}" data-k="${k}" style="margin-top:6px">${o?(cur===k?'✓ لابسها':'اختار'):'🪙 '+it.price}</button></div>`}).join('');
+document.querySelectorAll('#shopGrid button').forEach(b=>b.onclick=()=>{const k=b.dataset.k,it=L[k];
+if(!own.includes(k)){if(D.coins<it.price){toast('عملاتك ما تكفي، تحتاج '+(it.price-D.coins)+' زيادة');return}msg(`تشتري «${it.n}» بـ ${it.price} عملة؟`,[{t:'لا',c:'gray'},{t:'اشتر',c:'orange',f:()=>{D.coins-=it.price;own.push(k);D[SELK[shopTab]]=k;save();snd('coin');vib(40);misEvent('buy');toast('صار عندك '+it.n+'! 🎉');renderShop()}}]);return}
+D[SELK[shopTab]]=k;save();snd('tap');renderShop()})}
+function renderMis(){updCoins();ensureMis();$('misList').innerHTML=D.mis.list.map((m,i)=>{const M=MPOOL.find(x=>x.id===m.id),done=m.p>=M.n;return`<div class="mis"><div class="row" style="justify-content:space-between"><b>${M.t}</b><span class="pill" style="background:#FFF4D6;color:#633806">🪙 ${M.r}</span></div><div class="bar"><i style="width:${Math.round(m.p/M.n*100)}%"></i></div><div class="row" style="justify-content:space-between"><span style="font-size:13px;color:#5A6B7C">${m.p} / ${M.n}</span>${m.c?'<span style="color:#3FAE6A;font-weight:800">✓ أخذتها</span>':`<button class="gbtn small ${done?'green':'gray'}" data-i="${i}" style="width:auto;margin:0;padding:6px 14px">${done?'خذ الجائزة':'لسه'}</button>`}</div></div>`}).join('');
+document.querySelectorAll('#misList button').forEach(b=>b.onclick=()=>{const m=D.mis.list[+b.dataset.i],M=MPOOL.find(x=>x.id===m.id);if(m.p<M.n){toast('كمّل المهمة أول');return}m.c=true;D.coins+=M.r;D.S.earned+=M.r;save();snd('coin');toast('+'+M.r+' عملة!');renderMis()})}
+$('btnGift').onclick=()=>{if(D.gift===today()){toast('أخذت هدية اليوم، تعال بكرة 🎁');return}D.gift=today();D.coins+=30;D.S.earned+=30;save();snd('coin');vib(40);toast('هدية اليوم: +30 عملة 🎁');renderHome()};
+function renderSet(){$('swSound').classList.toggle('on',D.set.sound);$('swVib').classList.toggle('on',D.set.vib);opt('spd',()=>D.set.spd,v=>{D.set.spd=v;save()});$('inName').value=D.name;
+$('statBox').innerHTML=`<div class="ds" style="font-size:14px;line-height:1.9">فوز ضد الروبوت: ${D.S.w}<br>خسارة ضد الروبوت: ${D.S.l}<br>مباريات مع أصحابك: ${D.S.local}<br>نجوم: ${D.stars.reduce((a,b)=>a+b,0)} من ${NL*3}<br>كل العملات اللي جمعتها: ${D.S.earned}</div>`}
+$('inName').oninput=e=>{D.name=(e.target.value||'').trim()||'لاعب';save()};
 $('swSound').onclick=()=>{D.set.sound=!D.set.sound;save();renderSet();snd('tap')};
 $('swVib').onclick=()=>{D.set.vib=!D.set.vib;save();renderSet();vib(30)};
-let cfAct=null;function confirmBox(t,f){$('cfText').textContent=t;cfAct=f;$('ovConfirm').classList.add('show')}
-$('cfNo').onclick=()=>$('ovConfirm').classList.remove('show');$('cfYes').onclick=()=>{$('ovConfirm').classList.remove('show');cfAct&&cfAct()};
-$('btnReset').onclick=()=>confirmBox('أكيد تبي تمسح كل التقدم والعملات؟ ما تقدر ترجعها.',()=>{D=JSON.parse(JSON.stringify(P0));save();toast('انمسح كل شي');show('scHome')});
-// بدء اللعب
+$('btnReset').onclick=()=>msg('أكيد تبي تمسح كل التقدم والعملات واللي اشتريته؟ ما تقدر ترجعها.',[{t:'لا',c:'gray'},{t:'امسح',c:'orange',f:()=>{D=JSON.parse(JSON.stringify(P0));save();toast('انمسح كل شي');show('scHome')}}]);
 function startGame(){setup();show('scGame');
-if(game==='lv'){$('inName').textContent=(quick?'⚡ تحدي سريع · ':'المرحلة '+(cur+1)+' · ')+cfg.name;$('inNew').innerHTML=cfg.isNew.length?`<span class="new">جديد: ${cfg.isNew.join('، ')}</span>`:'';
-$('inPic').innerHTML=`<g transform="translate(-28,4) scale(1.3)">${charSVG(D.sel,'n',[1,0])}</g><text x="0" y="8" text-anchor="middle" font-size="12" font-weight="800" fill="#5A6B7C">ضد</text><g transform="translate(28,4) scale(1.3)">${charSVG(G[1].ch,'n',[-1,0])}</g>`;
-$('inDesc').textContent=cfg.d+` كل لاعب عنده ${cfg.w} جدران.`;$('inStars').textContent=`النجوم: نجمة للفوز، ونجمة إذا استخدمت ${Math.ceil(cfg.w/2)} جدران أو أقل، ونجمة إذا فزت والبوت باقي له 3 خطوات أو أكثر.`}
-else{$('inName').textContent=`لعب حر · ${nP===4?'4 لاعبين':'لاعبين'} · ${N}×${N}`;$('inNew').innerHTML='';$('inPic').innerHTML=G.map((p,j)=>`<g transform="translate(${(j-(G.length-1)/2)*30},4) scale(1.1)">${charSVG(p.ch,'n',[0,0])}</g>`).join('');
-$('inDesc').textContent=(nP===4?'كل لاعب يبدأ من ضلع، وهدفه يوصل للضلع المقابل.':'وصّل للضلع المقابل قبل خصمك.')+` كل لاعب عنده ${WALLS[nP][N]} جدران.`;$('inStars').textContent='هدف كل لاعب الضلع اللي عليه خط بلونه.'}
+if(game==='lv'){$('inTitle').textContent='المرحلة '+(cur+1)+' · '+cfg.name;$('inNew').innerHTML=cfg.isNew.length?`<span class="new">جديد: ${cfg.isNew.join('، ')}</span>`:'';
+$('inPic').innerHTML=`<g transform="translate(-30,6) scale(1.3)">${charSVG(D.sel,'n',[1,0],D.acc)}</g><text x="0" y="10" text-anchor="middle" font-size="12" font-weight="900" fill="#5A6B7C">ضد</text>`+G.slice(1).map((p,j)=>`<g transform="translate(${G.length>2?22+j*20:30},6) scale(${G.length>2?1:1.3})">${charSVG(p.ch,'n',[-1,0])}</g>`).join('');
+$('inDesc').textContent=cfg.d+` كل لاعب عنده ${cfg.w} جدران.`;$('inStars').textContent=`النجوم: نجمة للفوز، ونجمة إذا استخدمت ${Math.ceil(cfg.w/2)} جدران أو أقل، ونجمة إذا فزت والروبو باقي له 3 خطوات أو أكثر.`}
+else{$('inTitle').textContent=`مع صاحبك · ${N}×${N}`;$('inNew').innerHTML='';$('inPic').innerHTML=G.map((p,j)=>`<g transform="translate(${(j-(G.length-1)/2)*(G.length>2?28:46)},6) scale(${G.length>2?1.1:1.3})">${charSVG(p.ch,'n',[0,0],p.acc)}</g>`).join('');
+$('inDesc').textContent=(nP===2?'كل واحد يوصّل للضلع اللي قدامه. صاحبك يقعد قبالك وأزراره فوق مقلوبة صوبه.':'كل لاعب يبدأ من ضلع، وهدفه يوصل للضلع المقابل.')+` كل لاعب عنده ${WALLS[nP][N]} جدران.`;$('inStars').textContent='هذا الطور بدون عملات، بس يعدّ لمهمة «العب مع صاحبك».'}
 paused=true;$('ovIntro').classList.add('show')}
 $('inGo').onclick=()=>{$('ovIntro').classList.remove('show');paused=false;snd('tap');draw()};
-document.querySelectorAll('.ctrl button[data-v]').forEach(b=>b.onclick=()=>{if(b.disabled)return;mode=b.dataset.v;ghost=null;snd('tap');draw()});
-$('ok').onclick=place;$('sp').onclick=()=>{showPath=!showPath;snd('tap');draw()};
-$('btnPause').onclick=()=>{paused=true;clearTimeout(botTimer);$('ovPause').classList.add('show')};
 function resume(){paused=false;const j=curP();if(!over&&!G[j].human)botTimer=setTimeout(()=>botTurn(j),delay())}
 $('pResume').onclick=()=>{$('ovPause').classList.remove('show');resume()};
 $('pRestart').onclick=()=>{$('ovPause').classList.remove('show');startGame()};
