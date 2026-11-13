@@ -28,13 +28,13 @@ input{font:inherit}
 .lvb{position:absolute;bottom:-8px;left:-8px;background:#3B6FD8;color:#fff;border:2px solid #fff;border-radius:50%;width:24px;height:24px;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .pname{font-size:15px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .xp{height:12px;background:#1B2C55;border-radius:6px;overflow:hidden;position:relative;margin-top:2px;width:110px}
-.xp i{position:absolute;inset:0 auto 0 0;background:#4FC3F7;border-radius:6px}
+.xp i{position:absolute;inset:0 0 0 auto;background:#4FC3F7;border-radius:6px}
 .xp span{position:relative;font-size:10px;font-weight:900;color:#fff;display:block;text-align:center;line-height:12px}
 .cur{display:flex;align-items:center;background:rgba(20,40,80,.55);border-radius:12px;padding:3px 4px 3px 8px;gap:4px;font-weight:900;font-size:15px;flex:none}
 .cur .plus{width:24px;height:24px;border-radius:7px;background:#7ED321;border-bottom:3px solid #4C8A10;color:#fff;font-weight:900;font-size:18px;line-height:20px}
 .ic24{width:24px;height:24px;flex:none}
 /* أزرار جانبية */
-.side{position:absolute;top:120px;display:flex;flex-direction:column;gap:12px;z-index:3}
+.side{position:absolute;top:150px;display:flex;flex-direction:column;gap:12px;z-index:3}
 .side.r{right:8px}.side.l{left:8px}
 .sbtn{width:72px;position:relative;display:flex;flex-direction:column;align-items:center}
 .sbtn .i{width:58px;height:58px;border-radius:16px;background:linear-gradient(#FFFFFF,#DDE9F7);border:3px solid #2B4C8C;border-bottom-width:5px;display:flex;align-items:center;justify-content:center;font-size:30px}
@@ -157,6 +157,50 @@ input{font:inherit}
 .wig{animation:wig 2.4s ease-in-out infinite}
 @keyframes wig{0%,85%,100%{transform:rotate(0)}88%{transform:rotate(-10deg)}92%{transform:rotate(10deg)}96%{transform:rotate(-6deg)}}
 .new{display:inline-block;background:#FFC02E;color:#4A2E00;border-radius:10px;padding:3px 10px;font-size:13px;font-weight:900;margin-top:6px}
+
+.ov.show{animation:fadeIn .2s ease-out}
+.ov.show .box{animation:popIn .32s cubic-bezier(.2,1.5,.4,1)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:scale(.7) translateY(30px)}to{opacity:1;transform:none}}
+.scr.show{animation:scrIn .22s ease-out}
+@keyframes scrIn{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sbtn,.mbtn,.lvbtn,.gb,.tabb,.back,.road{transition:transform .08s}
+.sbtn:active,.road:active{transform:scale(.92)}
+.row2{display:flex;align-items:center;gap:8px;padding:2px 10px;max-width:560px;width:100%;margin:0 auto;position:relative;z-index:3}
+.gear{width:46px;height:46px;border-radius:14px;background:rgba(20,40,80,.55);color:#fff;font-size:24px;flex:none}
+.road{flex:1;max-width:320px;margin:0 auto;position:relative;background:repeating-linear-gradient(-45deg,#FFD45A 0 14px,#FFC02E 14px 28px);border:4px solid #fff;border-radius:14px;padding:8px 6px 6px;font-weight:900;font-size:18px;color:#6A3E00;box-shadow:0 4px 0 #B07400}
+.road small{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#2B3A67;color:#fff;border-radius:8px;padding:0 10px;font-size:11px;white-space:nowrap}
+.ribbon{position:relative;margin:-30px auto 12px;width:86%;background:linear-gradient(#FF6B8A,#D83A62);border-radius:8px;padding:10px;font-weight:900;font-size:22px;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.3);box-shadow:0 4px 0 #8C1D35}
+.ribbon::before,.ribbon::after{content:"";position:absolute;top:10px;width:22px;height:100%;background:#B02A50;z-index:-1}
+.ribbon::before{right:-14px;transform:skewY(-20deg)}.ribbon::after{left:-14px;transform:skewY(20deg)}
+.profit{position:absolute;top:44%;right:-8px;background:#E5486A;color:#fff;border:3px solid #fff;border-radius:50%;width:70px;height:70px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:13px;line-height:1.1;transform:rotate(-15deg);z-index:2}
+.oldp{display:inline-block;background:#5F6B78;color:#fff;border-radius:8px;padding:2px 12px;font-weight:900;text-decoration:line-through;text-decoration-color:#E5486A;text-decoration-thickness:3px;transform:rotate(-8deg);margin-bottom:-6px}
+.qt{display:flex;gap:4px;margin:4px 0 0}
+.qt button{flex:1;padding:8px;border-radius:12px 12px 0 0;background:#8FA3D6;color:#2B3A67;font-weight:900;font-size:16px}
+.qt button.on{background:#DDE6FF}
+.qbody{background:#DDE6FF;border-radius:0 0 14px 14px;padding:10px;color:#2B3A67}
+.qrow{background:#B9C6E0;border-radius:12px;padding:8px;margin:8px 0;text-align:right}
+.qrow .tt{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:900}
+.qbar{display:flex;align-items:center;gap:6px;margin-top:6px}
+.qbar .b{flex:1;height:22px;background:#4A5680;border-radius:8px;position:relative;overflow:hidden}
+.qbar .b i{position:absolute;inset:0 0 0 auto;background:#4FC3F7}
+.qbar .b span{position:relative;display:block;text-align:center;color:#fff;font-weight:900;font-size:13px;line-height:22px}
+.go{background:linear-gradient(#5BB8FF,#2F7BE0);border-bottom:4px solid #1F4F9E;color:#fff;border-radius:10px;padding:5px 14px;font-weight:900;font-size:15px;flex:none}
+.go.ok{background:linear-gradient(#A6F04A,#62C21A);border-bottom-color:#3D8A0E}
+.go.dn{background:#7F8BA8;border-bottom-color:#5F6B78}
+.ms{background:linear-gradient(#5B8CFF,#3B5FD8);border-radius:14px;padding:10px 8px 8px;position:relative}
+.mstrack{height:20px;background:#1E2A4D;border-radius:10px;position:relative;margin:30px 22px 6px}
+.mstrack i{position:absolute;inset:0 0 0 auto;background:linear-gradient(#FFD45A,#FFA000);border-radius:10px}
+.msc{position:absolute;top:-34px;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;font-size:26px;line-height:1}
+.msc b{font-size:12px;color:#fff;text-shadow:0 1px 0 #000}
+.msc.rd{animation:hop 1s infinite}
+.ptab{width:100%;border-collapse:separate;border-spacing:0 6px}
+.ptab td{padding:4px;text-align:center;vertical-align:middle}
+.ptab .lvn{width:36px;font-weight:900;font-size:16px}
+.cell{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:linear-gradient(#E9EEF8,#B9C6E0);border:2px solid #1E2A4D;position:relative;font-size:26px;color:#1E2A4D}
+.cell b{font-size:12px;font-weight:900;color:#fff;text-shadow:0 1px 0 #000,0 0 2px #000;position:absolute;bottom:2px;left:4px}
+.cell .lk{position:absolute;top:-8px;right:-6px;font-size:16px}
+.cell.got{opacity:.5}.cell.rd{box-shadow:0 0 0 3px #7ED321;animation:hop 1.2s infinite}
 </style>
 </head>
 <body>
@@ -175,21 +219,22 @@ input{font:inherit}
 <section id="scHome" class="scr bgsky">
 <svg class="tiles" id="homeBg" preserveAspectRatio="xMidYMid slice"></svg>
 <div class="topbar">
-<button class="prof ol" data-go="scSettings"><div class="ava"><svg id="avaPic" viewBox="-17 -22 34 34"></svg><div class="lvb" id="lvBadge">1</div></div><div style="min-width:0;text-align:right"><div class="pname" id="pName">لاعب</div><div class="xp"><i id="xpBar"></i><span id="xpTxt">0/100</span></div></div></button>
+<button class="prof ol" id="btnProf"><div class="ava"><svg id="avaPic" viewBox="-17 -22 34 34"></svg><div class="lvb" id="lvBadge">1</div></div><div style="min-width:0;text-align:right"><div class="pname" id="pName">لاعب</div><div class="xp"><i id="xpBar"></i><span id="xpTxt">0/100</span></div></div></button>
 <div class="cur ol"><svg class="ic24"><use href="#coin"/></svg><span class="cv">0</span><button class="plus" data-go="scShop">+</button></div>
 <div class="cur ol"><svg class="ic24"><use href="#gem"/></svg><span class="gv">0</span><button class="plus" data-go="scShop">+</button></div>
 </div>
+<div class="row2"><button class="gear" data-go="scSettings" aria-label="الإعدادات">⚙</button><button class="road" id="btnRoad"><small>طريق النجوم</small><span class="dot" id="dRoad" style="display:none;top:-10px;right:-10px">!</span><span id="roadTxt">خذ جوائزك</span></button><span style="width:46px"></span></div>
 <div class="side r">
-<button class="sbtn" data-go="scMissions"><span class="dot" id="dMis" style="display:none">!</span><div class="i">📋</div><div class="t">المهام</div></button>
-<button class="sbtn gold" id="sbGift"><span class="dot" id="dGift" style="display:none">!</span><div class="i wig">🎁</div><div class="t">الهدية</div></button>
-<button class="sbtn purple" id="sbChest"><span class="dot" id="dChest" style="display:none">!</span><div class="i">🧰</div><div class="tm" id="tChest"></div></button>
-<button class="sbtn gold" id="sbWeekly"><div class="i"><svg width="48" height="52" viewBox="-17 -26 34 44" id="wkPic"></svg></div><div class="tm" id="tWeek"></div></button>
+<button class="sbtn" id="sbQuest"><span class="dot" id="dQuest" style="display:none">!</span><div class="i">📋</div><div class="t">المهام</div></button>
+<button class="sbtn purple" id="sbFund"><span class="dot" id="dFund" style="display:none">!</span><div class="i">💎</div><div class="t">صندوق النمو</div></button>
+<button class="sbtn" id="sbChest" style="--x:1"><span class="dot" id="dChest" style="display:none">!</span><div class="i" style="background:linear-gradient(#A6F04A,#4C9A1A);border-color:#2F5A0E">🧰</div><div class="tm" id="tChest"></div></button>
+<button class="sbtn gold" id="sbPass"><span class="dot" id="dPass" style="display:none">!</span><div class="i">🏆</div><div class="tm" id="tPass"></div></button>
 </div>
 <div class="side l">
 <button class="sbtn red" id="sbNoAds"><div class="i">🚫</div><div class="t">بدون إعلانات</div></button>
 <button class="sbtn red" id="sbStarter"><div class="i">🎒</div><div class="t">حزمة البداية</div></button>
-<button class="sbtn purple" id="sbDeal"><div class="i" id="dealIc">🏷️</div><div class="tm" id="tDeal"></div></button>
-<button class="sbtn" id="sbOffers"><span class="dot" id="dOff" style="display:none">!</span><div class="i">🪜</div><div class="t">عروض</div></button>
+<button class="sbtn purple" id="sbLegend"><div class="i"><svg width="48" height="52" viewBox="-17 -26 34 44" id="legPic"></svg></div><div class="t">حزمة الأسطورة</div></button>
+<button class="sbtn gold" id="sbGift"><span class="dot" id="dGift" style="display:none">!</span><div class="i wig">🎁</div><div class="t">الهدية</div></button>
 </div>
 <div class="stage"><svg class="hero" id="hero" viewBox="-40 -40 80 80"></svg><div class="heroName ol" id="heroName"></div><button class="ward" data-go="scWard">👕 غيّر الشكل</button></div>
 <div class="playrow">
@@ -288,6 +333,12 @@ input{font:inherit}
 <div class="ov" id="ovOffer"><div class="box" style="background:#1E2A4D;padding-top:22px"><button class="x" id="offX">✕</button><div class="ptitle" style="margin-top:0">🪜 عروض ما تخلص<small id="offTimer"></small></div><div id="ladder"></div></div></div>
 <div class="ov" id="ovWeek"><div class="box" style="background:linear-gradient(#3B2A67,#6A2A2A);border-color:#FFC02E;padding-top:22px"><button class="x" id="wkX">✕</button><div class="ptitle" style="margin-top:0;background:linear-gradient(#FFD45A,#FFB000);color:#4A2E00;text-shadow:none;border-color:#fff">شخصية الأسبوع</div><div style="font-weight:900;font-size:20px" id="wkName"></div><div style="font-size:13px;opacity:.9">خصم 30% لين نهاية الأسبوع</div><svg id="wkBig" viewBox="-24 -32 48 54" width="190" height="210" style="display:block;margin:6px auto"></svg><div id="wkPrice" style="font-weight:900"></div><button class="gb" id="wkGo" style="font-size:26px;min-width:200px">يلا</button><div class="sub" id="wkTime"></div></div></div>
 <div class="ov" id="ovAd"><div class="box" style="background:#000;border-color:#444"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:12px;opacity:.7">إعلان تجريبي</span><button class="gb gr sm" id="adX" style="margin:0" disabled>5</button></div><div class="adbox"><div style="font-size:54px">📺</div><div style="font-weight:900;font-size:18px;margin-top:8px">مكان الإعلان</div><div style="font-size:13px;opacity:.7;margin-top:6px;line-height:1.6;padding:0 14px">هنا راح تطلع إعلانات حقيقية لما تنشر اللعبة على المتجر</div></div></div></div>
+
+<div class="ov" id="ovQuest"><div class="box" style="background:#5B7BD0;padding-top:14px"><button class="x" data-close="ovQuest">✕</button><div class="h2 ol" style="font-size:26px">المهام</div><div class="qt"><button data-q="d" class="on">يومية</button><button data-q="w">أسبوعية</button></div><div class="qbody"><div class="ms"><div class="mstrack"><i id="qBar"></i><div id="qMs"></div></div><div style="display:flex;align-items:center;gap:6px;color:#fff;font-weight:900"><span style="font-size:22px">⭐</span><span id="qPts">0</span></div></div><div id="qList"></div><div style="font-weight:800;font-size:13px;margin-top:6px" id="qTime"></div></div></div></div>
+<div class="ov" id="ovFund"><div class="box" style="background:linear-gradient(#8FA8F0,#5B7BD0);padding-top:14px"><button class="x" data-close="ovFund">✕</button><div style="display:flex;align-items:center;gap:8px;text-align:right"><div style="flex:1"><div class="ol" style="font-size:28px;font-weight:900;color:#BFE3FF">صندوق النمو</div><div class="ol" style="font-weight:900;color:#FFD45A">ربح ×25!</div><div class="ol" style="margin-top:6px;font-weight:900">مجموع الجوائز:</div><div class="ol" style="font-size:30px;font-weight:900">2240 <svg width="28" height="28" style="vertical-align:-4px"><use href="#gem"/></svg></div></div><div style="font-size:70px">🛒💎</div></div><button class="gb y" id="fundBuy" style="font-size:22px">23.99 €</button><div id="fundList" style="margin-top:8px"></div></div></div>
+<div class="ov" id="ovPass"><div class="box" style="background:linear-gradient(#5A2A7A,#2B1A4D);padding-top:14px"><button class="x" data-close="ovPass">✕</button><div style="display:flex;align-items:center;gap:8px;text-align:right"><div style="flex:1"><div class="ol" style="font-size:24px;font-weight:900">كنز الأسبوع</div><div class="cur" style="display:inline-flex;margin:4px 0">⏱ <span id="passT"></span></div><div style="font-size:13px">العب وافتح الصناديق واجمع النقاط!</div></div><div style="font-size:60px">🧰👑</div></div><div style="display:flex;align-items:center;gap:6px;background:#6A3FA0;border-radius:12px;padding:6px;margin-top:8px"><b id="passLv">مستوى 1</b><div class="qbar" style="flex:1;margin:0"><div class="b"><i id="passBar"></i><span id="passTx">0/75</span></div></div></div><table class="ptab" id="passTab"></table></div></div>
+<div class="ov" id="ovRoad"><div class="box" style="background:linear-gradient(#FFD45A,#E09A00);color:#4A2E00;padding-top:14px"><button class="x" data-close="ovRoad">✕</button><div class="h2" style="font-size:24px">⭐ طريق النجوم</div><div style="font-size:13px;font-weight:800">اجمع نجوم من المراحل وافتح الجوائز</div><div class="cur" style="display:inline-flex;margin:8px 0;color:#fff">⭐ <span id="roadStars">0</span></div><div id="roadList"></div></div></div>
+<div class="ov" id="ovPack"><div class="box" id="packBox" style="padding:0;overflow:visible;margin-top:30px"></div></div>
 <div class="ov" id="ovChest"><div class="box"><div class="h2">🧰 الصندوق</div><div id="chestIn" style="margin:12px 0"></div><button class="gb" id="chestOk">خذها</button></div></div>
 <script>
 const $=id=>document.getElementById(id),sv=$('sv');
@@ -501,85 +552,149 @@ $('pw').innerHTML=G.map((p,j)=>`<g id="pw${j}" class="mv" style="transform:trans
 ti=0;over=false;paused=false;ghost=null;mode='move';showPath=false;$('cfg').innerHTML='';$('bubWrap').style.visibility='hidden';
 const bot=G.findIndex(p=>!p.human);if(bot>=0)say(bot,pick(['هلا! جاهز؟','يلا نشوف مين يوصل أول','أنا جاهز']));
 draw()}
-// ===== الواجهات =====
+// ===== أدوات =====
 const ic=c=>`<svg class="ic24" style="vertical-align:-6px"><use href="#${c==='g'?'gem':'coin'}"/></svg>`;
 const needXP=l=>100+(l-1)*50;
 const fmt=ms=>{ms=Math.max(0,ms);const s=Math.floor(ms/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60,p=n=>String(n).padStart(2,'0');return d?`${d}ي ${p(h)}:${p(m)}`:`${p(h)}:${p(m)}:${p(x)}`};
 const midnight=()=>{const d=new Date();d.setHours(24,0,0,0);return d.getTime()};
 const weekEnd=()=>{const d=new Date();const day=(d.getDay()+6)%7;d.setHours(0,0,0,0);d.setDate(d.getDate()+7-day);return d.getTime()};
-const weekNo=()=>Math.floor((Date.now()/86400000+3)/7);
+const weekNo=()=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return Math.round(d.getTime()/604800000)};
+const LIST={chars:CH,accs:ACC,walls:WSK,grounds:GSK},SELK={chars:'sel',accs:'acc',walls:'wsk',grounds:'gsk'},KCAT={char:'chars',acc:'accs',wall:'walls',ground:'grounds'};
 function addXP(n){D.xp+=n;let up=0;while(D.xp>=needXP(D.plv)){D.xp-=needXP(D.plv);D.plv++;up++}if(up){D.gems+=10*up;setTimeout(()=>{toast(`⬆️ وصلت للمستوى ${D.plv}! +${10*up} جوهرة`);snd('coin')},1400)}}
-function grant(items){const out=[];items.forEach(([k,n])=>{if(k==='coin'){D.coins+=n;D.S.earned+=n;out.push(n+' عملة')}else if(k==='gem'){D.gems+=n;out.push(n+' جوهرة')}else if(k==='chest'){for(let i=0;i<n;i++)out.push(openChest(true))}else if(k==='char'){if(!D.owned.chars.includes(n))D.owned.chars.push(n);out.push(CH[n].n)}});save();updCoins();snd('coin');vib(40);return out.join(' + ')}
-function testBuy(price,label,items,after){msg(`🧪 <b>شراء تجريبي</b><br>${label}<br>السعر: <b>${price} €</b><br><span style="font-size:13px;opacity:.85">هذي نسخة تجريبية، ما راح ينسحب منك أي مبلغ.</span>`,[{t:'إلغاء',c:'gr'},{t:'اشتر',c:'y',f:()=>{const g=grant(items);toast('وصلك: '+g+' 🎉');after&&after()}}])}
+function rName([k,n]){return k==='coin'?n+' عملة':k==='gem'?n+' جوهرة':k==='chest'?(n>1?n+' صناديق':'صندوق'):k==='noads'?'بدون إعلانات':LIST[KCAT[k]][n].n}
+function grant(items){const out=[];items.forEach(([k,n])=>{if(k==='coin'){D.coins+=n;D.S.earned+=n;out.push(n+' عملة')}else if(k==='gem'){D.gems+=n;out.push(n+' جوهرة')}else if(k==='chest'){for(let i=0;i<n;i++)out.push(openChest())}else if(k==='noads'){D.noAds=true;out.push('بدون إعلانات')}else{const cat=KCAT[k];if(!D.owned[cat].includes(n))D.owned[cat].push(n);out.push(LIST[cat][n].n)}});save();updCoins();snd('coin');vib(40);return out.join(' + ')}
+function testBuy(price,label,items,after){msg(`🧪 <b>شراء تجريبي</b><br>${label}<br>السعر: <b>${price} €</b><br><span style="font-size:13px;opacity:.85">هذي نسخة تجريبية، ما راح ينسحب منك أي مبلغ.</span>`,[{t:'إلغاء',c:'gr'},{t:'اشتر',c:'y',f:()=>{const g=items.length?grant(items):'';if(g)toast('وصلك: '+g+' 🎉');after&&after()}}])}
 function itemPrice(cat,k,disc){const it=LIST[cat][k];return{p:Math.round(it.price*(disc||1)),c:it.cur}}
 function payItem(cat,k,disc,after){const it=LIST[cat][k],{p,c}=itemPrice(cat,k,disc);const have=c==='g'?D.gems:D.coins;if(have<p){msg(`ما يكفي! تحتاج ${p-have} ${c==='g'?'جوهرة':'عملة'} زيادة.`,[{t:'إغلاق',c:'gr'},{t:'روح للمتجر',c:'y',f:()=>show('scShop')}]);return}
-msg(`تشتري «${it.n}» بـ ${p} ${ic(c)}؟`,[{t:'لا',c:'gr'},{t:'اشتر',c:'y',f:()=>{if(c==='g')D.gems-=p;else D.coins-=p;D.owned[cat].push(k);D[SELK[cat]]=k;save();updCoins();snd('coin');vib(40);misEvent('buy');toast('صار عندك '+it.n+'! 🎉');after&&after()}}])}
-const LIST={chars:CH,accs:ACC,walls:WSK,grounds:GSK},SELK={chars:'sel',accs:'acc',walls:'wsk',grounds:'gsk'};
-function openChest(silent){const r=Math.random();let txt;if(r<.55){const n=40+Math.floor(Math.random()*9)*10;D.coins+=n;D.S.earned+=n;txt=n+' عملة'}else if(r<.85){const n=5+Math.floor(Math.random()*11);D.gems+=n;txt=n+' جوهرة'}else{const pool=[];Object.keys(LIST).forEach(cat=>Object.keys(LIST[cat]).forEach(k=>{const it=LIST[cat][k];if(it.cur==='c'&&it.price>0&&it.price<=300&&!D.owned[cat].includes(k))pool.push([cat,k])}));if(pool.length){const[cat,k]=pick(pool);D.owned[cat].push(k);txt=LIST[cat][k].n+' (جديد!)'}else{D.coins+=150;txt='150 عملة'}}save();updCoins();return txt}
+msg(`تشتري «${it.n}» بـ ${p} ${ic(c)}؟`,[{t:'لا',c:'gr'},{t:'اشتر',c:'y',f:()=>{if(c==='g')D.gems-=p;else D.coins-=p;D.owned[cat].push(k);D[SELK[cat]]=k;save();updCoins();snd('coin');vib(40);qEvent('buy');toast('صار عندك '+it.n+'! 🎉');after&&after()}}])}
+function openChest(){const r=Math.random();let txt;if(r<.55){const n=40+Math.floor(Math.random()*9)*10;D.coins+=n;D.S.earned+=n;txt=n+' عملة'}else if(r<.85){const n=5+Math.floor(Math.random()*11);D.gems+=n;txt=n+' جوهرة'}else{const pool=[];Object.keys(LIST).forEach(cat=>Object.keys(LIST[cat]).forEach(k=>{const it=LIST[cat][k];if(it.cur==='c'&&it.price>0&&it.price<=300&&!D.owned[cat].includes(k))pool.push([cat,k])}));if(pool.length){const[cat,k]=pick(pool);D.owned[cat].push(k);txt=LIST[cat][k].n+' (جديد!)'}else{D.coins+=150;txt='150 عملة'}}save();updCoins();return txt}
+function cellIcon([k,n]){if(k==='coin')return`<svg width="40" height="40"><use href="#coin"/></svg>`;if(k==='gem')return`<svg width="40" height="40"><use href="#gem"/></svg>`;if(k==='chest')return'🧰';if(k==='noads')return'🚫';
+if(k==='char')return`<svg width="46" height="52" viewBox="-17 -26 34 44">${charSVG(n,'n',[0,0])}</svg>`;if(k==='acc')return`<svg width="46" height="52" viewBox="-19 -30 38 48">${charSVG(D.sel,'n',[0,0],n)}</svg>`;
+if(k==='wall'){const st=WSK[n].f?WSK[n]:{f:CH[D.sel].b,s:CH[D.sel].d};return`<svg width="46" height="40" viewBox="0 0 46 40"><rect x="4" y="17" width="38" height="8" rx="4" fill="${st.f}" stroke="${st.s}"/><rect x="19" y="3" width="8" height="15" rx="4" fill="${st.f}" stroke="${st.s}"/></svg>`}
+const g=GSK[n];return`<svg width="44" height="40" viewBox="0 0 44 40"><rect width="44" height="40" rx="6" fill="${g.bg}" stroke="#8FA3D6"/><path d="M15 0V40M29 0V40M0 13H44M0 27H44" stroke="${g.ln}"/></svg>`}
+const qty=([k,n])=>k==='coin'||k==='gem'||k==='chest'?`<b>${n}</b>`:'';
 // ===== الإعلانات =====
 let adCb=null,adT=null;function showAd(cb){adCb=cb;let n=5;const x=$('adX');x.disabled=true;x.textContent=n;$('ovAd').classList.add('show');clearInterval(adT);adT=setInterval(()=>{n--;if(n<=0){clearInterval(adT);x.disabled=false;x.textContent='✕'}else x.textContent=n},1000)}
-$('adX').onclick=()=>{if($('adX').disabled)return;$('ovAd').classList.remove('show');const c=adCb;adCb=null;c&&c()};
+$('adX').onclick=()=>{if($('adX').disabled)return;$('ovAd').classList.remove('show');qEvent('ad');passAdd(5);const c=adCb;adCb=null;c&&c()};
 function maybeAd(cb){if(D.noAds){cb();return}showAd(cb)}
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>{$(b.dataset.close).classList.remove('show');snd('tap');if($('scHome').classList.contains('show'))renderHome();nextPop()});
+// ===== المهام =====
+const QD=[{id:'win',t:'فز بمرحلتين ضد الروبوت',n:2,pts:20,r:40},{id:'play',t:'العب 3 مباريات',n:3,pts:15,r:30},{id:'wall',t:'حط 6 جدران',n:6,pts:15,r:30},{id:'nowall',t:'فز بمرحلة بدون جدران',n:1,pts:20,r:50},{id:'star3',t:'خذ 3 نجوم بمرحلة',n:1,pts:20,r:50},{id:'local',t:'العب مع صاحبك',n:1,pts:15,r:30},{id:'key',t:'خذ مفتاح بمرحلة',n:1,pts:10,r:30},{id:'portal',t:'ادخل بوابتين',n:2,pts:10,r:30},{id:'buy',t:'اشتر أي شي من الخزانة',n:1,pts:25,r:40},{id:'chest',t:'افتح الصندوق المجاني',n:1,pts:10,r:20},{id:'ad',t:'شاهد إعلان',n:1,pts:10,r:20}];
+const QW=[{id:'win',t:'فز بـ 10 مراحل',n:10,pts:60,r:200},{id:'wall',t:'حط 40 جدار',n:40,pts:50,r:150},{id:'chest',t:'افتح 5 صناديق مجانية',n:5,pts:50,r:150},{id:'play',t:'العب 15 مباراة',n:15,pts:60,r:200}];
+const QMD=[[20,[['coin',50]]],[40,[['gem',5]]],[60,[['chest',1]]],[80,[['coin',150]]],[100,[['gem',20]]]],QMW=[[50,[['coin',200]]],[100,[['gem',30]]],[150,[['chest',2]]],[220,[['gem',80]]]];
+function ensureQ(){if(!D.q)D.q={};if(D.q.day!==today()){let h=0;for(const ch of today())h=(h*31+ch.charCodeAt(0))|0;const pool=QD.map((_,i)=>i),pk=[];while(pk.length<5){h=(h*1103515245+12345)|0;pk.push(pool.splice(Math.abs(h)%pool.length,1)[0])}D.q.day=today();D.q.dl=pk.map(i=>({i,p:0,c:false}));D.q.dpts=0;D.q.dcl=[]}
+if(D.q.week!==weekNo()){D.q.week=weekNo();D.q.wl=QW.map((_,i)=>({i,p:0,c:false}));D.q.wpts=0;D.q.wcl=[]}}
+function ensureMis(){ensureQ()}
+function qEvent(ev,n=1){ensureQ();let done=null;[[D.q.dl,QD],[D.q.wl,QW]].forEach(([L,P])=>L.forEach(m=>{const Q=P[m.i];if(Q.id===ev&&!m.c&&m.p<Q.n){m.p=Math.min(Q.n,m.p+n);if(m.p>=Q.n&&!done)done=Q.t}}));save();if(done)toast('خلصت مهمة: '+done+' 🎯')}
+function misEvent(id){const m={walls6:'wall',key:'key',portal:'portal',buy:'buy',chest:'chest',local:'local'}[id];if(m)qEvent(m)}
+let qTab='d';
+document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{qTab=b.dataset.q;document.querySelectorAll('[data-q]').forEach(x=>x.classList.toggle('on',x===b));snd('tap');renderQuest()});
+function qClaimable(){ensureQ();const any=(L,P,pts,cl,MS)=>L.some(m=>!m.c&&m.p>=P[m.i].n)||MS.some(([t],i)=>pts>=t&&!cl.includes(i));return any(D.q.dl,QD,D.q.dpts,D.q.dcl,QMD)||any(D.q.wl,QW,D.q.wpts,D.q.wcl,QMW)}
+function renderQuest(){ensureQ();const d=qTab==='d',L=d?D.q.dl:D.q.wl,P=d?QD:QW,MS=d?QMD:QMW,pts=d?D.q.dpts:D.q.wpts,cl=d?D.q.dcl:D.q.wcl,max=MS[MS.length-1][0];
+$('qPts').textContent=pts;$('qBar').style.width=Math.min(100,pts/max*100)+'%';
+$('qMs').innerHTML=MS.map(([t],i)=>{const got=cl.includes(i),rd=pts>=t&&!got;return`<button class="msc ${rd?'rd':''}" data-ms="${i}" style="right:${t/max*100}%;${got?'opacity:.45':''}">${got?'📭':'🧰'}<b>${t}</b></button>`}).join('');
+$('qList').innerHTML=L.map((m,j)=>{const Q=P[m.i],done=m.p>=Q.n;return`<div class="qrow"><div class="tt"><span>${Q.t}</span>${m.c?'<span class="go dn">✓</span>':done?`<button class="go ok" data-qc="${j}">خذ</button>`:`<button class="go" data-qg="${Q.id}">يلا</button>`}</div><div class="qbar"><div class="b"><i style="width:${m.p/Q.n*100}%"></i><span>${m.p}/${Q.n}</span></div><b style="white-space:nowrap">${Q.pts} ⭐ · ${Q.r} ${ic('c')}</b></div></div>`}).join('');
+$('qTime').textContent='المهام تتجدد بعد '+fmt((d?midnight():weekEnd())-Date.now());
+document.querySelectorAll('[data-qc]').forEach(b=>b.onclick=()=>{const m=L[+b.dataset.qc],Q=P[m.i];m.c=true;if(d)D.q.dpts+=Q.pts;else D.q.wpts+=Q.pts;grant([['coin',Q.r]]);passAdd(10);addXP(10);toast(`+${Q.pts} ⭐ و ${Q.r} عملة`);renderQuest()});
+document.querySelectorAll('[data-ms]').forEach(b=>b.onclick=()=>{const i=+b.dataset.ms,[t,items]=MS[i];if(cl.includes(i)){toast('أخذتها');return}if(pts<t){toast(`تحتاج ${t} ⭐ · الجائزة: ${items.map(rName).join(' + ')}`);return}cl.push(i);toast('وصلك: '+grant(items));renderQuest()});
+document.querySelectorAll('[data-qg]').forEach(b=>b.onclick=()=>{const id=b.dataset.qg;$('ovQuest').classList.remove('show');if(id==='local')show('scLocal');else if(id==='buy')show('scWard');else if(id==='chest'){renderHome();toast('الصندوق الأخضر على اليمين 👉')}else if(id==='ad')showAd(()=>{});else{game='lv';cur=Math.min(D.unlocked-1,NL-1);startGame()}})}
+$('sbQuest').onclick=()=>{snd('tap');renderQuest();$('ovQuest').classList.add('show')};
+// ===== صندوق النمو =====
+const FUND=[[5,320],[10,360],[15,400],[20,520],[25,640]];
+const lvDone=()=>D.stars.filter(x=>x).length;
+function fundClaimable(){return D.fund&&D.fund.b&&FUND.some(([l],i)=>lvDone()>=l&&!D.fund.cl.includes(i))}
+function renderFund(){if(!D.fund)D.fund={b:false,cl:[]};$('fundBuy').style.display=D.fund.b?'none':'';
+$('fundList').innerHTML=FUND.map(([l,g],i)=>{const got=D.fund.cl.includes(i),ok=lvDone()>=l;return`<div class="panel" style="display:flex;align-items:center;gap:10px;margin:8px 0;text-align:right"><svg width="${40+i*4}" height="${40+i*4}"><use href="#gem"/></svg><div style="flex:1"><div style="font-weight:900">خلّص ${l} مراحل</div><div style="font-weight:900;font-size:20px">الجائزة: ${g} ${ic('g')}</div></div><div style="text-align:center"><div style="color:${ok?'#7ED321':'#FFC02E'};font-weight:900">${Math.min(lvDone(),l)}/${l}</div><button class="go ${got?'dn':ok&&D.fund.b?'ok':'dn'}" data-f="${i}">${got?'✓':D.fund.b?(ok?'خذ':'🔒'):'🔒'}</button></div></div>`}).join('');
+document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{const i=+b.dataset.f,[l,g]=FUND[i];if(!D.fund.b){toast('اشتر صندوق النمو أول');return}if(D.fund.cl.includes(i))return;if(lvDone()<l){toast(`خلّص ${l} مراحل أول`);return}D.fund.cl.push(i);toast('وصلك: '+grant([['gem',g]]));renderFund()})}
+$('fundBuy').onclick=()=>testBuy('23.99','صندوق النمو: جواهر كل ما تتقدم بالمراحل',[],()=>{D.fund.b=true;save();toast('فتحت صندوق النمو! 💎');renderFund()});
+$('sbFund').onclick=()=>{snd('tap');renderFund();$('ovFund').classList.add('show')};
+// ===== كنز الأسبوع =====
+const PT=75,PASS={f:[['coin',100],['gem',10],['chest',1],['coin',200],['gem',15],['chest',1],['coin',300],['gem',25],['chest',2],['gem',50]],s:[['gem',30],['coin',500],['acc','glasses'],['gem',50],['wall','wood'],['chest',3],['gem',80],['ground','grass'],['coin',1500],['char','bunnySnow']],g:[['gem',100],['chest',3],['acc','crown'],['coin',3000],['wall','gold'],['gem',200],['ground','space'],['acc','halo'],['coin',5000],['char','blobGold']]};
+function ensurePass(){if(!D.pass||D.pass.week!==weekNo())D.pass={week:weekNo(),pts:0,s:false,g:false,cl:{f:[],s:[],g:[]}}}
+function passAdd(n){ensurePass();D.pass.pts+=n;save()}
+const passLv=()=>Math.min(10,Math.floor(D.pass.pts/PT));
+function passClaimable(){ensurePass();const lv=passLv();for(const t of['f','s','g']){if(t!=='f'&&!D.pass[t])continue;for(let i=0;i<lv;i++)if(!D.pass.cl[t].includes(i))return true}return false}
+function renderPass(){ensurePass();const lv=passLv();$('passT').textContent=fmt(weekEnd()-Date.now());$('passLv').textContent='مستوى '+Math.min(10,lv+1);const inLv=lv>=10?PT:D.pass.pts%PT;$('passBar').style.width=inLv/PT*100+'%';$('passTx').textContent=lv>=10?'كامل!':inLv+'/'+PT;
+let h=`<tr><td></td><td><div class="cur" style="justify-content:center">مجاني</div></td><td>${D.pass.s?'<div class="cur" style="justify-content:center;background:#7FA8D8">فضي ✓</div>':'<button class="gb b sm" id="buyS" style="width:100%">فضي<br>4.99 €</button>'}</td><td>${D.pass.g?'<div class="cur" style="justify-content:center;background:#E0A800">ذهبي ✓</div>':'<button class="gb y sm" id="buyG" style="width:100%">ذهبي<br>9.99 €</button>'}</td></tr>`;
+for(let i=0;i<10;i++){h+=`<tr style="background:${i<lv?'rgba(126,211,33,.15)':'transparent'}"><td class="lvn">${i+1}</td>`+['f','s','g'].map(t=>{const r=PASS[t][i],got=D.pass.cl[t].includes(i),locked=t!=='f'&&!D.pass[t],rd=!got&&!locked&&i<lv;return`<td><button class="cell ${got?'got':''} ${rd?'rd':''}" data-p="${t}${i}" style="${t==='s'?'background:linear-gradient(#DDEBFA,#9FB8DA)':t==='g'?'background:linear-gradient(#FFE9A8,#E0B040)':''}">${cellIcon(r)}${qty(r)}${locked?'<span class="lk">🔒</span>':got?'<span class="lk">✅</span>':''}</button></td>`}).join('')+'</tr>'}
+$('passTab').innerHTML=h;
+$('buyS')&&($('buyS').onclick=()=>testBuy('4.99','كنز الأسبوع · المسار الفضي',[],()=>{D.pass.s=true;save();renderPass()}));
+$('buyG')&&($('buyG').onclick=()=>testBuy('9.99','كنز الأسبوع · المسار الذهبي',[],()=>{D.pass.g=true;save();renderPass()}));
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{const t=b.dataset.p[0],i=+b.dataset.p.slice(1),r=PASS[t][i];if(D.pass.cl[t].includes(i))return;if(t!=='f'&&!D.pass[t]){toast('افتح المسار '+(t==='s'?'الفضي':'الذهبي')+' أول');return}if(i>=passLv()){toast(`توصل للمستوى ${i+1} · الجائزة: ${rName(r)}`);return}D.pass.cl[t].push(i);toast('وصلك: '+grant([r]));renderPass()})}
+$('sbPass').onclick=()=>{snd('tap');renderPass();$('ovPass').classList.add('show')};
+// ===== طريق النجوم =====
+const ROAD=[[3,['coin',100]],[6,['gem',10]],[10,['acc','bow']],[15,['chest',1]],[20,['coin',300]],[25,['wall','brick']],[30,['gem',30]],[40,['ground','sky']],[50,['chest',2]],[60,['acc','phones']],[75,['char','robotMint']]];
+const totStars=()=>D.stars.reduce((a,b)=>a+b,0);
+function roadClaimable(){if(!D.road)D.road=[];return ROAD.some(([s],i)=>totStars()>=s&&!D.road.includes(i))}
+function renderRoad(){if(!D.road)D.road=[];const st=totStars();$('roadStars').textContent=st;
+$('roadList').innerHTML=ROAD.map(([s,r],i)=>{const got=D.road.includes(i),ok=st>=s;return`<div style="display:flex;align-items:center;gap:10px;background:${ok?'#FFF4D6':'rgba(255,255,255,.4)'};border-radius:14px;padding:6px 10px;margin:6px 0;border:2px solid ${ok?'#B07400':'transparent'}"><div style="width:44px;font-weight:900;font-size:16px">⭐${s}</div><div class="cell" style="width:56px;height:56px">${cellIcon(r)}${qty(r)}</div><div style="flex:1;text-align:right;font-weight:900">${rName(r)}</div><button class="go ${got?'dn':ok?'ok':'dn'}" data-rd="${i}">${got?'✓':ok?'خذ':'🔒'}</button></div>`}).join('');
+document.querySelectorAll('[data-rd]').forEach(b=>b.onclick=()=>{const i=+b.dataset.rd,[s,r]=ROAD[i];if(D.road.includes(i))return;if(totStars()<s){toast(`تحتاج ${s} نجمة`);return}D.road.push(i);toast('وصلك: '+grant([r]));renderRoad()})}
+$('btnRoad').onclick=()=>{snd('tap');renderRoad();$('ovRoad').classList.add('show')};
+// ===== الحزم =====
+const legendKey=()=>['blobGold','robotMint','catNight','bunnySnow'].find(k=>!D.owned.chars.includes(k))||'blobGold';
+function openPack(kind){const B=$('packBox');let h='';
+if(kind==='noads'){B.style.background='linear-gradient(135deg,#2A7BD8,#1E5FB0)';h=`<button class="x" data-cp>✕</button><div style="padding:30px 16px 18px"><div class="ol" style="font-size:28px;font-weight:900">بدون إعلانات للأبد!</div><div style="font-size:80px;margin:16px 0" class="hop">🚫💰</div><div style="text-align:right;background:#FFC02E;color:#4A2E00;display:inline-block;padding:4px 18px;border-radius:0 10px 10px 0;font-weight:900;font-size:20px;margin-right:-16px">مكافأة</div><div class="panel" style="background:#174A8C;text-align:right"><div style="font-weight:900;font-size:18px">${ic('c')} + 500 عملة</div><div style="font-weight:900;font-size:18px;margin-top:6px">🚫 بدون إعلانات</div></div><span class="oldp">15 €</span><button class="gb y" id="pkBuy" style="font-size:24px">4.99 €</button></div>`}
+else if(kind==='starter'){B.style.background='linear-gradient(#1F8FB0,#156A88)';h=`<button class="x" data-cp>✕</button><div class="ribbon">حزمة البداية</div><div class="profit">385%<br>ربح</div><div style="display:flex;align-items:center;padding:0 12px;gap:8px"><div style="font-size:76px" class="hop">🧰</div><div class="grid2" style="flex:1;gap:6px">${[['coin',600],['noads',1],['char','cat'],['gem',100]].map(r=>`<div class="cell" style="width:100%;height:70px;background:#156A88;border-color:#7FD3F0;color:#fff">${cellIcon(r)}${qty(r)}</div>`).join('')}</div></div><div style="background:#DDE6FF;color:#2B3A67;border-radius:0 0 18px 18px;margin-top:12px;padding:14px"><div style="font-weight:900;font-size:18px">عرض للاعبين الجدد. مرة وحدة بس!</div><span class="oldp" style="margin-top:10px">25 €</span><button class="gb y" id="pkBuy" style="font-size:24px">8.49 €</button></div>`}
+else{const k=legendKey();B.style.background='linear-gradient(#6A3FD0,#3A2A8A)';h=`<button class="x" data-cp>✕</button><div class="ribbon">حزمة الأسطورة</div><div style="display:flex;align-items:flex-end;justify-content:center;gap:6px;padding:0 10px"><div><div style="font-weight:900">${CH[D.sel].n}</div><svg width="100" height="110" viewBox="-17 -26 34 44">${charSVG(D.sel,'n',[1,0],D.acc)}</svg></div><div style="font-size:40px;color:#7ED321;margin-bottom:40px">⬅</div><div><div style="font-weight:900;color:#A6F04A;font-size:18px">${CH[k].n}</div><svg width="130" height="140" viewBox="-17 -26 34 44" class="hop">${charSVG(k,'w',[0,0],'crown')}</svg></div></div><div style="background:#B03A60;border-radius:0 0 18px 18px;padding:14px;position:relative"><div class="profit" style="top:-10px;right:auto;left:-6px">242%<br>ربح</div><div style="font-weight:900;font-size:18px">ارتقِ بشكلك للأسطورة!</div><div style="display:flex;justify-content:center;align-items:center;gap:10px;margin:10px 0"><div class="cell" style="width:80px;height:84px">${cellIcon(['char',k])}</div><b style="font-size:30px">+</b><div class="cell" style="width:80px;height:84px">${cellIcon(['acc','crown'])}</div><b style="font-size:30px">+</b><div class="cell" style="width:80px;height:84px">🧰<b>2485</b></div></div><span class="oldp">28 €</span><button class="gb y" id="pkBuy" style="font-size:24px">9.49 €</button></div>`}
+B.innerHTML=h;$('ovPack').classList.add('show');B.querySelector('[data-cp]').onclick=()=>{$('ovPack').classList.remove('show');renderHome();nextPop()};
+$('pkBuy').onclick=()=>{$('ovPack').classList.remove('show');if(kind==='noads')testBuy('4.99','بدون إعلانات للأبد + 500 عملة',[['noads',1],['coin',500]],renderHome);else if(kind==='starter')testBuy('8.49','حزمة البداية',[['coin',600],['noads',1],['char','cat'],['gem',100]],()=>{D.starter=true;save();renderHome()});else{const k=legendKey();testBuy('9.49','حزمة الأسطورة: '+CH[k].n+' + تاج + 2485 عملة',[['char',k],['acc','crown'],['coin',2485]],()=>{D.sel=k;D.acc='crown';save();renderHome()})}};snd('tap')}
+$('sbNoAds').onclick=()=>openPack('noads');$('sbStarter').onclick=()=>openPack('starter');$('sbLegend').onclick=()=>openPack('legend');
 // ===== الشاشات =====
 const TABS=['scHome','scShop','scWard','scLevels','scRank'];
 function show(id){document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('show',s.id===id));$('nav').style.display=TABS.includes(id)?'':'none';document.querySelectorAll('.tabb').forEach(t=>t.classList.toggle('on',t.dataset.tab===id));
-({scHome:renderHome,scLevels:renderLevels,scLocal:renderLocal,scOnline:renderOnline,scShop:renderShop,scWard:renderWard,scRank:renderRank,scMissions:renderMis,scSettings:renderSet})[id]?.();updCoins()}
+({scHome:renderHome,scLevels:renderLevels,scLocal:renderLocal,scOnline:renderOnline,scShop:renderShop,scWard:renderWard,scRank:renderRank,scSettings:renderSet})[id]?.();updCoins()}
 document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{snd('tap');show(b.dataset.go)});
 document.querySelectorAll('.tabb').forEach(b=>b.onclick=()=>{snd('tap');show(b.dataset.tab)});
-function homeBg(){const R=rng(9);let s='<rect width="400" height="800" fill="none"/>';for(let i=0;i<26;i++){const x=R()*400,y=R()*800,w=30+R()*30;s+=`<rect x="${x}" y="${y}" width="${w}" height="${w}" rx="8" fill="#fff" opacity="${(.06+R()*.08).toFixed(2)}" transform="rotate(${(R()*30-15).toFixed(0)} ${x} ${y})"/>`;if(i%3===0)s+=`<rect x="${x+w*.1}" y="${y+w+4}" width="${w*1.3}" height="7" rx="3.5" fill="${pick(['#FFC02E','#E5486A','#7ED321'])}" opacity=".18"/>`}$('homeBg').setAttribute('viewBox','0 0 400 800');$('homeBg').innerHTML=s}
+$('btnProf').onclick=()=>{snd('tap');show('scRank')};
+function homeBg(){const R=rng(9);let s='';for(let i=0;i<26;i++){const x=R()*400,y=R()*800,w=30+R()*30;s+=`<rect x="${x}" y="${y}" width="${w}" height="${w}" rx="8" fill="#fff" opacity="${(.06+R()*.08).toFixed(2)}" transform="rotate(${(R()*30-15).toFixed(0)} ${x} ${y})"/>`;if(i%3===0)s+=`<rect x="${x+w*.1}" y="${y+w+4}" width="${w*1.3}" height="7" rx="3.5" fill="${pick(['#FFC02E','#E5486A','#7ED321'])}" opacity=".18"/>`}$('homeBg').setAttribute('viewBox','0 0 400 800');$('homeBg').innerHTML=s}
 function weeklyKey(){const L=['robotMint','blobGold','catNight','bunnySnow'];const w=weekNo();for(let i=0;i<L.length;i++){const k=L[(w+i)%L.length];if(!D.owned.chars.includes(k))return k}return L[w%L.length]}
 function dealItem(){let h=0;for(const ch of today())h=(h*31+ch.charCodeAt(0))|0;const pool=[];Object.keys(LIST).forEach(cat=>Object.keys(LIST[cat]).forEach(k=>{const it=LIST[cat][k];if(it.price>0&&!D.owned[cat].includes(k))pool.push([cat,k])}));if(!pool.length)return null;return pool[Math.abs(h)%pool.length]}
-function renderHome(){ensureMis();updCoins();
+function renderHome(){ensureQ();ensurePass();updCoins();
 $('avaPic').innerHTML=charSVG(D.sel,'n',[0,0],D.acc);$('lvBadge').textContent=D.plv;$('pName').textContent=D.name;const need=needXP(D.plv);$('xpBar').style.width=Math.round(D.xp/need*100)+'%';$('xpTxt').textContent=D.xp+'/'+need;
-$('hero').innerHTML=`<ellipse cx="0" cy="27" rx="30" ry="8" fill="#1F3F7A" opacity=".25"/><g transform="translate(0,4)"><path d="M-30 22 L0 12 L30 22 L0 32 Z" fill="#FFFFFF" stroke="#2B4C8C" stroke-width="1.5"/><path d="M-30 22 L0 32 L0 36 L-30 26 Z" fill="#C9D6E8" stroke="#2B4C8C" stroke-width="1.5"/><path d="M30 22 L0 32 L0 36 L30 26 Z" fill="#A9BCD8" stroke="#2B4C8C" stroke-width="1.5"/><path d="M-15 17 L15 27 M15 17 L-15 27" stroke="#D9DDE4" stroke-width="1"/></g><g class="hop"><g transform="translate(0,-2) scale(1.55)">${charSVG(D.sel,'n',[0,.3],D.acc)}</g></g>`;
+$('hero').innerHTML=`<ellipse cx="0" cy="27" rx="30" ry="8" fill="#1F3F7A" opacity=".25"/><g transform="translate(0,4)"><path d="M-30 22 L0 12 L30 22 L0 32 Z" fill="${GSK[D.gsk].bg}" stroke="#2B4C8C" stroke-width="1.5"/><path d="M-30 22 L0 32 L0 36 L-30 26 Z" fill="#C9D6E8" stroke="#2B4C8C" stroke-width="1.5"/><path d="M30 22 L0 32 L0 36 L30 26 Z" fill="#A9BCD8" stroke="#2B4C8C" stroke-width="1.5"/><path d="M-15 17 L15 27 M15 17 L-15 27" stroke="${GSK[D.gsk].ln}" stroke-width="1"/></g><g class="hop"><g transform="translate(0,-2) scale(1.55)">${charSVG(D.sel,'n',[0,.3],D.acc)}</g></g>`;
 $('heroName').textContent=CH[D.sel].n+(D.acc!=='none'?' · '+ACC[D.acc].n:'');
 const nxt=Math.min(D.unlocked-1,NL-1);$('lvBtn').textContent=D.stars[NL-1]&&D.unlocked>=NL?'المراحل ★':'المرحلة '+(nxt+1);$('streak').textContent=`🔥 سلسلة الفوز ×${D.streak}`;
-const ready=D.mis.list.some(m=>!m.c&&m.p>=MPOOL.find(x=>x.id===m.id).n);$('dMis').style.display=ready?'':'none';$('dGift').style.display=D.gift!==today()?'':'none';
-$('wkPic').innerHTML=charSVG(weeklyKey(),'n',[0,0]);$('sbNoAds').style.display=D.noAds?'none':'';$('sbStarter').style.display=D.starter?'none':'';
-const dl=dealItem();$('sbDeal').style.display=dl?'':'none';if(dl){const[cat,k]=dl;$('dealIc').innerHTML=cat==='chars'||cat==='accs'?`<svg width="46" height="50" viewBox="-19 -30 38 48">${cat==='chars'?charSVG(k,'n',[0,0]):charSVG(D.sel,'n',[0,0],k)}</svg>`:cat==='walls'?'🧱':'🟩'}
-ensureLad();$('dOff').style.display=LADDER[D.lad.step]&&LADDER[D.lad.step].free?'':'none';
+$('dQuest').style.display=qClaimable()?'':'none';$('dGift').style.display=D.gift!==today()?'':'none';$('dFund').style.display=fundClaimable()?'':'none';$('dPass').style.display=passClaimable()?'':'none';$('dRoad').style.display=roadClaimable()?'':'none';
+const nr=ROAD.find(([s],i)=>!(D.road||[]).includes(i));$('roadTxt').textContent=roadClaimable()?'خذ جوائزك!':nr?`⭐ ${totStars()}/${nr[0]}`:'خلصت الطريق!';
+$('legPic').innerHTML=charSVG(legendKey(),'n',[0,0],'crown');$('sbNoAds').style.display=D.noAds?'none':'';$('sbStarter').style.display=D.starter?'none':'';
 tick()}
-function tick(){const now=Date.now();const cr=now>=D.chestAt;$('tChest').textContent=cr?'افتحه!':fmt(D.chestAt-now);$('dChest').style.display=cr?'':'none';$('tWeek').textContent=fmt(weekEnd()-now);$('tDeal').textContent=fmt(midnight()-now);if($('ovOffer').classList.contains('show'))$('offTimer').textContent='يتجدد بعد '+fmt(midnight()-now);if($('ovWeek').classList.contains('show'))$('wkTime').textContent='⏱ '+fmt(weekEnd()-now)}
-setInterval(()=>{if($('scHome').classList.contains('show')||$('ovOffer').classList.contains('show')||$('ovWeek').classList.contains('show'))tick()},1000);
-$('lvBtn').onclick=()=>{snd('tap');game='lv';cur=Math.min(D.unlocked-1,NL-1);if(D.stars[cur]&&D.unlocked>=NL){wtab=PER-1;show('scLevels');return}startGame()};
+function tick(){const now=Date.now();const cr=now>=D.chestAt;$('tChest').textContent=cr?'افتحه!':fmt(D.chestAt-now);$('dChest').style.display=cr?'':'none';$('tPass').textContent=fmt(weekEnd()-now);
+if($('ovOffer').classList.contains('show'))$('offTimer').textContent='يتجدد بعد '+fmt(midnight()-now);if($('ovWeek').classList.contains('show'))$('wkTime').textContent='⏱ '+fmt(weekEnd()-now);if($('ovPass').classList.contains('show'))$('passT').textContent=fmt(weekEnd()-now);if($('ovQuest').classList.contains('show'))$('qTime').textContent='المهام تتجدد بعد '+fmt((qTab==='d'?midnight():weekEnd())-now)}
+setInterval(()=>{if($('scHome').classList.contains('show'))tick()},1000);
+$('lvBtn').onclick=()=>{snd('tap');game='lv';cur=Math.min(D.unlocked-1,NL-1);if(D.stars[cur]&&D.unlocked>=NL){wtab=WORLDS.length-1;show('scLevels');return}startGame()};
 $('sbGift').onclick=()=>{if(D.gift===today()){toast('أخذت هدية اليوم، تعال بكرة 🎁');return}D.gift=today();const g=grant([['coin',30],['gem',5]]);toast('هدية اليوم: '+g+' 🎁');renderHome()};
-$('sbChest').onclick=()=>{if(Date.now()<D.chestAt){toast('الصندوق يفتح بعد '+fmt(D.chestAt-Date.now()));return}const t=openChest();D.chestAt=Date.now()+4*3600e3;save();misEvent('chest');snd('coin');vib([40,30,40]);$('chestIn').innerHTML=`<div style="font-size:60px" class="hop">🧰</div><div style="font-weight:900;font-size:20px;margin-top:6px">${t}</div><div style="font-size:12px;opacity:.8;margin-top:6px">الصندوق الجاي بعد 4 ساعات</div>`;$('ovChest').classList.add('show');renderHome()};
+$('sbChest').onclick=()=>{if(Date.now()<D.chestAt){toast('الصندوق يفتح بعد '+fmt(D.chestAt-Date.now()));return}const t=openChest();D.chestAt=Date.now()+4*3600e3;save();qEvent('chest');passAdd(10);snd('coin');vib([40,30,40]);$('chestIn').innerHTML=`<div style="font-size:70px" class="hop">🧰</div><div style="font-weight:900;font-size:22px;margin-top:6px">${t}</div><div style="font-size:12px;opacity:.8;margin-top:6px">الصندوق الجاي بعد 4 ساعات · +10 نقاط للكنز</div>`;$('ovChest').classList.add('show');renderHome()};
 $('chestOk').onclick=()=>$('ovChest').classList.remove('show');
-$('sbNoAds').onclick=()=>testBuy('2.99','بدون إعلانات للأبد + 50 جوهرة',[['gem',50]],()=>{D.noAds=true;save();renderHome()});
-$('sbStarter').onclick=()=>msg(`🎒 <b>حزمة البداية</b> · مرة وحدة بس<br><div style="display:flex;gap:6px;justify-content:center;margin:8px 0"><div class="item"><svg width="56" height="60" viewBox="-17 -26 34 44">${charSVG('cat','n',[0,0])}</svg></div><div class="item">${ic('g')}<b>100</b></div><div class="item">${ic('c')}<b>1000</b></div></div>بسبوس + 100 جوهرة + 1000 عملة`,[{t:'إغلاق',c:'gr'},{t:'0.99 €',c:'y',f:()=>testBuy('0.99','حزمة البداية',[['char','cat'],['gem',100],['coin',1000]],()=>{D.starter=true;save();renderHome()})}]);
-$('sbDeal').onclick=()=>{const dl=dealItem();if(!dl)return;const[cat,k]=dl,it=LIST[cat][k],{p,c}=itemPrice(cat,k,.6);const pic=cat==='chars'?charSVG(k,'n',[0,0]):cat==='accs'?charSVG(D.sel,'n',[0,0],k):'';
-msg(`🏷️ <b>عرض اليوم · خصم 40%</b><br>${pic?`<svg width="90" height="100" viewBox="-20 -30 40 48">${pic}</svg><br>`:''}<b>${it.n}</b> (${{chars:'شخصية',accs:'إكسسوار',walls:'جدران',grounds:'أرضية'}[cat]})<br><s style="opacity:.6">${it.price}</s> ← <b>${p}</b> ${ic(c)}`,[{t:'إغلاق',c:'gr'},{t:'اشتر',c:'y',f:()=>payItem(cat,k,.6,renderHome)}])};
-$('sbWeekly').onclick=()=>openWeekly();
-$('sbOffers').onclick=()=>openOffers();
 // السلم
 const LADDER=[{paid:'1.19',items:[['gem',25],['coin',300],['chest',1]]},{free:1,items:[['coin',150]]},{free:1,items:[['gem',15]]},{paid:'2.49',items:[['gem',60],['coin',800]]},{free:1,items:[['coin',300]]},{free:1,items:[['chest',1]]},{paid:'4.99',items:[['gem',150],['coin',2000]]},{free:1,items:[['gem',40]]}];
 function ensureLad(){if(!D.lad||D.lad.date!==today()){D.lad={date:today(),step:0};save()}}
-const itemBox=([k,n])=>`<div class="item">${k==='coin'?`<svg width="44" height="44"><use href="#coin"/></svg>`:k==='gem'?`<svg width="44" height="44"><use href="#gem"/></svg>`:'🧰'}<b>${n}</b></div>`;
+const itemBox=r=>`<div class="item">${cellIcon(r).replace(/width="40" height="40"/,'width="44" height="44"')}${qty(r)}</div>`;
 function renderLadder(){ensureLad();$('ladder').innerHTML=LADDER.map((s,i)=>{const done=i<D.lad.step,act=i===D.lad.step;
-const btn=done?`<button class="gb gr" disabled>✓ أخذتها</button>`:s.paid?`<button class="gb y" data-l="${i}" ${act?'':'disabled'} style="${act?'':'opacity:.6'}">${act?'':'<span class="lock">🔒</span>'}${s.paid} €</button>`:`<button class="gb" data-l="${i}" style="${act?'':'opacity:.6'}">${act?'':'<span class="lock">🔒</span>'}مجاناً</button>`;
+const btn=done?`<button class="gb gr" disabled>✓</button>`:s.paid?`<button class="gb y" data-l="${i}" style="${act?'':'opacity:.6'}">${act?'':'<span class="lock">🔒</span>'}${s.paid} €</button>`:`<button class="gb" data-l="${i}" style="${act?'':'opacity:.6'}">${act?'':'<span class="lock">🔒</span>'}مجاناً</button>`;
 return(i?'<div class="ladder"><div class="rope"></div><div class="rope"></div></div>':'')+`<div class="panel" style="margin:0;${done?'opacity:.55':''}"><div class="items">${s.items.map(itemBox).join('')}</div>${btn}</div>`}).join('');
 document.querySelectorAll('#ladder [data-l]').forEach(b=>b.onclick=()=>{const i=+b.dataset.l;if(i!==D.lad.step){toast('خذ اللي قبلها أول 🔒');return}const s=LADDER[i];const next=()=>{D.lad.step++;save();renderLadder()};
-if(s.paid)testBuy(s.paid,'عرض: '+s.items.map(([k,n])=>k==='coin'?n+' عملة':k==='gem'?n+' جوهرة':'صندوق').join(' + '),s.items,next);else{const g=grant(s.items);toast('وصلك: '+g);next()}})}
+if(s.paid)testBuy(s.paid,'عرض: '+s.items.map(rName).join(' + '),s.items,next);else{toast('وصلك: '+grant(s.items));next()}})}
 function openOffers(){renderLadder();tick();$('ovOffer').classList.add('show')}
-let afterOffer=null;$('offX').onclick=()=>{$('ovOffer').classList.remove('show');renderHome();const f=afterOffer;afterOffer=null;f&&f()};
+$('offX').onclick=()=>{$('ovOffer').classList.remove('show');renderHome();nextPop()};
 function openWeekly(){const k=weeklyKey(),it=CH[k],{p,c}=itemPrice('chars',k,.7);$('wkName').textContent=it.n;$('wkBig').innerHTML=`<ellipse cx="0" cy="19" rx="16" ry="3.5" fill="#000" opacity=".25"/><g class="hop">${charSVG(k,'w',[0,0])}</g>`;$('wkPrice').innerHTML=D.owned.chars.includes(k)?'✓ تملكها':`<s style="opacity:.6">${it.price}</s> ← ${p} ${ic(c)}`;$('wkGo').textContent=D.owned.chars.includes(k)?'البسها':'يلا';tick();$('ovWeek').classList.add('show')}
-$('wkX').onclick=()=>$('ovWeek').classList.remove('show');
+$('wkX').onclick=()=>{$('ovWeek').classList.remove('show');nextPop()};
 $('wkGo').onclick=()=>{const k=weeklyKey();$('ovWeek').classList.remove('show');if(D.owned.chars.includes(k)){D.sel=k;save();renderHome();return}payItem('chars',k,.7,renderHome)};
+let popQ=[];function nextPop(){const f=popQ.shift();f&&setTimeout(f,250)}
 // المتجر
-function renderShop(){updCoins();const gems=[[80,'0.99'],[500,'4.99'],[1200,'9.99'],[2600,'19.99']],coins=[[1000,50],[5000,220],[12000,480]];
-let s='';
-if(!D.starter||!D.noAds){s+=`<div class="panel"><div class="ptitle" style="background:linear-gradient(#FF8A9A,#E5486A)">عروض خاصة</div><div class="grid2">`;
-if(!D.starter)s+=`<div class="card"><div class="nm">🎒 حزمة البداية</div><div class="items" style="margin:6px 0"><div class="item" style="width:56px;height:56px"><svg width="44" height="48" viewBox="-17 -26 34 44">${charSVG('cat','n',[0,0])}</svg></div><div class="item" style="width:56px;height:56px">${ic('g')}<b>100</b></div></div><div style="font-size:12px">+ 1000 عملة</div><button class="gb y sm" id="shStarter" style="width:100%">0.99 €</button></div>`;
-if(!D.noAds)s+=`<div class="card"><div class="nm">🚫 بدون إعلانات</div><div style="font-size:44px;margin:8px 0">📺</div><div style="font-size:12px">للأبد + 50 جوهرة</div><button class="gb y sm" id="shNoAds" style="width:100%">2.99 €</button></div>`;
-s+=`</div></div>`}
-s+=`<div class="panel"><div class="ptitle">🪜 عروض ما تخلص<small>تتجدد كل يوم</small></div><button class="gb" id="shLad" style="width:100%">افتح العروض</button></div>`;
+function renderShop(){updCoins();const gems=[[80,'0.99'],[500,'4.99'],[1200,'9.99'],[2600,'19.99']],coins=[[1000,50],[5000,220],[12000,480]];const dl=dealItem(),wk=weeklyKey();
+let s=`<div class="grid2" style="margin:10px 0">`;
+s+=`<button class="card" id="shWeek" style="background:linear-gradient(#6A2A2A,#3B2A67);border-color:#FFC02E"><span class="disc">-30%</span><div class="nm" style="color:#FFC02E">شخصية الأسبوع</div><svg width="70" height="78" viewBox="-17 -27 34 45">${charSVG(wk,'n',[0,0])}</svg><div class="nm">${CH[wk].n}</div></button>`;
+if(dl){const[cat,k]=dl,{p,c}=itemPrice(cat,k,.6);s+=`<button class="card" id="shDeal"><span class="disc">-40%</span><div class="nm" style="color:#7ED321">عرض اليوم</div><div style="height:78px;display:flex;align-items:center;justify-content:center">${cellIcon([{chars:'char',accs:'acc',walls:'wall',grounds:'ground'}[cat],k])}</div><div class="nm">${LIST[cat][k].n} · ${p} ${ic(c)}</div></button>`}
+s+=`</div>`;
+s+=`<div class="grid3" style="margin-bottom:10px"><button class="card" id="shLad"><div style="font-size:30px">🪜</div><div class="nm">عروض ما تخلص</div></button><button class="card" id="shFund"><div style="font-size:30px">💎</div><div class="nm">صندوق النمو</div></button><button class="card" id="shPass"><div style="font-size:30px">🏆</div><div class="nm">كنز الأسبوع</div></button></div>`;
+if(!D.starter||!D.noAds){s+=`<div class="grid2" style="margin-bottom:10px">`;if(!D.starter)s+=`<button class="card" id="shStarter" style="background:linear-gradient(#1F8FB0,#156A88)"><span class="disc">385%</span><div style="font-size:34px">🎒</div><div class="nm">حزمة البداية</div><div class="gb y sm">8.49 €</div></button>`;if(!D.noAds)s+=`<button class="card" id="shNoAds" style="background:linear-gradient(#2A7BD8,#1E5FB0)"><div style="font-size:34px">🚫</div><div class="nm">بدون إعلانات</div><div class="gb y sm">4.99 €</div></button>`;s+=`</div>`}
 s+=`<div class="panel"><div class="ptitle" style="background:linear-gradient(#C9A6FF,#8A5CF0)">الجواهر</div><div class="grid2">${gems.map(([n,p],i)=>`<div class="card">${i===2?'<span class="disc">الأفضل</span>':''}<svg width="${44+i*8}" height="${44+i*8}"><use href="#gem"/></svg><div class="nm" style="font-size:18px">${n}</div><button class="gb y sm" data-gem="${i}" style="width:100%">${p} €</button></div>`).join('')}</div></div>`;
 s+=`<div class="panel"><div class="ptitle" style="background:linear-gradient(#FFD45A,#FFB000);color:#4A2E00;text-shadow:none">العملات</div><div class="grid3">${coins.map(([n,g],i)=>`<div class="card"><svg width="${38+i*8}" height="${38+i*8}"><use href="#coin"/></svg><div class="nm" style="font-size:15px">${n}</div><button class="gb b sm" data-coin="${i}" style="width:100%">${g} ${ic('g')}</button></div>`).join('')}</div></div>`;
 s+=`<div class="panel"><div class="ptitle" style="background:linear-gradient(#A6F04A,#62C21A)">مجاناً</div><button class="gb y" id="shAd" style="width:100%">📺 شاهد إعلان واحصل على 5 جواهر</button></div>`;
 $('shopBody').innerHTML=s;
-$('shStarter')&&($('shStarter').onclick=()=>testBuy('0.99','حزمة البداية',[['char','cat'],['gem',100],['coin',1000]],()=>{D.starter=true;save();renderShop()}));
-$('shNoAds')&&($('shNoAds').onclick=()=>testBuy('2.99','بدون إعلانات للأبد + 50 جوهرة',[['gem',50]],()=>{D.noAds=true;save();renderShop()}));
-$('shLad').onclick=()=>openOffers();
+$('shWeek').onclick=openWeekly;$('shDeal')&&($('shDeal').onclick=()=>{const[cat,k]=dealItem();payItem(cat,k,.6,renderShop)});
+$('shLad').onclick=openOffers;$('shFund').onclick=()=>{renderFund();$('ovFund').classList.add('show')};$('shPass').onclick=()=>{renderPass();$('ovPass').classList.add('show')};
+$('shStarter')&&($('shStarter').onclick=()=>openPack('starter'));$('shNoAds')&&($('shNoAds').onclick=()=>openPack('noads'));
 $('shAd').onclick=()=>showAd(()=>{toast('وصلك: '+grant([['gem',5]]))});
 document.querySelectorAll('[data-gem]').forEach(b=>b.onclick=()=>{const[n,p]=gems[+b.dataset.gem];testBuy(p,n+' جوهرة',[['gem',n]],renderShop)});
 document.querySelectorAll('[data-coin]').forEach(b=>b.onclick=()=>{const[n,g]=coins[+b.dataset.coin];if(D.gems<g){msg('جواهرك ما تكفي',[{t:'تمام',c:'gr'}]);return}msg(`تبدل ${g} ${ic('g')} بـ ${n} ${ic('c')}؟`,[{t:'لا',c:'gr'},{t:'بدّل',c:'y',f:()=>{D.gems-=g;grant([['coin',n]]);renderShop()}}])})}
@@ -595,7 +710,7 @@ const L=LIST[wTab],own=D.owned[wTab],curk=D[SELK[wTab]];const keys=Object.keys(L
 $('wardGrid').innerHTML=keys.map(k=>{const it=L[k],o=own.includes(k);return`<div class="card ${curk===k?'sel':''}">${it.cur==='g'&&!o?'<span class="disc" style="background:#8A5CF0">مميز</span>':''}${wardPic(wTab,k)}<div class="nm">${it.n}</div><button class="gb sm ${o?(curk===k?'gr':''):it.cur==='g'?'b':'y'}" data-k="${k}" style="width:100%">${o?(curk===k?'✓ لابسها':'البس'):it.price+' '+ic(it.cur)}</button></div>`}).join('');
 document.querySelectorAll('#wardGrid button').forEach(b=>b.onclick=()=>{const k=b.dataset.k;if(!own.includes(k)){payItem(wTab,k,1,renderWard);return}D[SELK[wTab]]=k;save();snd('tap');renderWard()})}
 // المراحل
-function renderLevels(){$('tst').textContent=D.stars.reduce((a,b)=>a+b,0);
+function renderLevels(){$('tst').textContent=totStars();
 $('wts').innerHTML=WORLDS.map((W,i)=>`<button class="tab ${i===wtab?'on':''} ${i*PER>=D.unlocked?'lk':''}" data-w="${i}">${i*PER>=D.unlocked?'🔒 ':''}${W.n}</button>`).join('');
 document.querySelectorAll('#wts button').forEach(b=>b.onclick=()=>{const w=+b.dataset.w;if(w*PER>=D.unlocked){toast('خلّص عالم '+WORLDS[w-1].n+' أول');return}wtab=w;snd('tap');renderLevels()});
 const W=WORLDS[wtab];$('wName').textContent=`${W.n} · لوحة ${W.N}×${W.N}`;$('wDesc').textContent=W.d;
@@ -613,9 +728,7 @@ document.querySelectorAll('#seats button').forEach(b=>b.onclick=()=>{const j=+b.
 $('btnLocal').onclick=()=>{snd('tap');game='local';startGame()};
 function renderOnline(){$('tiers').innerHTML=[5,50,100,500,1000].map(t=>`<div class="panel" style="display:flex;justify-content:space-between;align-items:center;margin:8px 0;opacity:.8"><div style="font-weight:900;font-size:17px">طاولة ${t}</div><div style="font-size:13px">${t} ${ic('c')} ضد ${t} ${ic('c')} · الفايز ياخذ ${t*2}</div><span>🔒</span></div>`).join('')}
 function renderRank(){$('rankMe').innerHTML=[1,2,3].map(i=>`<div class="panel" style="margin:6px 0;display:flex;align-items:center;gap:8px;opacity:.5"><b style="width:24px">${i}</b><div style="flex:1">؟؟؟</div><span>${ic('c')} ؟</span></div>`).join('')+`<div class="panel" style="margin:6px 0;display:flex;align-items:center;gap:8px;border-color:#FFC02E"><b style="width:24px">—</b><svg width="34" height="40" viewBox="-17 -26 34 44">${charSVG(D.sel,'n',[0,0],D.acc)}</svg><div style="flex:1;font-weight:900">${D.name}<div style="font-size:12px;opacity:.8">مستوى ${D.plv}</div></div><span style="font-weight:900">${ic('c')} ${D.S.earned}</span></div>`;
-$('statBox').innerHTML=`المستوى: ${D.plv}<br>فوز ضد الروبوت: ${D.S.w} · خسارة: ${D.S.l}<br>أطول سلسلة فوز: ${D.best}<br>مباريات مع أصحابك: ${D.S.local}<br>النجوم: ${D.stars.reduce((a,b)=>a+b,0)} من ${NL*3}<br>كل العملات اللي جمعتها: ${D.S.earned}`}
-function renderMis(){ensureMis();$('misList').innerHTML=D.mis.list.map((m,i)=>{const M=MPOOL.find(x=>x.id===m.id),done=m.p>=M.n;return`<div class="mis"><div style="display:flex;justify-content:space-between;gap:8px"><b>${M.t}</b><span style="white-space:nowrap;font-weight:900">${M.r} ${ic('c')}</span></div><div class="bar"><i style="width:${Math.round(m.p/M.n*100)}%"></i></div><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;opacity:.85">${m.p} / ${M.n}</span>${m.c?'<span style="color:#7ED321;font-weight:900">✓ أخذتها</span>':`<button class="gb sm ${done?'':'gr'}" data-i="${i}" style="margin:0">${done?'خذ الجائزة':'لسه'}</button>`}</div></div>`}).join('');
-document.querySelectorAll('#misList button').forEach(b=>b.onclick=()=>{const m=D.mis.list[+b.dataset.i],M=MPOOL.find(x=>x.id===m.id);if(m.p<M.n){toast('كمّل المهمة أول');return}m.c=true;toast('+'+grant([['coin',M.r]]));addXP(10);save();renderMis()})}
+$('statBox').innerHTML=`المستوى: ${D.plv}<br>فوز ضد الروبوت: ${D.S.w} · خسارة: ${D.S.l}<br>أطول سلسلة فوز: ${D.best}<br>مباريات مع أصحابك: ${D.S.local}<br>النجوم: ${totStars()} من ${NL*3}<br>كل العملات اللي جمعتها: ${D.S.earned}`}
 function renderSet(){$('swSound').classList.toggle('on',D.set.sound);$('swVib').classList.toggle('on',D.set.vib);$('swPop').classList.toggle('on',D.set.pop);opt('spd',()=>D.set.spd,v=>{D.set.spd=v;save()});$('inName').value=D.name}
 $('inName').oninput=e=>{D.name=(e.target.value||'').trim()||'لاعب';save()};
 $('swSound').onclick=()=>{D.set.sound=!D.set.sound;save();renderSet();snd('tap')};
@@ -632,16 +745,16 @@ $('inDesc').textContent=(nP===2?'كل واحد يوصّل للضلع اللي ق
 paused=true;$('ovIntro').classList.add('show')}
 $('inGo').onclick=()=>{$('ovIntro').classList.remove('show');paused=false;snd('tap');draw()};
 let lastEarn=0,doubled=false;
-function finish(wi){over=true;ghost=null;clearTimeout(botTimer);G.forEach((p,j)=>p.mood=j===wi?'w':'s');const humanWin=G[wi].human;let st=0,earn=0,xp=0;
-if(game==='lv'){if(wi===0){D.S.w++;D.streak++;D.best=Math.max(D.best,D.streak);const used=cfg.w-G[0].walls,minB=Math.min(...G.slice(1).map((_,j)=>pd(j+1)));st=1+(used<=Math.ceil(cfg.w/2)?1:0)+(minB>=3?1:0);const first=!D.stars[cur];earn=10+st*5+(first?10:0)+Math.min(20,(D.streak-1)*2);xp=30+st*5;if(st>D.stars[cur])D.stars[cur]=st;D.unlocked=Math.max(D.unlocked,Math.min(NL,cur+2));misEvent('win2');misEvent('win3');if(st===3)misEvent('star3');if(!wallsUsedRound)misEvent('nowall')}else{D.S.l++;D.streak=0;xp=10}}
-else{D.S.local++;misEvent('local');xp=15}
-D.coins+=earn;D.S.earned+=earn;addXP(xp);save();updCoins();lastEarn=earn;doubled=false;
+function finish(wi){over=true;ghost=null;clearTimeout(botTimer);G.forEach((p,j)=>p.mood=j===wi?'w':'s');const humanWin=G[wi].human;let st=0,earn=0,xp=0,pp=0;
+if(game==='lv'){if(wi===0){D.S.w++;D.streak++;D.best=Math.max(D.best,D.streak);const used=cfg.w-G[0].walls,minB=Math.min(...G.slice(1).map((_,j)=>pd(j+1)));st=1+(used<=Math.ceil(cfg.w/2)?1:0)+(minB>=3?1:0);const first=!D.stars[cur];earn=10+st*5+(first?10:0)+Math.min(20,(D.streak-1)*2);xp=30+st*5;pp=25;if(st>D.stars[cur])D.stars[cur]=st;D.unlocked=Math.max(D.unlocked,Math.min(NL,cur+2));qEvent('win');if(st===3)qEvent('star3');if(!wallsUsedRound)qEvent('nowall')}else{D.S.l++;D.streak=0;xp=10;pp=8}}
+else{D.S.local++;qEvent('local');xp=15;pp=10}
+qEvent('play');passAdd(pp);D.coins+=earn;D.S.earned+=earn;addXP(xp);save();updCoins();lastEarn=earn;doubled=false;
 if(humanWin){confetti();snd('win');vib([60,40,60])}else{snd('lose');vib(200)}
 const bot=G.findIndex((p,j)=>!p.human&&j!==wi);if(!G[wi].human)say(wi,pick(['وصلت أول! نعيدها؟','سبقتك هالمرة','لا تزعل، جرب مرة ثانية']));else if(bot>=0)say(bot,pick(['كفو، غلبتني!','واو، ما توقعتها','المرة الجاية لي']));
 draw();
 setTimeout(()=>{if(game==='lv'){$('rStars').innerHTML=wi===0?starsH(st):'😵';$('rTitle').textContent=wi===0?(cur===NL-1?'خلصت كل المراحل!':'فزت!'):'خسرت، جرب مرة ثانية';$('rSub').textContent=cfg.name+(wi===0&&D.streak>1?` · 🔥 سلسلة ×${D.streak}`:'')}
 else{$('rStars').innerHTML=`<svg width="90" height="100" viewBox="-17 -30 34 48">${charSVG(G[wi].ch,'w',[0,0],G[wi].acc)}</svg>`;$('rTitle').textContent='فاز '+G[wi].name+'!';$('rSub').textContent='مع صاحبك · بدون عملات'}
-$('rCoins').innerHTML=(earn?`<span class="cur" id="rEarn">${ic('c')} +${earn}</span>`:'')+`<span class="cur">⭐ +${xp} خبرة</span>`;
+$('rCoins').innerHTML=(earn?`<span class="cur" id="rEarn">${ic('c')} +${earn}</span>`:'')+`<span class="cur">⭐ +${xp} خبرة</span><span class="cur">🏆 +${pp}</span>`;
 $('rDouble').style.display=earn?'':'none';$('rNext').style.display=game==='lv'&&wi===0&&cur<NL-1?'':'none';$('rAgain').textContent=game==='lv'&&wi!==0?'حاول مرة ثانية':'العب مرة ثانية';
 $('ovRes').classList.add('show');if(earn)snd('coin')},1100)}
 $('rDouble').onclick=()=>{if(doubled)return;showAd(()=>{doubled=true;D.coins+=lastEarn;D.S.earned+=lastEarn;save();updCoins();$('rEarn').innerHTML=`${ic('c')} +${lastEarn*2}`;$('rDouble').style.display='none';toast('تضاعفت! +'+lastEarn);snd('coin')})};
@@ -653,8 +766,8 @@ $('rAgain').onclick=()=>{$('ovRes').classList.remove('show');maybeAd(startGame)}
 $('rNext').onclick=()=>{$('ovRes').classList.remove('show');cur++;maybeAd(startGame)};
 $('rHome').onclick=()=>{$('ovRes').classList.remove('show');maybeAd(()=>show('scHome'))};
 // البداية
-ensureMis();ensureLad();homeBg();show('scHome');
-if(D.set.pop){openOffers();afterOffer=()=>{if(!D.owned.chars.includes(weeklyKey()))openWeekly()}}
+ensureQ();ensureLad();ensurePass();if(!D.fund)D.fund={b:false,cl:[]};if(!D.road)D.road=[];homeBg();show('scHome');
+if(D.set.pop){popQ=[()=>{if(!D.owned.chars.includes(weeklyKey()))openWeekly();else nextPop()},()=>{if(!D.starter)openPack('starter')}];openOffers()}
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}
 </script>
 </body>
