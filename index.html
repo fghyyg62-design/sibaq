@@ -1650,6 +1650,19 @@ const _renderShop1=renderShop;renderShop=function(){_renderShop1();document.quer
 // الحقيبة: الشخصيات بالصناديق
 const _renderWard1=renderWard;renderWard=function(){_renderWard1();document.querySelectorAll('#scWard [data-wk^="chars|"]').forEach(b=>{const k=b.dataset.wk.split('|')[1];if(!D.owned.chars.includes(k)){b.className='gb sm b2';b.innerHTML='افتح صناديق';b.onclick=goChests}})};
 setTimeout(()=>{try{renderHome()}catch(e){}},0);
+// ---------- حذف الكنزات والبوط (ما تركب على الشخصيات) ----------
+(function(){const rm=['tshirt','hoodie','sneaker','goldshoes'];let ref={c:0,g:0};rm.forEach(k=>{if(D.owned.accs.includes(k)){const it=ACC[k];ref[it.cur]+=it.price;D.owned.accs=D.owned.accs.filter(x=>x!==k)}delete ACC[k];delete SLOT[k]});normAcc();if(rm.includes(D.acc.body))D.acc.body='none';D.acc.feet='none';if(ref.c||ref.g){D.coins+=ref.c;D.gems+=ref.g}save();
+const i=WTABS.findIndex(t=>t[0]==='feet');if(i>=0)WTABS.splice(i,1);const b=WTABS.find(t=>t[0]==='body');if(b)b[1]='الظهر';SLOTN.body='الظهر'})();
+function slotBox(s){const k=D.acc[s];return`<button class="wslot" data-slot="${s}">${k&&k!=='none'?imgTag(AIMG[k],40):'<span style="opacity:.5;font-size:22px">+</span>'}<small>${SLOTN[s]}</small></button>`}
+const _renderWard2=renderWard;renderWard=function(){_renderWard2();const sl=document.querySelectorAll('#scWard .wslots');if(sl[1])sl[1].innerHTML=slotBox('body')};
+// ---------- حماية الكشف من التعليق ----------
+nameOf=(function(f){return function(o){try{return f(o)}catch(e){return''}}})(nameOf);
+(function(){const _rv=revealSeq;revealSeq=function(list,done,applied){let closed=false,mo=null;const kill=()=>{if(mo)mo.disconnect();const b=$('cst').querySelector('.skipb');if(b)b.remove()};const close=()=>{if(closed)return;closed=true;kill();chestTap=null;$('ovChest').classList.remove('show');try{renderHome()}catch(e){}updCoins();done&&done()};
+try{_rv(list,()=>{closed=true;kill();done&&done()},applied)}catch(e){close();return}
+const add=()=>{if(closed)return;const S=$('cst');if(!S.querySelector('.skipb')&&!S.querySelector('#rvOk'))S.insertAdjacentHTML('beforeend','<button class="gb gr sm skipb" style="position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:5;min-width:120px">تخطّي ⏭</button>');const b=S.querySelector('.skipb');if(b)b.onclick=ev=>{ev.stopPropagation();const ok=S.querySelector('#rvOk');if(ok){ok.click();return}const c=list.filter(o=>o.k==='coin').reduce((x,o)=>x+o.n,0)+list.reduce((x,o)=>x+(o.bonus||0),0),g=list.filter(o=>o.k==='gem').reduce((x,o)=>x+o.n,0);close();const pt=[innerWidth/2,innerHeight/2];setTimeout(()=>{if(c)flyTo('coin',c,pt);if(g)flyTo('gem',g,pt)},250)}};
+mo=new MutationObserver(add);mo.observe($('cst'),{childList:true});add();
+const watch=setInterval(()=>{if(closed||!$('ovChest').classList.contains('show')){clearInterval(watch);mo.disconnect();return}if(!chestTap&&!$('cst').querySelector('#rvOk')&&!$('cst').querySelector('.cimg')){clearInterval(watch);mo.disconnect();close()}},1500)}})();
+window.addEventListener('error',e=>{if($('ovChest').classList.contains('show')&&!$('cst').querySelector('#rvOk')){chestTap=null;$('ovChest').classList.remove('show');updCoins();setTimeout(()=>{revBusy=false;try{runRewards()}catch(_){}},300)}});
 // البداية
 normAcc();ensureQ();ensureLad();ensurePass();if(!D.fund)D.fund={b:false,cl:[]};if(!D.road)D.road=[];homeBg();show('scHome');
 if(D.set.pop){popQ=[()=>{if(!D.owned.chars.includes(weeklyKey()))openWeekly();else nextPop()},()=>{if(!D.starter)openPack('starter')}];openOffers()}
